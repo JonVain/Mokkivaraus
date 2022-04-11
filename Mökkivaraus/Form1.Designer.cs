@@ -46,13 +46,13 @@ namespace Mökkivaraus
             this.alueTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.alueTableAdapter();
             this.asiakasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -152,21 +152,21 @@ namespace Mökkivaraus
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btn1);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(996, 704);
             this.panel1.TabIndex = 1;
             // 
-            // btn1
+            // label1
             // 
-            this.btn1.Location = new System.Drawing.Point(798, 25);
-            this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(75, 23);
-            this.btn1.TabIndex = 2;
-            this.btn1.Text = "Lähetä";
-            this.btn1.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(225, 327);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Testilaabeli";
             // 
             // Form1
             // 
@@ -178,12 +178,13 @@ namespace Mökkivaraus
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -206,6 +207,7 @@ namespace Mökkivaraus
         private System.Windows.Forms.DataGridViewTextBoxColumn lahiosoiteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn puhelinnroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label1;
     }
 }
 
