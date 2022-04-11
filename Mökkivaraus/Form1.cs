@@ -19,6 +19,8 @@ namespace Mökkivaraus
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'vnDataSet.alue' table. You can move, or remove it, as needed.
+            this.alueTableAdapter.Fill(this.vnDataSet.alue);
             // TODO: This line of code loads data into the 'vnDataSet.asiakas' table. You can move, or remove it, as needed.
             this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
 

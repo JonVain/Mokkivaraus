@@ -31,10 +31,13 @@ namespace Mökkivaraus
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.vnDataSet = new Mökkivaraus.VnDataSet();
-            this.vnDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.asiakasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vnDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vnDataSet = new Mökkivaraus.VnDataSet();
             this.asiakasTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.asiakasTableAdapter();
+            this.alueBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.alueTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.alueTableAdapter();
+            this.asiakasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.asiakasidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postinroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.etunimiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,10 +45,14 @@ namespace Mökkivaraus
             this.lahiosoiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puhelinnroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -60,31 +67,45 @@ namespace Mökkivaraus
             this.lahiosoiteDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
             this.puhelinnroDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.asiakasBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(1111, 574);
+            this.dataGridView1.DataSource = this.asiakasBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(742, 343);
+            this.dataGridView1.Size = new System.Drawing.Size(744, 45);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // vnDataSet
-            // 
-            this.vnDataSet.DataSetName = "VnDataSet";
-            this.vnDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // vnDataSetBindingSource
-            // 
-            this.vnDataSetBindingSource.DataSource = this.vnDataSet;
-            this.vnDataSetBindingSource.Position = 0;
             // 
             // asiakasBindingSource
             // 
             this.asiakasBindingSource.DataMember = "asiakas";
             this.asiakasBindingSource.DataSource = this.vnDataSetBindingSource;
             // 
+            // vnDataSetBindingSource
+            // 
+            this.vnDataSetBindingSource.DataSource = this.vnDataSet;
+            this.vnDataSetBindingSource.Position = 0;
+            // 
+            // vnDataSet
+            // 
+            this.vnDataSet.DataSetName = "VnDataSet";
+            this.vnDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // asiakasTableAdapter
             // 
             this.asiakasTableAdapter.ClearBeforeFill = true;
+            // 
+            // alueBindingSource
+            // 
+            this.alueBindingSource.DataMember = "alue";
+            this.alueBindingSource.DataSource = this.vnDataSetBindingSource;
+            // 
+            // alueTableAdapter
+            // 
+            this.alueTableAdapter.ClearBeforeFill = true;
+            // 
+            // asiakasBindingSource1
+            // 
+            this.asiakasBindingSource1.DataMember = "asiakas";
+            this.asiakasBindingSource1.DataSource = this.vnDataSetBindingSource;
             // 
             // asiakasidDataGridViewTextBoxColumn
             // 
@@ -128,19 +149,30 @@ namespace Mökkivaraus
             this.puhelinnroDataGridViewTextBoxColumn.HeaderText = "puhelinnro";
             this.puhelinnroDataGridViewTextBoxColumn.Name = "puhelinnroDataGridViewTextBoxColumn";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(996, 704);
+            this.panel1.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1865, 929);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -152,6 +184,8 @@ namespace Mökkivaraus
         private VnDataSet vnDataSet;
         private System.Windows.Forms.BindingSource asiakasBindingSource;
         private VnDataSetTableAdapters.asiakasTableAdapter asiakasTableAdapter;
+        private System.Windows.Forms.BindingSource alueBindingSource;
+        private VnDataSetTableAdapters.alueTableAdapter alueTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn asiakasidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn postinroDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn etunimiDataGridViewTextBoxColumn;
@@ -159,6 +193,8 @@ namespace Mökkivaraus
         private System.Windows.Forms.DataGridViewTextBoxColumn lahiosoiteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn puhelinnroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource asiakasBindingSource1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
