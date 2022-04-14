@@ -44,6 +44,7 @@ namespace Mökkivaraus
             this.tsmToimintaAlueet = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmPalvelut = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
@@ -88,6 +89,7 @@ namespace Mökkivaraus
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.toolStrip1);
             this.panel1.Location = new System.Drawing.Point(-1, -2);
             this.panel1.Name = "panel1";
@@ -130,13 +132,21 @@ namespace Mökkivaraus
             this.tsmPalvelut.Text = "Palveluiden Hallinta";
             this.tsmPalvelut.Click += new System.EventHandler(this.tsmPalvelut_Click);
             // 
-            // Main
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(381, 444);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "Tekstiä";
+            // 
+            // Etusivu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1022, 783);
             this.Controls.Add(this.panel1);
-            this.Name = "Main";
+            this.Name = "Etusivu";
             this.Text = "Mökki varaus";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).EndInit();
@@ -166,6 +176,7 @@ namespace Mökkivaraus
         private System.Windows.Forms.ToolStripMenuItem tsmToimintaAlueet;
         private System.Windows.Forms.ToolStripMenuItem tsmPalvelut;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
