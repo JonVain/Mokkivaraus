@@ -1,7 +1,7 @@
 ﻿
 namespace Mökkivaraus
 {
-    partial class PalveluidenHallinta
+    partial class MokkienHallinta
     {
         /// <summary>
         /// Required designer variable.
@@ -29,15 +29,13 @@ namespace Mökkivaraus
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PalveluidenHallinta));
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MokkienHallinta));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmEtusivu = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmToimintaAlueet = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmToiminta = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmPalvelut = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAsiakas = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmMokki = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +45,7 @@ namespace Mökkivaraus
             this.toolStripDropDownButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1014, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -56,9 +54,9 @@ namespace Mökkivaraus
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmEtusivu,
-            this.tsmToimintaAlueet,
-            this.tsmAsiakas,
-            this.tsmMokki});
+            this.tsmToiminta,
+            this.tsmPalvelut,
+            this.tsmAsiakas});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
@@ -72,12 +70,19 @@ namespace Mökkivaraus
             this.tsmEtusivu.Text = "Takaisin Etusivulle";
             this.tsmEtusivu.Click += new System.EventHandler(this.tsmEtusivu_Click);
             // 
-            // tsmToimintaAlueet
+            // tsmToiminta
             // 
-            this.tsmToimintaAlueet.Name = "tsmToimintaAlueet";
-            this.tsmToimintaAlueet.Size = new System.Drawing.Size(191, 22);
-            this.tsmToimintaAlueet.Text = "Toiminta-alue Hallinta";
-            this.tsmToimintaAlueet.Click += new System.EventHandler(this.tsmToimintaAlueet_Click);
+            this.tsmToiminta.Name = "tsmToiminta";
+            this.tsmToiminta.Size = new System.Drawing.Size(191, 22);
+            this.tsmToiminta.Text = "Toiminta-alue Hallinta";
+            this.tsmToiminta.Click += new System.EventHandler(this.tsmToiminta_Click);
+            // 
+            // tsmPalvelut
+            // 
+            this.tsmPalvelut.Name = "tsmPalvelut";
+            this.tsmPalvelut.Size = new System.Drawing.Size(191, 22);
+            this.tsmPalvelut.Text = "Palveluiden Hallinta";
+            this.tsmPalvelut.Click += new System.EventHandler(this.tsmPalvelut_Click);
             // 
             // tsmAsiakas
             // 
@@ -86,21 +91,14 @@ namespace Mökkivaraus
             this.tsmAsiakas.Text = "Asiakas Hallinta";
             this.tsmAsiakas.Click += new System.EventHandler(this.tsmAsiakas_Click);
             // 
-            // tsmMokki
-            // 
-            this.tsmMokki.Name = "tsmMokki";
-            this.tsmMokki.Size = new System.Drawing.Size(191, 22);
-            this.tsmMokki.Text = "Mökkien Hallinta";
-            this.tsmMokki.Click += new System.EventHandler(this.tsmMokki_Click);
-            // 
-            // PalveluidenHallinta
+            // MokkienHallinta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 613);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "PalveluidenHallinta";
-            this.Text = "Palveluiden Hallinta";
+            this.Name = "MokkienHallinta";
+            this.Text = "Mökkien Hallinta";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -110,12 +108,11 @@ namespace Mökkivaraus
 
         #endregion
 
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem tsmEtusivu;
-        private System.Windows.Forms.ToolStripMenuItem tsmToimintaAlueet;
+        private System.Windows.Forms.ToolStripMenuItem tsmToiminta;
+        private System.Windows.Forms.ToolStripMenuItem tsmPalvelut;
         private System.Windows.Forms.ToolStripMenuItem tsmAsiakas;
-        private System.Windows.Forms.ToolStripMenuItem tsmMokki;
     }
 }

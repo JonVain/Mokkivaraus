@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Mökkivaraus
 {
-    public partial class ToimintaAlueHallinta : Form
+    public partial class MokkienHallinta : Form
     {
-        public ToimintaAlueHallinta()
+        public MokkienHallinta()
         {
             InitializeComponent();
         }
@@ -21,6 +21,13 @@ namespace Mökkivaraus
         {
             Etusivu es = new Etusivu();
             es.Show();
+            this.Hide();
+        }
+
+        private void tsmToiminta_Click(object sender, EventArgs e)
+        {
+            ToimintaAlueHallinta tah = new ToimintaAlueHallinta();
+            tah.Show();
             this.Hide();
         }
 
@@ -35,13 +42,6 @@ namespace Mökkivaraus
         {
             AsiakasHallinta ah = new AsiakasHallinta();
             ah.Show();
-            this.Hide();
-        }
-
-        private void tsmMokki_Click(object sender, EventArgs e)
-        {
-            MokkienHallinta mh = new MokkienHallinta();
-            mh.Show();
             this.Hide();
         }
     }

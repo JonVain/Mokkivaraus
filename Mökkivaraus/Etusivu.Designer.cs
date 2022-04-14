@@ -43,12 +43,13 @@ namespace Mökkivaraus
             this.tsdHallinta = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmToimintaAlueet = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmPalvelut = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmAsiakasHallinta = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmMokki = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.asiakasBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.alueBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.laskuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.laskuTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.laskuTableAdapter();
-            this.tsmAsiakasHallinta = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
@@ -118,7 +119,8 @@ namespace Mökkivaraus
             this.tsdHallinta.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmToimintaAlueet,
             this.tsmPalvelut,
-            this.tsmAsiakasHallinta});
+            this.tsmAsiakasHallinta,
+            this.tsmMokki});
             this.tsdHallinta.Image = ((System.Drawing.Image)(resources.GetObject("tsdHallinta.Image")));
             this.tsdHallinta.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsdHallinta.Name = "tsdHallinta";
@@ -139,6 +141,20 @@ namespace Mökkivaraus
             this.tsmPalvelut.Text = "Palveluiden Hallinta";
             this.tsmPalvelut.Click += new System.EventHandler(this.tsmPalvelut_Click);
             // 
+            // tsmAsiakasHallinta
+            // 
+            this.tsmAsiakasHallinta.Name = "tsmAsiakasHallinta";
+            this.tsmAsiakasHallinta.Size = new System.Drawing.Size(191, 22);
+            this.tsmAsiakasHallinta.Text = "Asiakas Hallinta";
+            this.tsmAsiakasHallinta.Click += new System.EventHandler(this.tsmAsiakasHallinta_Click);
+            // 
+            // tsmMokki
+            // 
+            this.tsmMokki.Name = "tsmMokki";
+            this.tsmMokki.Size = new System.Drawing.Size(191, 22);
+            this.tsmMokki.Text = "Mökkien Hallinta";
+            this.tsmMokki.Click += new System.EventHandler(this.tsmMokki_Click);
+            // 
             // asiakasBindingSource2
             // 
             this.asiakasBindingSource2.DataMember = "asiakas";
@@ -157,13 +173,6 @@ namespace Mökkivaraus
             // laskuTableAdapter
             // 
             this.laskuTableAdapter.ClearBeforeFill = true;
-            // 
-            // tsmAsiakasHallinta
-            // 
-            this.tsmAsiakasHallinta.Name = "tsmAsiakasHallinta";
-            this.tsmAsiakasHallinta.Size = new System.Drawing.Size(191, 22);
-            this.tsmAsiakasHallinta.Text = "Asiakas Hallinta";
-            this.tsmAsiakasHallinta.Click += new System.EventHandler(this.tsmAsiakasHallinta_Click);
             // 
             // Etusivu
             // 
@@ -209,6 +218,7 @@ namespace Mökkivaraus
         private System.Windows.Forms.BindingSource laskuBindingSource;
         private VnDataSetTableAdapters.laskuTableAdapter laskuTableAdapter;
         private System.Windows.Forms.ToolStripMenuItem tsmAsiakasHallinta;
+        private System.Windows.Forms.ToolStripMenuItem tsmMokki;
     }
 }
 

@@ -42,14 +42,19 @@ namespace Mökkivaraus
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
+        private void tsmMokki_Click(object sender, EventArgs e)
+        {
+            MokkienHallinta mh = new MokkienHallinta();
+            mh.Show();
+            this.Hide();
         }
 
         private void tsmAsiakasHallinta_Click(object sender, EventArgs e)
         {
-
+            AsiakasHallinta ah = new AsiakasHallinta();
+            ah.Show();
+            this.Hide();
         }
     }
 }
