@@ -36,6 +36,7 @@ namespace Mökkivaraus
             this.tsmToiminta = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmPalvelut = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAsiakas = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,11 +92,21 @@ namespace Mökkivaraus
             this.tsmAsiakas.Text = "Asiakas Hallinta";
             this.tsmAsiakas.Click += new System.EventHandler(this.tsmAsiakas_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(268, 119);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(236, 193);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // MokkienHallinta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "MokkienHallinta";
             this.Text = "Mökkien Hallinta";
@@ -114,5 +125,6 @@ namespace Mökkivaraus
         private System.Windows.Forms.ToolStripMenuItem tsmToiminta;
         private System.Windows.Forms.ToolStripMenuItem tsmPalvelut;
         private System.Windows.Forms.ToolStripMenuItem tsmAsiakas;
+        private System.Windows.Forms.Button button1;
     }
 }
