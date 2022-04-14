@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsiakasHallinta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsiakasHallinta.Designer.cs">
+      <DependentUpon>AsiakasHallinta.cs</DependentUpon>
+    </Compile>
     <Compile Include="PalveluidenHallinta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VnDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AsiakasHallinta.resx">
+      <DependentUpon>AsiakasHallinta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Etusivu.resx">
       <DependentUpon>Etusivu.cs</DependentUpon>
     </EmbeddedResource>

@@ -19,6 +19,8 @@ namespace Mökkivaraus
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'vnDataSet.lasku' table. You can move, or remove it, as needed.
+            this.laskuTableAdapter.Fill(this.vnDataSet.lasku);
             // TODO: This line of code loads data into the 'vnDataSet.alue' table. You can move, or remove it, as needed.
             this.alueTableAdapter.Fill(this.vnDataSet.alue);
             // TODO: This line of code loads data into the 'vnDataSet.asiakas' table. You can move, or remove it, as needed.
@@ -41,6 +43,11 @@ namespace Mökkivaraus
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmAsiakasHallinta_Click(object sender, EventArgs e)
         {
 
         }

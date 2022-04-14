@@ -44,20 +44,11 @@ namespace Mökkivaraus
             this.tsmToimintaAlueet = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmPalvelut = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.asiakasidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.postinroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.etunimiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sukunimiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lahiosoiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.puhelinnroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.asiakasBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.alueBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.laskuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.laskuTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.laskuTableAdapter();
+            this.tsmAsiakasHallinta = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
@@ -65,7 +56,9 @@ namespace Mökkivaraus
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource1)).BeginInit();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // asiakasBindingSource
@@ -103,13 +96,6 @@ namespace Mökkivaraus
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.toolStrip1);
             this.panel1.Location = new System.Drawing.Point(-1, -2);
             this.panel1.Name = "panel1";
@@ -131,7 +117,8 @@ namespace Mökkivaraus
             this.tsdHallinta.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsdHallinta.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmToimintaAlueet,
-            this.tsmPalvelut});
+            this.tsmPalvelut,
+            this.tsmAsiakasHallinta});
             this.tsdHallinta.Image = ((System.Drawing.Image)(resources.GetObject("tsdHallinta.Image")));
             this.tsdHallinta.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsdHallinta.Name = "tsdHallinta";
@@ -152,116 +139,31 @@ namespace Mökkivaraus
             this.tsmPalvelut.Text = "Palveluiden Hallinta";
             this.tsmPalvelut.Click += new System.EventHandler(this.tsmPalvelut_Click);
             // 
-            // dataGridView1
+            // asiakasBindingSource2
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.asiakasidDataGridViewTextBoxColumn,
-            this.postinroDataGridViewTextBoxColumn,
-            this.etunimiDataGridViewTextBoxColumn,
-            this.sukunimiDataGridViewTextBoxColumn,
-            this.lahiosoiteDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.puhelinnroDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.asiakasBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(267, 14);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(744, 150);
-            this.dataGridView1.TabIndex = 1;
+            this.asiakasBindingSource2.DataMember = "asiakas";
+            this.asiakasBindingSource2.DataSource = this.vnDataSetBindingSource;
             // 
-            // asiakasidDataGridViewTextBoxColumn
+            // alueBindingSource1
             // 
-            this.asiakasidDataGridViewTextBoxColumn.DataPropertyName = "asiakas_id";
-            this.asiakasidDataGridViewTextBoxColumn.HeaderText = "asiakas_id";
-            this.asiakasidDataGridViewTextBoxColumn.Name = "asiakasidDataGridViewTextBoxColumn";
+            this.alueBindingSource1.DataMember = "alue";
+            this.alueBindingSource1.DataSource = this.vnDataSetBindingSource;
             // 
-            // postinroDataGridViewTextBoxColumn
+            // laskuBindingSource
             // 
-            this.postinroDataGridViewTextBoxColumn.DataPropertyName = "postinro";
-            this.postinroDataGridViewTextBoxColumn.HeaderText = "postinro";
-            this.postinroDataGridViewTextBoxColumn.Name = "postinroDataGridViewTextBoxColumn";
+            this.laskuBindingSource.DataMember = "lasku";
+            this.laskuBindingSource.DataSource = this.vnDataSetBindingSource;
             // 
-            // etunimiDataGridViewTextBoxColumn
+            // laskuTableAdapter
             // 
-            this.etunimiDataGridViewTextBoxColumn.DataPropertyName = "etunimi";
-            this.etunimiDataGridViewTextBoxColumn.HeaderText = "etunimi";
-            this.etunimiDataGridViewTextBoxColumn.Name = "etunimiDataGridViewTextBoxColumn";
+            this.laskuTableAdapter.ClearBeforeFill = true;
             // 
-            // sukunimiDataGridViewTextBoxColumn
+            // tsmAsiakasHallinta
             // 
-            this.sukunimiDataGridViewTextBoxColumn.DataPropertyName = "sukunimi";
-            this.sukunimiDataGridViewTextBoxColumn.HeaderText = "sukunimi";
-            this.sukunimiDataGridViewTextBoxColumn.Name = "sukunimiDataGridViewTextBoxColumn";
-            // 
-            // lahiosoiteDataGridViewTextBoxColumn
-            // 
-            this.lahiosoiteDataGridViewTextBoxColumn.DataPropertyName = "lahiosoite";
-            this.lahiosoiteDataGridViewTextBoxColumn.HeaderText = "lahiosoite";
-            this.lahiosoiteDataGridViewTextBoxColumn.Name = "lahiosoiteDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // puhelinnroDataGridViewTextBoxColumn
-            // 
-            this.puhelinnroDataGridViewTextBoxColumn.DataPropertyName = "puhelinnro";
-            this.puhelinnroDataGridViewTextBoxColumn.HeaderText = "puhelinnro";
-            this.puhelinnroDataGridViewTextBoxColumn.Name = "puhelinnroDataGridViewTextBoxColumn";
-            // 
-            // textBox1
-            // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.asiakasBindingSource, "asiakas_id", true));
-            this.textBox1.Location = new System.Drawing.Point(517, 203);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(187, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.asiakasBindingSource, "etunimi", true));
-            this.textBox2.Location = new System.Drawing.Point(517, 230);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(187, 20);
-            this.textBox2.TabIndex = 3;
-            // 
-            // textBox3
-            // 
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.asiakasBindingSource, "sukunimi", true));
-            this.textBox3.Location = new System.Drawing.Point(517, 257);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(187, 20);
-            this.textBox3.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(446, 206);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "ID";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(446, 233);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Etunimi";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(446, 260);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Sukunimi";
+            this.tsmAsiakasHallinta.Name = "tsmAsiakasHallinta";
+            this.tsmAsiakasHallinta.Size = new System.Drawing.Size(191, 22);
+            this.tsmAsiakasHallinta.Text = "Asiakas Hallinta";
+            this.tsmAsiakasHallinta.Click += new System.EventHandler(this.tsmAsiakasHallinta_Click);
             // 
             // Etusivu
             // 
@@ -281,7 +183,9 @@ namespace Mökkivaraus
             this.panel1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -300,20 +204,11 @@ namespace Mökkivaraus
         private System.Windows.Forms.ToolStripMenuItem tsmToimintaAlueet;
         private System.Windows.Forms.ToolStripMenuItem tsmPalvelut;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn asiakasidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn postinroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn etunimiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sukunimiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lahiosoiteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn puhelinnroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource asiakasBindingSource2;
+        private System.Windows.Forms.BindingSource alueBindingSource1;
+        private System.Windows.Forms.BindingSource laskuBindingSource;
+        private VnDataSetTableAdapters.laskuTableAdapter laskuTableAdapter;
+        private System.Windows.Forms.ToolStripMenuItem tsmAsiakasHallinta;
     }
 }
 
