@@ -377,6 +377,7 @@ namespace Mökkivaraus
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "MokkienHallinta";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MokkienHallinta_FormClosing);
             this.Load += new System.EventHandler(this.MokkienHallinta_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

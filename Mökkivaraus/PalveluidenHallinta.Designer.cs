@@ -101,6 +101,7 @@ namespace Mökkivaraus
             this.Controls.Add(this.toolStrip1);
             this.Name = "PalveluidenHallinta";
             this.Text = "Palveluiden Hallinta";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PalveluidenHallinta_FormClosed);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

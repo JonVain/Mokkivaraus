@@ -42,11 +42,11 @@ namespace Mökkivaraus
             this.alueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.alueTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.alueTableAdapter();
             this.ToimintaAlueLista = new System.Windows.Forms.ComboBox();
+            this.alueBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.alueBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.alueBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.lbMokit = new System.Windows.Forms.Label();
             this.gridMokkiTaulukko = new System.Windows.Forms.DataGridView();
-            this.mokkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mokkiTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.mokkiTableAdapter();
             this.mokkiidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alueidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postinroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,20 +56,20 @@ namespace Mökkivaraus
             this.kuvausDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.henkilomaaraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.varusteluDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mokkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mokkiTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.mokkiTableAdapter();
             this.alueBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.alueBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.alueBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
             this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMokkiTaulukko)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource4)).BeginInit();
             this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -158,9 +158,18 @@ namespace Mökkivaraus
             this.ToimintaAlueLista.Name = "ToimintaAlueLista";
             this.ToimintaAlueLista.Size = new System.Drawing.Size(164, 21);
             this.ToimintaAlueLista.TabIndex = 5;
-            this.ToimintaAlueLista.Text = "Valitse toiminta-alue... ";
             this.ToimintaAlueLista.ValueMember = "alue_id";
             this.ToimintaAlueLista.SelectedIndexChanged += new System.EventHandler(this.ToimintaAlueLista_SelectedIndexChanged);
+            // 
+            // alueBindingSource4
+            // 
+            this.alueBindingSource4.DataMember = "alue";
+            this.alueBindingSource4.DataSource = this.vnDataSet;
+            // 
+            // alueBindingSource3
+            // 
+            this.alueBindingSource3.DataMember = "alue";
+            this.alueBindingSource3.DataSource = this.vnDataSet;
             // 
             // alueBindingSource1
             // 
@@ -197,15 +206,6 @@ namespace Mökkivaraus
             this.gridMokkiTaulukko.Size = new System.Drawing.Size(649, 150);
             this.gridMokkiTaulukko.TabIndex = 7;
             this.gridMokkiTaulukko.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridMokkiTaulukko_CellContentClick);
-            // 
-            // mokkiBindingSource
-            // 
-            this.mokkiBindingSource.DataMember = "mokki";
-            this.mokkiBindingSource.DataSource = this.vnDataSet;
-            // 
-            // mokkiTableAdapter
-            // 
-            this.mokkiTableAdapter.ClearBeforeFill = true;
             // 
             // mokkiidDataGridViewTextBoxColumn
             // 
@@ -261,28 +261,27 @@ namespace Mökkivaraus
             this.varusteluDataGridViewTextBoxColumn.HeaderText = "varustelu";
             this.varusteluDataGridViewTextBoxColumn.Name = "varusteluDataGridViewTextBoxColumn";
             // 
+            // mokkiBindingSource
+            // 
+            this.mokkiBindingSource.DataMember = "mokki";
+            this.mokkiBindingSource.DataSource = this.vnDataSet;
+            // 
+            // mokkiTableAdapter
+            // 
+            this.mokkiTableAdapter.ClearBeforeFill = true;
+            // 
             // alueBindingSource2
             // 
             this.alueBindingSource2.DataMember = "alue";
             this.alueBindingSource2.DataSource = this.vnDataSet;
             // 
-            // alueBindingSource3
-            // 
-            this.alueBindingSource3.DataMember = "alue";
-            this.alueBindingSource3.DataSource = this.vnDataSet;
-            // 
-            // alueBindingSource4
-            // 
-            this.alueBindingSource4.DataMember = "alue";
-            this.alueBindingSource4.DataSource = this.vnDataSet;
-            // 
             // fillByToolStrip
             // 
             this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillByToolStrip.Location = new System.Drawing.Point(0, 25);
             this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(111, 25);
+            this.fillByToolStrip.Size = new System.Drawing.Size(990, 25);
             this.fillByToolStrip.TabIndex = 8;
             this.fillByToolStrip.Text = "fillByToolStrip";
             // 
@@ -307,17 +306,18 @@ namespace Mökkivaraus
             this.Controls.Add(this.toolStrip1);
             this.Name = "ToimintaAlueHallinta";
             this.Text = "Toiminta-alue Hallinta";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ToimintaAlueHallinta_FormClosed);
             this.Load += new System.EventHandler(this.ToimintaAlueHallinta_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMokkiTaulukko)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource4)).EndInit();
             this.fillByToolStrip.ResumeLayout(false);
             this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);

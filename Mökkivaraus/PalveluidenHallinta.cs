@@ -49,5 +49,10 @@ namespace Mökkivaraus
             mh.Show();
             this.Hide();
         }
+
+        private void PalveluidenHallinta_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Environment.Exit(1);
+        }
     }
 }

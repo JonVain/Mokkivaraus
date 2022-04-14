@@ -502,6 +502,7 @@ namespace Mökkivaraus
             this.Controls.Add(this.toolStrip1);
             this.Name = "AsiakasHallinta";
             this.Text = "Asiakas Hallinta";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AsiakasHallinta_FormClosed);
             this.Load += new System.EventHandler(this.AsiakasHallinta_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

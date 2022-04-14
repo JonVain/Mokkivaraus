@@ -63,5 +63,10 @@ namespace Mökkivaraus
             this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
             dataGridView1.Refresh();
         }
+
+        private void AsiakasHallinta_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Environment.Exit(1);
+        }
     }
 }

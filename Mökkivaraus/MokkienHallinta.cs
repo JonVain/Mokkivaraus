@@ -66,5 +66,10 @@ namespace Mökkivaraus
         {
 
         }
+
+        private void MokkienHallinta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Environment.Exit(1);
+        }
     }
 }

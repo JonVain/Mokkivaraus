@@ -160,5 +160,10 @@ namespace Mökkivaraus
             }
 
         }
+
+        private void ToimintaAlueHallinta_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Environment.Exit(1);
+        }
     }
 }
