@@ -39,7 +39,6 @@ namespace Mökkivaraus
             this.alueTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.alueTableAdapter();
             this.asiakasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsdHallinta = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmToimintaAlueet = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,14 +93,6 @@ namespace Mökkivaraus
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1023, 786);
             this.panel1.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(381, 444);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Tekstiä";
             // 
             // toolStrip1
             // 
