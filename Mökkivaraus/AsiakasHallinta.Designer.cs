@@ -36,10 +36,8 @@ namespace Mökkivaraus
             this.tsmEtusivu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmToiminta = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmPalvelut = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmMokki = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.vnDataSet = new Mökkivaraus.VnDataSet();
-            this.asiakasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.asiakasTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.asiakasTableAdapter();
             this.asiakasidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postinroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.etunimiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,11 +45,14 @@ namespace Mökkivaraus
             this.lahiosoiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puhelinnroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tsmMokki = new System.Windows.Forms.ToolStripMenuItem();
+            this.asiakasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vnDataSet = new Mökkivaraus.VnDataSet();
+            this.asiakasTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.asiakasTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -99,6 +100,13 @@ namespace Mökkivaraus
             this.tsmPalvelut.Text = "Palveluiden Hallinta";
             this.tsmPalvelut.Click += new System.EventHandler(this.tsmPalvelut_Click);
             // 
+            // tsmMokki
+            // 
+            this.tsmMokki.Name = "tsmMokki";
+            this.tsmMokki.Size = new System.Drawing.Size(191, 22);
+            this.tsmMokki.Text = "Mökkien Hallinta";
+            this.tsmMokki.Click += new System.EventHandler(this.tsmMokki_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
@@ -116,20 +124,6 @@ namespace Mökkivaraus
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(420, 546);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // vnDataSet
-            // 
-            this.vnDataSet.DataSetName = "VnDataSet";
-            this.vnDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // asiakasBindingSource
-            // 
-            this.asiakasBindingSource.DataMember = "asiakas";
-            this.asiakasBindingSource.DataSource = this.vnDataSet;
-            // 
-            // asiakasTableAdapter
-            // 
-            this.asiakasTableAdapter.ClearBeforeFill = true;
             // 
             // asiakasidDataGridViewTextBoxColumn
             // 
@@ -173,18 +167,36 @@ namespace Mökkivaraus
             this.puhelinnroDataGridViewTextBoxColumn.HeaderText = "puhelinnro";
             this.puhelinnroDataGridViewTextBoxColumn.Name = "puhelinnroDataGridViewTextBoxColumn";
             // 
-            // tsmMokki
+            // asiakasBindingSource
             // 
-            this.tsmMokki.Name = "tsmMokki";
-            this.tsmMokki.Size = new System.Drawing.Size(191, 22);
-            this.tsmMokki.Text = "Mökkien Hallinta";
-            this.tsmMokki.Click += new System.EventHandler(this.tsmMokki_Click);
+            this.asiakasBindingSource.DataMember = "asiakas";
+            this.asiakasBindingSource.DataSource = this.vnDataSet;
+            // 
+            // vnDataSet
+            // 
+            this.vnDataSet.DataSetName = "VnDataSet";
+            this.vnDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // asiakasTableAdapter
+            // 
+            this.asiakasTableAdapter.ClearBeforeFill = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(201, 150);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "nappi";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AsiakasHallinta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 570);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "AsiakasHallinta";
@@ -193,8 +205,8 @@ namespace Mökkivaraus
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,5 +231,6 @@ namespace Mökkivaraus
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn puhelinnroDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem tsmMokki;
+        private System.Windows.Forms.Button button1;
     }
 }
