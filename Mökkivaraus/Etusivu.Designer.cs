@@ -39,12 +39,13 @@ namespace Mökkivaraus
             this.alueTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.alueTableAdapter();
             this.asiakasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsdHallinta = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsmToimintaAlueet = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmPalvelut = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
@@ -89,12 +90,21 @@ namespace Mökkivaraus
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.toolStrip1);
             this.panel1.Location = new System.Drawing.Point(-1, -2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1023, 786);
             this.panel1.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(381, 444);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "Tekstiä";
             // 
             // toolStrip1
             // 
@@ -132,13 +142,15 @@ namespace Mökkivaraus
             this.tsmPalvelut.Text = "Palveluiden Hallinta";
             this.tsmPalvelut.Click += new System.EventHandler(this.tsmPalvelut_Click);
             // 
-            // textBox1
+            // button1
             // 
-            this.textBox1.Location = new System.Drawing.Point(381, 444);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Tekstiä";
+            this.button1.Location = new System.Drawing.Point(527, 164);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "nabbi";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Etusivu
             // 
@@ -177,6 +189,7 @@ namespace Mökkivaraus
         private System.Windows.Forms.ToolStripMenuItem tsmPalvelut;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
