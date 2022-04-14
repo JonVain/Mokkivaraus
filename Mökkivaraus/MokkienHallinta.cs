@@ -44,5 +44,27 @@ namespace Mökkivaraus
             ah.Show();
             this.Hide();
         }
+
+        private void MokkienHallinta_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'vnDataSet.mokki' table. You can move, or remove it, as needed.
+            this.mokkiTableAdapter.Fill(this.vnDataSet.mokki);
+
+        }
+
+        private void btnLisaa_Click(object sender, EventArgs e)
+        {
+            Validate();
+            mokkiBindingSource.EndEdit();
+            mokkiTableAdapter.Update(this.vnDataSet);
+            mokkiTableAdapter.Insert(long.Parse(tbAlue.Text), tbPostinro.Text, tbMokki.Text, tbKatuosoite.Text, double.Parse(tbHinta.Text), tbKuvaus.Text, int.Parse(tbHlomaara.Text), tbVarustelu.Text);
+            this.mokkiTableAdapter.Fill(this.vnDataSet.mokki);
+            dataGridView1.Refresh();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
