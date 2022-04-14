@@ -19,6 +19,8 @@ namespace Mökkivaraus
 
         private void AsiakasHallinta_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'vnDataSet.mokki' table. You can move, or remove it, as needed.
+            this.mokkiTableAdapter.Fill(this.vnDataSet.mokki);
             // TODO: This line of code loads data into the 'vnDataSet.asiakas' table. You can move, or remove it, as needed.
             this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
 
@@ -52,9 +54,14 @@ namespace Mökkivaraus
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLisaa_Click(object sender, EventArgs e)
         {
-
+            Validate();
+            asiakasBindingSource.EndEdit();
+            asiakasTableAdapter.Update(this.vnDataSet);
+            asiakasTableAdapter.Insert(tbUusPostinro.Text, tbUusEtunimi.Text, tbUusSukunimi.Text, tbUusOsoite.Text, tbUusEmail.Text, tbUusPuhnro.Text);
+            this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
+            dataGridView1.Refresh();
         }
     }
 }
