@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Mökkivaraus
 {
-    public partial class Form1 : Form
+    public partial class Etusivu : Form
     {
-        public Form1()
+        public Etusivu()
         {
             InitializeComponent();
         }
@@ -26,16 +26,18 @@ namespace Mökkivaraus
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void tsmToimintaAlueet_Click(object sender, EventArgs e)
         {
-
+            ToimintaAlueHallinta tah = new ToimintaAlueHallinta();
+            tah.Show();
+            this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void tsmPalvelut_Click(object sender, EventArgs e)
         {
-
+            PalveluidenHallinta ph = new PalveluidenHallinta();
+            ph.Show();
+            this.Hide();
         }
-
-        
     }
 }

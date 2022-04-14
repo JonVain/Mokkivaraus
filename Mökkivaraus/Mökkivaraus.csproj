@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="PalveluidenHallinta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="PalveluidenHallinta.Designer.cs">
+      <DependentUpon>PalveluidenHallinta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Etusivu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Etusivu.Designer.cs">
+      <DependentUpon>Etusivu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToimintaAlueHallinta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToimintaAlueHallinta.Designer.cs">
+      <DependentUpon>ToimintaAlueHallinta.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,8 +71,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>VnDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Etusivu.resx">
+      <DependentUpon>Etusivu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PalveluidenHallinta.resx">
+      <DependentUpon>PalveluidenHallinta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -71,6 +86,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ToimintaAlueHallinta.resx">
+      <DependentUpon>ToimintaAlueHallinta.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
