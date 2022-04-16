@@ -360,7 +360,7 @@ namespace Mökkivaraus
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(260, 60);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Toiminta-alue Hallinta";
+            this.button3.Text = "Toiminta-aluehallinta";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.tsmToiminta_Click);
@@ -377,7 +377,7 @@ namespace Mökkivaraus
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(260, 60);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Asiakas Hallinta";
+            this.button2.Text = "Asiakashallinta";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.tsmAsiakas_Click);
@@ -426,7 +426,7 @@ namespace Mökkivaraus
             this.Name = "MokkienHallinta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Mökkien Hallinta";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MokkienHallinta_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MokkienHallinta_FormClosed);
             this.Load += new System.EventHandler(this.MokkienHallinta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).EndInit();
