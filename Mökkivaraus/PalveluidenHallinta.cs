@@ -24,11 +24,6 @@ namespace Mökkivaraus
             this.Hide();
         }
 
-        private void tsmPalvelut_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tsmEtusivu_Click(object sender, EventArgs e)
         {
             Etusivu es = new Etusivu();

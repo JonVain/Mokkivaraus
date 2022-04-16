@@ -31,12 +31,6 @@ namespace Mökkivaraus
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MokkienHallinta));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.tsmEtusivu = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmToiminta = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmPalvelut = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmAsiakas = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.mokkiidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alueidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,63 +61,17 @@ namespace Mökkivaraus
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.toolStrip1.SuspendLayout();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1126, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmEtusivu,
-            this.tsmToiminta,
-            this.tsmPalvelut,
-            this.tsmAsiakas});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(61, 22);
-            this.toolStripDropDownButton1.Text = "Hallinta";
-            // 
-            // tsmEtusivu
-            // 
-            this.tsmEtusivu.Name = "tsmEtusivu";
-            this.tsmEtusivu.Size = new System.Drawing.Size(191, 22);
-            this.tsmEtusivu.Text = "Takaisin Etusivulle";
-            this.tsmEtusivu.Click += new System.EventHandler(this.tsmEtusivu_Click);
-            // 
-            // tsmToiminta
-            // 
-            this.tsmToiminta.Name = "tsmToiminta";
-            this.tsmToiminta.Size = new System.Drawing.Size(191, 22);
-            this.tsmToiminta.Text = "Toiminta-alue Hallinta";
-            this.tsmToiminta.Click += new System.EventHandler(this.tsmToiminta_Click);
-            // 
-            // tsmPalvelut
-            // 
-            this.tsmPalvelut.Name = "tsmPalvelut";
-            this.tsmPalvelut.Size = new System.Drawing.Size(191, 22);
-            this.tsmPalvelut.Text = "Palveluiden Hallinta";
-            this.tsmPalvelut.Click += new System.EventHandler(this.tsmPalvelut_Click);
-            // 
-            // tsmAsiakas
-            // 
-            this.tsmAsiakas.Name = "tsmAsiakas";
-            this.tsmAsiakas.Size = new System.Drawing.Size(191, 22);
-            this.tsmAsiakas.Text = "Asiakas Hallinta";
-            this.tsmAsiakas.Click += new System.EventHandler(this.tsmAsiakas_Click);
             // 
             // dataGridView1
             // 
@@ -140,7 +88,7 @@ namespace Mökkivaraus
             this.henkilomaaraDataGridViewTextBoxColumn,
             this.varusteluDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.mokkiBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(113, 405);
+            this.dataGridView1.Location = new System.Drawing.Point(308, 418);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(944, 220);
             this.dataGridView1.TabIndex = 1;
@@ -215,7 +163,7 @@ namespace Mökkivaraus
             // 
             // btnLisaa
             // 
-            this.btnLisaa.Location = new System.Drawing.Point(452, 351);
+            this.btnLisaa.Location = new System.Drawing.Point(743, 364);
             this.btnLisaa.Name = "btnLisaa";
             this.btnLisaa.Size = new System.Drawing.Size(258, 48);
             this.btnLisaa.TabIndex = 2;
@@ -225,56 +173,56 @@ namespace Mökkivaraus
             // 
             // tbAlue
             // 
-            this.tbAlue.Location = new System.Drawing.Point(167, 76);
+            this.tbAlue.Location = new System.Drawing.Point(402, 200);
             this.tbAlue.Name = "tbAlue";
             this.tbAlue.Size = new System.Drawing.Size(100, 20);
             this.tbAlue.TabIndex = 3;
             // 
             // tbPostinro
             // 
-            this.tbPostinro.Location = new System.Drawing.Point(167, 102);
+            this.tbPostinro.Location = new System.Drawing.Point(402, 226);
             this.tbPostinro.Name = "tbPostinro";
             this.tbPostinro.Size = new System.Drawing.Size(100, 20);
             this.tbPostinro.TabIndex = 4;
             // 
             // tbMokki
             // 
-            this.tbMokki.Location = new System.Drawing.Point(167, 128);
+            this.tbMokki.Location = new System.Drawing.Point(402, 252);
             this.tbMokki.Name = "tbMokki";
             this.tbMokki.Size = new System.Drawing.Size(100, 20);
             this.tbMokki.TabIndex = 5;
             // 
             // tbKatuosoite
             // 
-            this.tbKatuosoite.Location = new System.Drawing.Point(167, 154);
+            this.tbKatuosoite.Location = new System.Drawing.Point(402, 278);
             this.tbKatuosoite.Name = "tbKatuosoite";
             this.tbKatuosoite.Size = new System.Drawing.Size(100, 20);
             this.tbKatuosoite.TabIndex = 6;
             // 
             // tbHinta
             // 
-            this.tbHinta.Location = new System.Drawing.Point(167, 180);
+            this.tbHinta.Location = new System.Drawing.Point(402, 304);
             this.tbHinta.Name = "tbHinta";
             this.tbHinta.Size = new System.Drawing.Size(100, 20);
             this.tbHinta.TabIndex = 7;
             // 
             // tbKuvaus
             // 
-            this.tbKuvaus.Location = new System.Drawing.Point(167, 206);
+            this.tbKuvaus.Location = new System.Drawing.Point(402, 330);
             this.tbKuvaus.Name = "tbKuvaus";
             this.tbKuvaus.Size = new System.Drawing.Size(100, 20);
             this.tbKuvaus.TabIndex = 8;
             // 
             // tbHlomaara
             // 
-            this.tbHlomaara.Location = new System.Drawing.Point(167, 232);
+            this.tbHlomaara.Location = new System.Drawing.Point(402, 356);
             this.tbHlomaara.Name = "tbHlomaara";
             this.tbHlomaara.Size = new System.Drawing.Size(100, 20);
             this.tbHlomaara.TabIndex = 9;
             // 
             // tbVarustelu
             // 
-            this.tbVarustelu.Location = new System.Drawing.Point(167, 258);
+            this.tbVarustelu.Location = new System.Drawing.Point(402, 382);
             this.tbVarustelu.Name = "tbVarustelu";
             this.tbVarustelu.Size = new System.Drawing.Size(100, 20);
             this.tbVarustelu.TabIndex = 10;
@@ -282,7 +230,7 @@ namespace Mökkivaraus
             // Alue
             // 
             this.Alue.AutoSize = true;
-            this.Alue.Location = new System.Drawing.Point(70, 76);
+            this.Alue.Location = new System.Drawing.Point(305, 200);
             this.Alue.Name = "Alue";
             this.Alue.Size = new System.Drawing.Size(28, 13);
             this.Alue.TabIndex = 12;
@@ -292,7 +240,7 @@ namespace Mökkivaraus
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(70, 102);
+            this.label2.Location = new System.Drawing.Point(305, 226);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 13;
@@ -301,7 +249,7 @@ namespace Mökkivaraus
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(70, 128);
+            this.label3.Location = new System.Drawing.Point(305, 252);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 14;
@@ -310,7 +258,7 @@ namespace Mökkivaraus
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(70, 154);
+            this.label4.Location = new System.Drawing.Point(305, 278);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 15;
@@ -319,7 +267,7 @@ namespace Mökkivaraus
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(70, 180);
+            this.label5.Location = new System.Drawing.Point(305, 304);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 16;
@@ -328,7 +276,7 @@ namespace Mökkivaraus
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(70, 206);
+            this.label6.Location = new System.Drawing.Point(305, 330);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 17;
@@ -337,7 +285,7 @@ namespace Mökkivaraus
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(70, 232);
+            this.label7.Location = new System.Drawing.Point(305, 356);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 13);
             this.label7.TabIndex = 18;
@@ -346,17 +294,116 @@ namespace Mökkivaraus
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(70, 258);
+            this.label8.Location = new System.Drawing.Point(305, 382);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(51, 13);
             this.label8.TabIndex = 19;
             this.label8.Text = "Varustelu";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(266, 781);
+            this.panel2.TabIndex = 20;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(3, 4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(260, 60);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Etusivu";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.tsmEtusivu_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(3, 268);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(260, 60);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Palveluiden Hallinta";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.tsmPalvelut_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(3, 202);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(260, 60);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Toiminta-alue Hallinta";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.tsmToiminta_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(3, 136);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(260, 60);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Asiakas Hallinta";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.tsmAsiakas_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(3, 70);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(260, 60);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Mökkien Hallinta";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // MokkienHallinta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1126, 637);
+            this.ClientSize = new System.Drawing.Size(1264, 781);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -375,28 +422,20 @@ namespace Mökkivaraus
             this.Controls.Add(this.tbAlue);
             this.Controls.Add(this.btnLisaa);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.toolStrip1);
+            this.Location = new System.Drawing.Point(50, 50);
             this.Name = "MokkienHallinta";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MokkienHallinta_FormClosing);
             this.Load += new System.EventHandler(this.MokkienHallinta_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
-        private System.Windows.Forms.ToolStripMenuItem tsmEtusivu;
-        private System.Windows.Forms.ToolStripMenuItem tsmToiminta;
-        private System.Windows.Forms.ToolStripMenuItem tsmPalvelut;
-        private System.Windows.Forms.ToolStripMenuItem tsmAsiakas;
         private System.Windows.Forms.DataGridView dataGridView1;
         private VnDataSet vnDataSet;
         private System.Windows.Forms.BindingSource mokkiBindingSource;
@@ -427,5 +466,11 @@ namespace Mökkivaraus
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
