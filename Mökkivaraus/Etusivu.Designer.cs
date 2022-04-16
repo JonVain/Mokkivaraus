@@ -218,7 +218,8 @@ namespace Mökkivaraus
             this.Controls.Add(this.panel2);
             this.Location = new System.Drawing.Point(50, 50);
             this.Name = "Etusivu";
-            this.Text = "Mökki varaus";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Text = "Etusivu";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).EndInit();

@@ -56,17 +56,24 @@ namespace Mökkivaraus
 
         private void btnLisaa_Click(object sender, EventArgs e)
         {
-            Validate();
-            asiakasBindingSource.EndEdit();
-            asiakasTableAdapter.Update(this.vnDataSet);
-            asiakasTableAdapter.Insert(tbUusPostinro.Text, tbUusEtunimi.Text, tbUusSukunimi.Text, tbUusOsoite.Text, tbUusEmail.Text, tbUusPuhnro.Text);
-            this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
-            dataGridView1.Refresh();
+            LisaaAsiakas la = new LisaaAsiakas();
+            la.Show();
         }
 
         private void AsiakasHallinta_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Environment.Exit(1);
+        }
+
+        private void btnPaivita_Click(object sender, EventArgs e)
+        {
+            this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
+            dgvAsiakkaat.Refresh();
+        }
+        private void LisaaAsiakas_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
+            dgvAsiakkaat.Refresh();
         }
     }
 }

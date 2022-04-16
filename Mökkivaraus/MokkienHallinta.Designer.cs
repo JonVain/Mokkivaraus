@@ -424,6 +424,8 @@ namespace Mökkivaraus
             this.Controls.Add(this.dataGridView1);
             this.Location = new System.Drawing.Point(50, 50);
             this.Name = "MokkienHallinta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Text = "Mökkien Hallinta";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MokkienHallinta_FormClosing);
             this.Load += new System.EventHandler(this.MokkienHallinta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

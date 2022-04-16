@@ -330,6 +330,7 @@ namespace Mökkivaraus
             this.Controls.Add(this.lbToimintaA);
             this.Location = new System.Drawing.Point(50, 50);
             this.Name = "ToimintaAlueHallinta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Toiminta-alue Hallinta";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ToimintaAlueHallinta_FormClosed);
             this.Load += new System.EventHandler(this.ToimintaAlueHallinta_Load);

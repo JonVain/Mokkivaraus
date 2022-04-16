@@ -147,6 +147,7 @@ namespace Mökkivaraus
             this.Controls.Add(this.panel2);
             this.Location = new System.Drawing.Point(50, 50);
             this.Name = "PalveluidenHallinta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Palveluiden Hallinta";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PalveluidenHallinta_FormClosed);
             this.panel2.ResumeLayout(false);
