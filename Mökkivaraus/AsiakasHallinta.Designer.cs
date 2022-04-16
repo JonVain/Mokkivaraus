@@ -101,42 +101,49 @@ namespace Mökkivaraus
             this.asiakasidDataGridViewTextBoxColumn.DataPropertyName = "asiakas_id";
             this.asiakasidDataGridViewTextBoxColumn.HeaderText = "ID";
             this.asiakasidDataGridViewTextBoxColumn.Name = "asiakasidDataGridViewTextBoxColumn";
+            this.asiakasidDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // postinroDataGridViewTextBoxColumn
             // 
             this.postinroDataGridViewTextBoxColumn.DataPropertyName = "postinro";
             this.postinroDataGridViewTextBoxColumn.HeaderText = "Postinumero";
             this.postinroDataGridViewTextBoxColumn.Name = "postinroDataGridViewTextBoxColumn";
+            this.postinroDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // etunimiDataGridViewTextBoxColumn
             // 
             this.etunimiDataGridViewTextBoxColumn.DataPropertyName = "etunimi";
             this.etunimiDataGridViewTextBoxColumn.HeaderText = "Etunimi";
             this.etunimiDataGridViewTextBoxColumn.Name = "etunimiDataGridViewTextBoxColumn";
+            this.etunimiDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sukunimiDataGridViewTextBoxColumn
             // 
             this.sukunimiDataGridViewTextBoxColumn.DataPropertyName = "sukunimi";
             this.sukunimiDataGridViewTextBoxColumn.HeaderText = "Sukunimi";
             this.sukunimiDataGridViewTextBoxColumn.Name = "sukunimiDataGridViewTextBoxColumn";
+            this.sukunimiDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // lahiosoiteDataGridViewTextBoxColumn
             // 
             this.lahiosoiteDataGridViewTextBoxColumn.DataPropertyName = "lahiosoite";
             this.lahiosoiteDataGridViewTextBoxColumn.HeaderText = "Lähiosoite";
             this.lahiosoiteDataGridViewTextBoxColumn.Name = "lahiosoiteDataGridViewTextBoxColumn";
+            this.lahiosoiteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "Sähköposti";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // puhelinnroDataGridViewTextBoxColumn
             // 
             this.puhelinnroDataGridViewTextBoxColumn.DataPropertyName = "puhelinnro";
             this.puhelinnroDataGridViewTextBoxColumn.HeaderText = "Puhelinnumero";
             this.puhelinnroDataGridViewTextBoxColumn.Name = "puhelinnroDataGridViewTextBoxColumn";
+            this.puhelinnroDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // asiakasBindingSource
             // 
@@ -274,10 +281,13 @@ namespace Mökkivaraus
             // btnLisaa
             // 
             this.btnLisaa.Image = ((System.Drawing.Image)(resources.GetObject("btnLisaa.Image")));
+            this.btnLisaa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLisaa.Location = new System.Drawing.Point(272, 517);
             this.btnLisaa.Name = "btnLisaa";
-            this.btnLisaa.Size = new System.Drawing.Size(47, 47);
+            this.btnLisaa.Size = new System.Drawing.Size(118, 47);
             this.btnLisaa.TabIndex = 16;
+            this.btnLisaa.Text = "Lisää Asiakas";
+            this.btnLisaa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLisaa.UseVisualStyleBackColor = true;
             this.btnLisaa.Click += new System.EventHandler(this.btnLisaa_Click);
             // 
@@ -315,7 +325,7 @@ namespace Mökkivaraus
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button5.BackColor = System.Drawing.Color.Transparent;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -332,7 +342,7 @@ namespace Mökkivaraus
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button4.BackColor = System.Drawing.Color.Transparent;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -349,7 +359,7 @@ namespace Mökkivaraus
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -366,7 +376,7 @@ namespace Mökkivaraus
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -382,7 +392,7 @@ namespace Mökkivaraus
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -409,10 +419,13 @@ namespace Mökkivaraus
             // btnPaivita
             // 
             this.btnPaivita.Image = ((System.Drawing.Image)(resources.GetObject("btnPaivita.Image")));
-            this.btnPaivita.Location = new System.Drawing.Point(325, 517);
+            this.btnPaivita.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPaivita.Location = new System.Drawing.Point(396, 517);
             this.btnPaivita.Name = "btnPaivita";
-            this.btnPaivita.Size = new System.Drawing.Size(47, 47);
+            this.btnPaivita.Size = new System.Drawing.Size(118, 47);
             this.btnPaivita.TabIndex = 35;
+            this.btnPaivita.Text = "Päivitä Lista";
+            this.btnPaivita.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPaivita.UseVisualStyleBackColor = true;
             this.btnPaivita.Click += new System.EventHandler(this.btnPaivita_Click);
             // 
