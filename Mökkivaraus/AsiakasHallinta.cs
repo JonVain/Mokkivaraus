@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -72,6 +73,16 @@ namespace Mökkivaraus
         }
         private void LisaaAsiakas_FormClosed(object sender, FormClosedEventArgs e)
         {
+            this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
+            dgvAsiakkaat.Refresh();
+        }
+
+        private void btnPoista_Click(object sender, EventArgs e)
+        {
+            Validate();
+            asiakasBindingSource.EndEdit();
+            asiakasTableAdapter.Update(this.vnDataSet);
+            asiakasTableAdapter.Delete(long.Parse(tbID.Text), tbPostnro.Text, tbEtunimi.Text, tbSukunimi.Text, tbOsoite.Text, tbEmail.Text, tbPuhnro.Text);
             this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
             dgvAsiakkaat.Refresh();
         }
