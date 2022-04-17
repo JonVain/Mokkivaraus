@@ -20,7 +20,7 @@ namespace Mökkivaraus
             InitializeComponent();
         }
 
-        MySqlConnection connection = new MySqlConnection("datasource=localhost;Initial Catalog=vp;username=root;Password=Ruutti");
+        MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3307;Initial Catalog=vn;username=root;Password=Ruutti");
         MySqlCommand command;
 
         private void tsmEtusivu_Click(object sender, EventArgs e)
@@ -85,21 +85,34 @@ namespace Mökkivaraus
 
         }
 
-
-
         private void ToimintaAlueLista_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // indeksin haku
+            object alue_id = cb_toimintaAlueLista.SelectedValue;
+            /*
+            string nimi = cb_toimintaAlueLista.Text;
+            string pyynto = "SELECT alue_id FROM mokki WHERE nimi=" + nimi;
+            MySqlDataAdapter adapter = new MySqlDataAdapter(pyynto, connection);
+            adapter.
+            */
 
+            int luku =  Convert.ToInt32(alue_id);
+
+            populateDGV(luku);
         }
 
-        private void gridMokkiTaulukko_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        // Taulukon koodi
+        private void gridMokkiTaulukko_CellContentClick(object sender, EventArgs e)
         {
-            populateDGV();
+            
         }
 
-        public void populateDGV()
+        // Taulukon päivitys-osio
+        public void populateDGV(int luku)
         {
-            string query = "SELECT * FROM mokki";
+            string query1 = "SELECT * FROM mokki WHERE alue_id=";
+            string query = query1 + luku;
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
             adapter.Fill(table);
@@ -107,21 +120,7 @@ namespace Mökkivaraus
         }
 
 
-        public void OpenConnection()
-        {
-            if (connection.State == ConnectionState.Closed)
-            {
-                connection.Open();
-            }
-        }
-
-        public void CloseConnection()
-        {
-            if (connection.State == ConnectionState.Open)
-            {
-                connection.Close();
-            }
-        }
+        // SQL lauseiden suoritus
         public void ExecuteMyQuery(string query)
         {
             try
@@ -145,6 +144,24 @@ namespace Mökkivaraus
             finally
             {
                 CloseConnection();
+            }
+        }
+
+        // Yhteyden avaus
+        public void OpenConnection()
+        {
+            if (connection.State == ConnectionState.Closed)
+            {
+                connection.Open();
+            }
+        }
+
+        // Yhteys kiinni
+        public void CloseConnection()
+        {
+            if (connection.State == ConnectionState.Open)
+            {
+                connection.Close();
             }
         }
 
