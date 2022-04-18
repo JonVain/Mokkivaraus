@@ -86,5 +86,11 @@ namespace Mökkivaraus
             this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
             dgvAsiakkaat.Refresh();
         }
+
+        private void btnPaivitaAsiakas_Click(object sender, EventArgs e)
+        {
+            asiakasBindingSource.EndEdit();
+            asiakasTableAdapter.Update(this.vnDataSet.asiakas);
+        }
     }
 }
