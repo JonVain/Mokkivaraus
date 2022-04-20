@@ -53,6 +53,12 @@
     <Compile Include="AsiakasHallinta.Designer.cs">
       <DependentUpon>AsiakasHallinta.cs</DependentUpon>
     </Compile>
+    <Compile Include="LisaaAlue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LisaaAlue.Designer.cs">
+      <DependentUpon>LisaaAlue.cs</DependentUpon>
+    </Compile>
     <Compile Include="LisaaAsiakas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VnDataSet.cs">
+      <DependentUpon>VnDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="VnDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -95,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Etusivu.resx">
       <DependentUpon>Etusivu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LisaaAlue.resx">
+      <DependentUpon>LisaaAlue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LisaaAsiakas.resx">
       <DependentUpon>LisaaAsiakas.cs</DependentUpon>

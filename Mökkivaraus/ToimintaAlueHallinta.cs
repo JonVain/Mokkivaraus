@@ -51,26 +51,6 @@ namespace Mökkivaraus
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void ToimintaAlueHallinta_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'vnDataSet.mokki' table. You can move, or remove it, as needed.
@@ -101,12 +81,6 @@ namespace Mökkivaraus
             populateDGV(luku);
         }
 
-
-        // Taulukon koodi
-        private void gridMokkiTaulukko_CellContentClick(object sender, EventArgs e)
-        {
-            
-        }
 
         // Taulukon päivitys-osio
         public void populateDGV(int luku)
@@ -165,22 +139,63 @@ namespace Mökkivaraus
             }
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.mokkiTableAdapter.FillBy(this.vnDataSet.mokki);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
         private void ToimintaAlueHallinta_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Environment.Exit(1);
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLisaaAlue_Click(object sender, EventArgs e)
+        {
+            LisaaAlue ikkuna_alue = new LisaaAlue();
+            ikkuna_alue.Show();
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lbToimintaA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbPaivitaAlueTaulukko_Click(object sender, EventArgs e)
+        {
+            this.alueTableAdapter.Fill(this.vnDataSet.alue);
+            dgvAlueet.Refresh();
+        }
+
+        private void LisaaAlue_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.alueTableAdapter.Fill(this.vnDataSet.alue);
+            dgvAlueet.Refresh();
+        }
+
+        private void btnPoistaAlueTaulukosta_Click(object sender, EventArgs e)
+        {
+            Validate();
+            alueBindingSource.EndEdit();
+            alueTableAdapter.Update(this.vnDataSet);
+            //alueTableAdapter.Delete(long.Parse(tb_id.Text), tb_nimi.Text);
+            //alueTableAdapter.Delete(dgvAlueet.CurrentCell.RowIndex,"null");
+            this.alueTableAdapter.Fill(this.vnDataSet.alue);
+            dgvAlueet.Refresh();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
