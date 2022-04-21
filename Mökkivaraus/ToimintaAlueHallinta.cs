@@ -181,9 +181,7 @@ namespace Mökkivaraus
         {
             Validate();
             alueBindingSource.EndEdit();
-            alueTableAdapter.Update(this.vnDataSet);
-            //alueTableAdapter.Delete(long.Parse(tb_id.Text), tb_nimi.Text);
-            //alueTableAdapter.Delete(dgvAlueet.CurrentCell.RowIndex,"null");
+            alueTableAdapter.Delete(long.Parse(tb_id.Text), tb_nimi.Text);
             this.alueTableAdapter.Fill(this.vnDataSet.alue);
             dgvAlueet.Refresh();
         }
@@ -194,6 +192,38 @@ namespace Mökkivaraus
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvAlueetCellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btPaivitaToimintaAlue_Click(object sender, EventArgs e)
+        {
+            //alueBindingSource.EndEdit();
+            //alueTableAdapter.Update(this.vnDataSet.alue);
+        }
+
+        private void dgvAlueet_MouseClick(object sender, MouseEventArgs e)
+        {
+            tb_id.Text = dgvAlueet.CurrentRow.Cells[1].Value.ToString();
+            tb_nimi.Text = dgvAlueet.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void tb_id_TextChanged(object sender, EventArgs e)
         {
 
         }
