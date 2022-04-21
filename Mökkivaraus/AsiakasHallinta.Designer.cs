@@ -68,7 +68,7 @@ namespace Mökkivaraus
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPaivita = new System.Windows.Forms.Button();
             this.btnPoista = new System.Windows.Forms.Button();
-            this.btnPaivitaAsiakas = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsiakkaat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
@@ -437,23 +437,23 @@ namespace Mökkivaraus
             this.btnPoista.UseVisualStyleBackColor = true;
             this.btnPoista.Click += new System.EventHandler(this.btnPoista_Click);
             // 
-            // btnPaivitaAsiakas
+            // button6
             // 
-            this.btnPaivitaAsiakas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPaivitaAsiakas.Location = new System.Drawing.Point(653, 687);
-            this.btnPaivitaAsiakas.Name = "btnPaivitaAsiakas";
-            this.btnPaivitaAsiakas.Size = new System.Drawing.Size(245, 21);
-            this.btnPaivitaAsiakas.TabIndex = 11;
-            this.btnPaivitaAsiakas.Text = "Päivitä Asiakkaan tiedot";
-            this.btnPaivitaAsiakas.UseVisualStyleBackColor = true;
-            this.btnPaivitaAsiakas.Click += new System.EventHandler(this.btnPaivitaAsiakas_Click);
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(653, 687);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(245, 21);
+            this.button6.TabIndex = 11;
+            this.button6.Text = "Päivitä Asiakkaan tiedot";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.btnPaivitaAsiakas_Click);
             // 
             // AsiakasHallinta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 739);
-            this.Controls.Add(this.btnPaivitaAsiakas);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.btnPoista);
             this.Controls.Add(this.btnPaivita);
             this.Controls.Add(this.panel1);
@@ -528,6 +528,6 @@ namespace Mökkivaraus
         private System.Windows.Forms.DataGridViewTextBoxColumn lahiosoiteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn puhelinnroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnPaivitaAsiakas;
+        private System.Windows.Forms.Button button6;
     }
 }
