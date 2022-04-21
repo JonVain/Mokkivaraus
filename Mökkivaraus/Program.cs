@@ -16,7 +16,7 @@ namespace Mökkivaraus
        {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Etusivu());
+            Application.Run(new LogIn());
         }
     }
 }

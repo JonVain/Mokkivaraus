@@ -92,5 +92,10 @@ namespace Mökkivaraus
             asiakasBindingSource.EndEdit();
             asiakasTableAdapter.Update(this.vnDataSet.asiakas);
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
