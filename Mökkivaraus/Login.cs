@@ -49,5 +49,10 @@ namespace Mökkivaraus
         {
             Application.Exit();
         }
+
+        private void button1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }

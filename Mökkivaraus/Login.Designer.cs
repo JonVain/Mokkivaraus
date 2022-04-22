@@ -56,7 +56,7 @@ namespace Mökkivaraus
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::Mökkivaraus.Properties.Resources.loginnibg;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(6, 10);
@@ -66,7 +66,6 @@ namespace Mökkivaraus
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::Mökkivaraus.Properties.Resources.loginnibg;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(103, 36);
             this.pictureBox1.Name = "pictureBox1";
@@ -112,7 +111,6 @@ namespace Mökkivaraus
             this.txtSalasana.Size = new System.Drawing.Size(223, 20);
             this.txtSalasana.TabIndex = 8;
             this.txtSalasana.UseSystemPasswordChar = true;
-            this.txtSalasana.Click += new System.EventHandler(this.txtSalasana_Click);
             this.txtSalasana.TextChanged += new System.EventHandler(this.txtSalasana_TextChanged);
             // 
             // button1
