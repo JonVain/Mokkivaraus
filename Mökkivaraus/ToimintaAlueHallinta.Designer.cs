@@ -60,13 +60,13 @@ namespace Mökkivaraus
             this.tbPaivitaAlueTaulukko = new System.Windows.Forms.Button();
             this.tb_nimi = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btPalveluidenRaportointi = new System.Windows.Forms.Button();
+            this.btMajoitusRaportointi = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btPaivitaToimintaAlue = new System.Windows.Forms.Button();
             this.lbAlueet = new System.Windows.Forms.Label();
             this.tb_id = new System.Windows.Forms.TextBox();
             this.lbMuokkaaAlueita = new System.Windows.Forms.Label();
-            this.btMajoitusRaportointi = new System.Windows.Forms.Button();
-            this.btPalveluidenRaportointi = new System.Windows.Forms.Button();
             this.alue_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nimi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
@@ -368,6 +368,24 @@ namespace Mökkivaraus
             this.panel3.Size = new System.Drawing.Size(1012, 279);
             this.panel3.TabIndex = 26;
             // 
+            // btPalveluidenRaportointi
+            // 
+            this.btPalveluidenRaportointi.Location = new System.Drawing.Point(41, 213);
+            this.btPalveluidenRaportointi.Name = "btPalveluidenRaportointi";
+            this.btPalveluidenRaportointi.Size = new System.Drawing.Size(164, 32);
+            this.btPalveluidenRaportointi.TabIndex = 29;
+            this.btPalveluidenRaportointi.Text = "Palveluiden raportointi";
+            this.btPalveluidenRaportointi.UseVisualStyleBackColor = true;
+            // 
+            // btMajoitusRaportointi
+            // 
+            this.btMajoitusRaportointi.Location = new System.Drawing.Point(41, 175);
+            this.btMajoitusRaportointi.Name = "btMajoitusRaportointi";
+            this.btMajoitusRaportointi.Size = new System.Drawing.Size(164, 32);
+            this.btMajoitusRaportointi.TabIndex = 28;
+            this.btMajoitusRaportointi.Text = "Majoittumisen raportointi";
+            this.btMajoitusRaportointi.UseVisualStyleBackColor = true;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.btPaivitaToimintaAlue);
@@ -426,24 +444,6 @@ namespace Mökkivaraus
             this.lbMuokkaaAlueita.TabIndex = 0;
             this.lbMuokkaaAlueita.Text = "Muokkaa toiminta-alueita";
             this.lbMuokkaaAlueita.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // btMajoitusRaportointi
-            // 
-            this.btMajoitusRaportointi.Location = new System.Drawing.Point(41, 175);
-            this.btMajoitusRaportointi.Name = "btMajoitusRaportointi";
-            this.btMajoitusRaportointi.Size = new System.Drawing.Size(164, 32);
-            this.btMajoitusRaportointi.TabIndex = 28;
-            this.btMajoitusRaportointi.Text = "Majoittumisen raportointi";
-            this.btMajoitusRaportointi.UseVisualStyleBackColor = true;
-            // 
-            // btPalveluidenRaportointi
-            // 
-            this.btPalveluidenRaportointi.Location = new System.Drawing.Point(41, 213);
-            this.btPalveluidenRaportointi.Name = "btPalveluidenRaportointi";
-            this.btPalveluidenRaportointi.Size = new System.Drawing.Size(164, 32);
-            this.btPalveluidenRaportointi.TabIndex = 29;
-            this.btPalveluidenRaportointi.Text = "Palveluiden raportointi";
-            this.btPalveluidenRaportointi.UseVisualStyleBackColor = true;
             // 
             // alue_id
             // 
