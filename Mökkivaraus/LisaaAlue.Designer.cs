@@ -80,6 +80,8 @@ namespace Mökkivaraus
             this.tbUusiAlue.Name = "tbUusiAlue";
             this.tbUusiAlue.Size = new System.Drawing.Size(240, 22);
             this.tbUusiAlue.TabIndex = 2;
+            this.tbUusiAlue.TextChanged += new System.EventHandler(this.tbUusiAlue_TextChanged);
+            this.tbUusiAlue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbUusiAlue_KeyPress);
             // 
             // btnTyhjenna
             // 

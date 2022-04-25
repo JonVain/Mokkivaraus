@@ -28,7 +28,10 @@ namespace Mökkivaraus
             alueBindingSource8.EndEdit();
             alueTableAdapter.Update(this.vnDataSet);
             alueTableAdapter.Insert(tbUusiAlue.Text);
+            
             this.Close();
+            
+            
         }
 
         private void btnTyhjenna_Click(object sender, EventArgs e)
@@ -64,6 +67,19 @@ namespace Mökkivaraus
         }
 
         private void asiakasBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbUusiAlue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbUusiAlue_TextChanged(object sender, EventArgs e)
         {
 
         }

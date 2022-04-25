@@ -69,13 +69,6 @@ namespace Mökkivaraus
         {
             // indeksin haku
             object alue_id = cb_toimintaAlueLista.SelectedValue;
-            /*
-            string nimi = cb_toimintaAlueLista.Text;
-            string pyynto = "SELECT alue_id FROM mokki WHERE nimi=" + nimi;
-            MySqlDataAdapter adapter = new MySqlDataAdapter(pyynto, connection);
-            adapter.
-            */
-
             int luku =  Convert.ToInt32(alue_id);
 
             populateDGV(luku);
@@ -152,7 +145,9 @@ namespace Mökkivaraus
         private void btnLisaaAlue_Click(object sender, EventArgs e)
         {
             LisaaAlue ikkuna_alue = new LisaaAlue();
+            ikkuna_alue.FormClosed += new FormClosedEventHandler(LisaaAlue_FormClosed);
             ikkuna_alue.Show();
+            
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -169,7 +164,9 @@ namespace Mökkivaraus
         {
             this.alueTableAdapter.Fill(this.vnDataSet.alue);
             dgvAlueet.Refresh();
+        
         }
+
 
         private void LisaaAlue_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -213,19 +210,28 @@ namespace Mökkivaraus
 
         private void btPaivitaToimintaAlue_Click(object sender, EventArgs e)
         {
-            //alueBindingSource.EndEdit();
-            //alueTableAdapter.Update(this.vnDataSet.alue);
+            Validate();
+            alueBindingSource.EndEdit();
+            alueTableAdapter.Update(this.vnDataSet);
         }
 
         private void dgvAlueet_MouseClick(object sender, MouseEventArgs e)
         {
-            tb_id.Text = dgvAlueet.CurrentRow.Cells[1].Value.ToString();
-            tb_nimi.Text = dgvAlueet.CurrentRow.Cells[0].Value.ToString();
+            //tb_id.Text = dgvAlueet.CurrentRow.Cells[0].Value.ToString();
+            //tb_nimi.Text = dgvAlueet.CurrentRow.Cells[1].Value.ToString();
         }
 
         private void tb_id_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void tb_nimi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }  
         }
     }
 }
