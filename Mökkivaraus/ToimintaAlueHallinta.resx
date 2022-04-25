@@ -213,12 +213,6 @@
         cU1ufuDX8qHGN1zfdofJM2pT1wNd6qsJu9RYgM/pq0PW+FswzimK39iDmQhr/fYGAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="alue_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="nimi.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>126</value>
   </metadata>

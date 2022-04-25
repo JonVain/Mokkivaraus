@@ -67,8 +67,8 @@ namespace Mökkivaraus
             this.lbAlueet = new System.Windows.Forms.Label();
             this.tb_id = new System.Windows.Forms.TextBox();
             this.lbMuokkaaAlueita = new System.Windows.Forms.Label();
-            this.alue_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nimi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alueidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nimiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMokkiTaulukko)).BeginInit();
@@ -317,8 +317,8 @@ namespace Mökkivaraus
             this.dgvAlueet.AutoGenerateColumns = false;
             this.dgvAlueet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAlueet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.alue_id,
-            this.nimi});
+            this.alueidDataGridViewTextBoxColumn,
+            this.nimiDataGridViewTextBoxColumn});
             this.dgvAlueet.DataSource = this.alueBindingSource;
             this.dgvAlueet.Location = new System.Drawing.Point(238, 77);
             this.dgvAlueet.Name = "dgvAlueet";
@@ -445,17 +445,17 @@ namespace Mökkivaraus
             this.lbMuokkaaAlueita.Text = "Muokkaa toiminta-alueita";
             this.lbMuokkaaAlueita.Click += new System.EventHandler(this.label1_Click);
             // 
-            // alue_id
+            // alueidDataGridViewTextBoxColumn
             // 
-            this.alue_id.DataPropertyName = "alue_id";
-            this.alue_id.HeaderText = "alue_id";
-            this.alue_id.Name = "alue_id";
+            this.alueidDataGridViewTextBoxColumn.DataPropertyName = "alue_id";
+            this.alueidDataGridViewTextBoxColumn.HeaderText = "alue_id";
+            this.alueidDataGridViewTextBoxColumn.Name = "alueidDataGridViewTextBoxColumn";
             // 
-            // nimi
+            // nimiDataGridViewTextBoxColumn
             // 
-            this.nimi.DataPropertyName = "nimi";
-            this.nimi.HeaderText = "nimi";
-            this.nimi.Name = "nimi";
+            this.nimiDataGridViewTextBoxColumn.DataPropertyName = "nimi";
+            this.nimiDataGridViewTextBoxColumn.HeaderText = "nimi";
+            this.nimiDataGridViewTextBoxColumn.Name = "nimiDataGridViewTextBoxColumn";
             // 
             // ToimintaAlueHallinta
             // 
@@ -525,7 +525,7 @@ namespace Mökkivaraus
         private System.Windows.Forms.TextBox tb_id;
         private System.Windows.Forms.Button btPalveluidenRaportointi;
         private System.Windows.Forms.Button btMajoitusRaportointi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn alue_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nimi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alueidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nimiDataGridViewTextBoxColumn;
     }
 }
