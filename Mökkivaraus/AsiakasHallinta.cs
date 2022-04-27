@@ -16,6 +16,7 @@ namespace Mökkivaraus
         public AsiakasHallinta()
         {
             InitializeComponent();
+            tbPostnro.MaxLength = 5;
         }
 
         private void AsiakasHallinta_Load(object sender, EventArgs e)
@@ -24,7 +25,6 @@ namespace Mökkivaraus
             this.mokkiTableAdapter.Fill(this.vnDataSet.mokki);
             // TODO: This line of code loads data into the 'vnDataSet.asiakas' table. You can move, or remove it, as needed.
             this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
-
         }
 
         private void tsmMokki_Click(object sender, EventArgs e)
@@ -59,6 +59,7 @@ namespace Mökkivaraus
         {
             LisaaAsiakas la = new LisaaAsiakas();
             la.Show();
+            this.Hide();
         }
 
         private void AsiakasHallinta_FormClosed(object sender, FormClosedEventArgs e)
@@ -93,9 +94,26 @@ namespace Mökkivaraus
             asiakasTableAdapter.Update(this.vnDataSet.asiakas);
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void tbPostnro_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar !='.'))
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void tbPuhnro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void AsiakasHallinta_Shown(object sender, EventArgs e)
+        {
+            this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
+            dgvAsiakkaat.Refresh();
         }
     }
 }

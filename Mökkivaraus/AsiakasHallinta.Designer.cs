@@ -66,7 +66,6 @@ namespace Mökkivaraus
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnPaivita = new System.Windows.Forms.Button();
             this.btnPoista = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsiakkaat)).BeginInit();
@@ -174,9 +173,11 @@ namespace Mökkivaraus
             // 
             this.tbPostnro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.asiakasBindingSource, "postinro", true));
             this.tbPostnro.Location = new System.Drawing.Point(487, 636);
+            this.tbPostnro.MaxLength = 5;
             this.tbPostnro.Name = "tbPostnro";
             this.tbPostnro.Size = new System.Drawing.Size(150, 20);
             this.tbPostnro.TabIndex = 6;
+            this.tbPostnro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPostnro_KeyPress);
             // 
             // tbEtunimi
             // 
@@ -217,6 +218,7 @@ namespace Mökkivaraus
             this.tbPuhnro.Name = "tbPuhnro";
             this.tbPuhnro.Size = new System.Drawing.Size(150, 20);
             this.tbPuhnro.TabIndex = 9;
+            this.tbPuhnro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPuhnro_KeyPress);
             // 
             // lblid
             // 
@@ -316,7 +318,6 @@ namespace Mökkivaraus
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(266, 739);
             this.panel2.TabIndex = 33;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button5
             // 
@@ -411,24 +412,11 @@ namespace Mökkivaraus
             this.panel1.Size = new System.Drawing.Size(644, 585);
             this.panel1.TabIndex = 34;
             // 
-            // btnPaivita
-            // 
-            this.btnPaivita.Image = ((System.Drawing.Image)(resources.GetObject("btnPaivita.Image")));
-            this.btnPaivita.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPaivita.Location = new System.Drawing.Point(272, 639);
-            this.btnPaivita.Name = "btnPaivita";
-            this.btnPaivita.Size = new System.Drawing.Size(118, 42);
-            this.btnPaivita.TabIndex = 2;
-            this.btnPaivita.Text = "Päivitä Lista";
-            this.btnPaivita.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPaivita.UseVisualStyleBackColor = true;
-            this.btnPaivita.Click += new System.EventHandler(this.btnPaivita_Click);
-            // 
             // btnPoista
             // 
             this.btnPoista.Image = ((System.Drawing.Image)(resources.GetObject("btnPoista.Image")));
             this.btnPoista.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPoista.Location = new System.Drawing.Point(272, 687);
+            this.btnPoista.Location = new System.Drawing.Point(272, 639);
             this.btnPoista.Name = "btnPoista";
             this.btnPoista.Size = new System.Drawing.Size(118, 42);
             this.btnPoista.TabIndex = 3;
@@ -455,7 +443,6 @@ namespace Mökkivaraus
             this.ClientSize = new System.Drawing.Size(910, 739);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.btnPoista);
-            this.Controls.Add(this.btnPaivita);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.tbEmail);
@@ -479,6 +466,7 @@ namespace Mökkivaraus
             this.Text = "Asiakas Hallinta";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AsiakasHallinta_FormClosed);
             this.Load += new System.EventHandler(this.AsiakasHallinta_Load);
+            this.Shown += new System.EventHandler(this.AsiakasHallinta_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsiakkaat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).EndInit();
@@ -519,7 +507,6 @@ namespace Mökkivaraus
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnPaivita;
         private System.Windows.Forms.Button btnPoista;
         private System.Windows.Forms.DataGridViewTextBoxColumn asiakasidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn etunimiDataGridViewTextBoxColumn;

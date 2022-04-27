@@ -96,6 +96,7 @@ namespace Mökkivaraus
             this.tbPuhnro.Name = "tbPuhnro";
             this.tbPuhnro.Size = new System.Drawing.Size(139, 22);
             this.tbPuhnro.TabIndex = 4;
+            this.tbPuhnro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPuhnro_KeyPress);
             // 
             // label4
             // 
@@ -140,6 +141,7 @@ namespace Mökkivaraus
             this.tbPostinumero.Name = "tbPostinumero";
             this.tbPostinumero.Size = new System.Drawing.Size(200, 22);
             this.tbPostinumero.TabIndex = 3;
+            this.tbPostinumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPostinumero_KeyPress);
             // 
             // label7
             // 
