@@ -62,8 +62,6 @@ namespace Mökkivaraus
             this.btnPoistaAlueTaulukosta = new System.Windows.Forms.Button();
             this.tb_nimi = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btPalveluidenRaportointi = new System.Windows.Forms.Button();
-            this.btMajoitusRaportointi = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btPaivitaToimintaAlue = new System.Windows.Forms.Button();
             this.lbAlueet = new System.Windows.Forms.Label();
@@ -380,32 +378,11 @@ namespace Mökkivaraus
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btPalveluidenRaportointi);
             this.panel3.Controls.Add(this.gridMokkiTaulukko);
-            this.panel3.Controls.Add(this.btMajoitusRaportointi);
             this.panel3.Location = new System.Drawing.Point(269, 4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1012, 279);
             this.panel3.TabIndex = 26;
-            // 
-            // btPalveluidenRaportointi
-            // 
-            this.btPalveluidenRaportointi.Location = new System.Drawing.Point(41, 213);
-            this.btPalveluidenRaportointi.Name = "btPalveluidenRaportointi";
-            this.btPalveluidenRaportointi.Size = new System.Drawing.Size(164, 32);
-            this.btPalveluidenRaportointi.TabIndex = 29;
-            this.btPalveluidenRaportointi.Text = "Palveluiden raportointi";
-            this.btPalveluidenRaportointi.UseVisualStyleBackColor = true;
-            // 
-            // btMajoitusRaportointi
-            // 
-            this.btMajoitusRaportointi.Location = new System.Drawing.Point(41, 175);
-            this.btMajoitusRaportointi.Name = "btMajoitusRaportointi";
-            this.btMajoitusRaportointi.Size = new System.Drawing.Size(164, 32);
-            this.btMajoitusRaportointi.TabIndex = 28;
-            this.btMajoitusRaportointi.Text = "Majoittumisen raportointi";
-            this.btMajoitusRaportointi.UseVisualStyleBackColor = true;
-            this.btMajoitusRaportointi.Click += new System.EventHandler(this.btMajoitusRaportointi_Click);
             // 
             // panel4
             // 
@@ -530,8 +507,6 @@ namespace Mökkivaraus
         private System.Windows.Forms.Label lbAlueet;
         private System.Windows.Forms.Button btPaivitaToimintaAlue;
         private System.Windows.Forms.TextBox tb_id;
-        private System.Windows.Forms.Button btPalveluidenRaportointi;
-        private System.Windows.Forms.Button btMajoitusRaportointi;
         private System.Windows.Forms.DataGridViewTextBoxColumn alueidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nimiDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnRaportit;

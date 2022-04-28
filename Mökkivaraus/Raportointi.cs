@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace Mökkivaraus
 {
@@ -16,6 +18,9 @@ namespace Mökkivaraus
         {
             InitializeComponent();
         }
+
+        MySqlConnection connection = new MySqlConnection("datasource=localhost;port=3307;Initial Catalog=vn;username=root;Password=Ruutti");
+        MySqlCommand command;
 
         private void btnEtusivu_Click(object sender, EventArgs e)
         {
@@ -62,6 +67,144 @@ namespace Mökkivaraus
         private void Raportointi_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Environment.Exit(1);
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            dtp_Varaus_Loppu.MinDate = dtp_Varaus_Alku.Value;
+            dtp_Varaus_Alku.MaxDate = dtp_Varaus_Loppu.Value;
+        }
+        private void dtp_Varaus_Loppu_ValueChanged(object sender, EventArgs e)
+        {
+
+            dtp_Varaus_Loppu.MinDate = dtp_Varaus_Alku.Value;
+            dtp_Varaus_Alku.MaxDate = dtp_Varaus_Loppu.Value;
+
+        }
+
+        private void Raportointi_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'vnDataSet.alue' table. You can move, or remove it, as needed.
+            this.alueTableAdapter.Fill(this.vnDataSet.alue);
+            // TODO: This line of code loads data into the 'vnDataSet.palvelu' table. You can move, or remove it, as needed.
+            this.palveluTableAdapter.Fill(this.vnDataSet.palvelu);
+            // TODO: This line of code loads data into the 'vnDataSet.varaus' table. You can move, or remove it, as needed.
+            this.varausTableAdapter.Fill(this.vnDataSet.varaus);
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // Taulukon päivitys-osio
+        public void populateDGV_Varaukset(int luku)
+        {
+            string query4 = "SELECT mokki.mokkinimi, mokki.katuosoite, varaus.varattu_pvm, " +
+                "varaus.vahvistus_pvm, varaus.varattu_alkupvm, varaus.varattu_loppupvm, varaus.varaus_id " +
+                "FROM mokki, alue, varaus " +
+                "WHERE mokki.alue_id = alue.alue_id AND mokki.mokki_id = varaus.mokki_mokki_id AND alue.alue_id="; 
+                
+            string query1 = "SELECT * FROM varaus WHERE mokki_mokki_id=";
+            string query = query4 + luku;
+            DataTable table3 = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
+            adapter.Fill(table3);
+            dgvVaraus.DataSource = table3;
+        }
+
+        public void populateDGV_Palvelut(int luku2)
+        {
+            string query5 = "SELECT palvelu.nimi, palvelu.tyyppi, varaus.varattu_pvm, varaus.vahvistus_pvm," +
+                " varaus.varattu_alkupvm, varaus.varattu_loppupvm " +
+                "FROM palvelu, varauksen_palvelut, varaus " +
+                "WHERE palvelu.palvelu_id = varauksen_palvelut.palvelu_id AND varauksen_palvelut.varaus_id = varaus.varaus_id AND palvelu.palvelu_id=";
+
+            string query1 = "SELECT * FROM varaus WHERE mokki_mokki_id=";
+            string query6 = query5 + luku2;
+            DataTable table2 = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query6, connection);
+            adapter.Fill(table2);
+            dgvPalvelu.DataSource = table2;
+        }
+
+
+        // SQL lauseiden suoritus
+        public void ExecuteMyQuery(string query)
+        {
+            try
+            {
+                OpenConnection();
+                command = new MySqlCommand(query, connection);
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Kysely suoritettu");
+                }
+                else
+                {
+                    MessageBox.Show("Kyselyä ei suoritettu");
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+        // Yhteyden avaus
+        public void OpenConnection()
+        {
+            if (connection.State == ConnectionState.Closed)
+            {
+                connection.Open();
+            }
+        }
+
+        // Yhteys kiinni
+        public void CloseConnection()
+        {
+            if (connection.State == ConnectionState.Open)
+            {
+                connection.Close();
+            }
+        }
+
+        private void Alueen_Valinta(object sender, EventArgs e)
+        {
+            // indeksin haku
+            object alue_id = cb_toimintaAlueLista.SelectedValue;
+            int luku = Convert.ToInt32(alue_id);
+
+            populateDGV_Varaukset(luku);
+            
+        }
+
+        
+
+        private void PalvelunValinta(object sender, EventArgs e)
+        {
+            // indeksin haku
+            object palvelu_id = cbPalveluLista.SelectedValue;
+            int luku2 = Convert.ToInt32(palvelu_id);
+            populateDGV_Palvelut(luku2);
+        }
+
+        private void dtp_Palvelu_Alku_ValueChanged(object sender, EventArgs e)
+        {
+            dtp_Palvelu_Loppu.MinDate = dtp_Palvelu_Alku.Value;
+            dtp_Palvelu_Alku.MaxDate = dtp_Palvelu_Loppu.Value;
+        }
+
+        private void dtp_Palvelu_Loppu_ValueChanged(object sender, EventArgs e)
+        {
+            dtp_Palvelu_Loppu.MinDate = dtp_Palvelu_Alku.Value;
+            dtp_Palvelu_Alku.MaxDate = dtp_Palvelu_Loppu.Value;
         }
     }
 }
