@@ -63,6 +63,16 @@ namespace Mökkivaraus.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lasku {
+            get {
+                object obj = ResourceManager.GetObject("lasku", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap loginnibg {
             get {
                 object obj = ResourceManager.GetObject("loginnibg", resourceCulture);
