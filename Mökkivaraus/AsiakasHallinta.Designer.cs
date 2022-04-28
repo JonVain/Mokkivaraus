@@ -56,24 +56,25 @@ namespace Mökkivaraus
             this.lblOsoite = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPuhnro = new System.Windows.Forms.Label();
-            this.btnLisaa = new System.Windows.Forms.Button();
             this.mokkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mokkiTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.mokkiTableAdapter();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPoista = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnPoista = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnLisaa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsiakkaat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).BeginInit();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvAsiakkaat
@@ -283,19 +284,6 @@ namespace Mökkivaraus
             this.lblPuhnro.TabIndex = 15;
             this.lblPuhnro.Text = "Puhelinnumero";
             // 
-            // btnLisaa
-            // 
-            this.btnLisaa.Image = ((System.Drawing.Image)(resources.GetObject("btnLisaa.Image")));
-            this.btnLisaa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLisaa.Location = new System.Drawing.Point(272, 591);
-            this.btnLisaa.Name = "btnLisaa";
-            this.btnLisaa.Size = new System.Drawing.Size(118, 42);
-            this.btnLisaa.TabIndex = 1;
-            this.btnLisaa.Text = "Lisää Asiakas";
-            this.btnLisaa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLisaa.UseVisualStyleBackColor = true;
-            this.btnLisaa.Click += new System.EventHandler(this.btnLisaa_Click);
-            // 
             // mokkiBindingSource
             // 
             this.mokkiBindingSource.DataMember = "mokki";
@@ -305,9 +293,30 @@ namespace Mökkivaraus
             // 
             this.mokkiTableAdapter.ClearBeforeFill = true;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgvAsiakkaat);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(266, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(644, 585);
+            this.panel1.TabIndex = 34;
+            // 
+            // button6
+            // 
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(653, 687);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(245, 21);
+            this.button6.TabIndex = 11;
+            this.button6.Text = "Päivitä Asiakkaan tiedot";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.btnPaivitaAsiakas_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
@@ -318,6 +327,35 @@ namespace Mökkivaraus
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(266, 739);
             this.panel2.TabIndex = 33;
+            // 
+            // btnPoista
+            // 
+            this.btnPoista.Image = ((System.Drawing.Image)(resources.GetObject("btnPoista.Image")));
+            this.btnPoista.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPoista.Location = new System.Drawing.Point(272, 639);
+            this.btnPoista.Name = "btnPoista";
+            this.btnPoista.Size = new System.Drawing.Size(118, 42);
+            this.btnPoista.TabIndex = 3;
+            this.btnPoista.Text = "Poista Listalta";
+            this.btnPoista.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPoista.UseVisualStyleBackColor = true;
+            this.btnPoista.Click += new System.EventHandler(this.btnPoista_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.Location = new System.Drawing.Point(3, 334);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(260, 60);
+            this.button7.TabIndex = 28;
+            this.button7.Text = "Raporttien Hallinta";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button7.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
@@ -403,38 +441,18 @@ namespace Mökkivaraus
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.tsmMokki_Click);
             // 
-            // panel1
+            // btnLisaa
             // 
-            this.panel1.Controls.Add(this.dgvAsiakkaat);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(266, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(644, 585);
-            this.panel1.TabIndex = 34;
-            // 
-            // btnPoista
-            // 
-            this.btnPoista.Image = ((System.Drawing.Image)(resources.GetObject("btnPoista.Image")));
-            this.btnPoista.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPoista.Location = new System.Drawing.Point(272, 639);
-            this.btnPoista.Name = "btnPoista";
-            this.btnPoista.Size = new System.Drawing.Size(118, 42);
-            this.btnPoista.TabIndex = 3;
-            this.btnPoista.Text = "Poista Listalta";
-            this.btnPoista.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPoista.UseVisualStyleBackColor = true;
-            this.btnPoista.Click += new System.EventHandler(this.btnPoista_Click);
-            // 
-            // button6
-            // 
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(653, 687);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(245, 21);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "Päivitä Asiakkaan tiedot";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.btnPaivitaAsiakas_Click);
+            this.btnLisaa.Image = ((System.Drawing.Image)(resources.GetObject("btnLisaa.Image")));
+            this.btnLisaa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLisaa.Location = new System.Drawing.Point(272, 591);
+            this.btnLisaa.Name = "btnLisaa";
+            this.btnLisaa.Size = new System.Drawing.Size(118, 42);
+            this.btnLisaa.TabIndex = 1;
+            this.btnLisaa.Text = "Lisää Asiakas";
+            this.btnLisaa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLisaa.UseVisualStyleBackColor = true;
+            this.btnLisaa.Click += new System.EventHandler(this.btnLisaa_Click);
             // 
             // AsiakasHallinta
             // 
@@ -471,8 +489,8 @@ namespace Mökkivaraus
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -500,12 +518,6 @@ namespace Mökkivaraus
         private System.Windows.Forms.Button btnLisaa;
         private System.Windows.Forms.BindingSource mokkiBindingSource;
         private VnDataSetTableAdapters.mokkiTableAdapter mokkiTableAdapter;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnPoista;
         private System.Windows.Forms.DataGridViewTextBoxColumn asiakasidDataGridViewTextBoxColumn;
@@ -516,5 +528,12 @@ namespace Mökkivaraus
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn puhelinnroDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button7;
     }
 }

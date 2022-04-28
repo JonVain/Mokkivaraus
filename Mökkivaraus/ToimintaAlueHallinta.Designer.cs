@@ -48,6 +48,7 @@ namespace Mökkivaraus
             this.mokkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mokkiTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.mokkiTableAdapter();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnRaportit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -198,6 +199,7 @@ namespace Mökkivaraus
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.btnRaportit);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button4);
@@ -209,6 +211,23 @@ namespace Mökkivaraus
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(266, 781);
             this.panel2.TabIndex = 21;
+            // 
+            // btnRaportit
+            // 
+            this.btnRaportit.BackColor = System.Drawing.Color.Transparent;
+            this.btnRaportit.FlatAppearance.BorderSize = 0;
+            this.btnRaportit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRaportit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRaportit.Image = ((System.Drawing.Image)(resources.GetObject("btnRaportit.Image")));
+            this.btnRaportit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRaportit.Location = new System.Drawing.Point(3, 334);
+            this.btnRaportit.Name = "btnRaportit";
+            this.btnRaportit.Size = new System.Drawing.Size(260, 60);
+            this.btnRaportit.TabIndex = 27;
+            this.btnRaportit.Text = "Raporttien Hallinta";
+            this.btnRaportit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRaportit.UseVisualStyleBackColor = false;
+            this.btnRaportit.Click += new System.EventHandler(this.btnRaportit_Click);
             // 
             // panel1
             // 
@@ -515,5 +534,6 @@ namespace Mökkivaraus
         private System.Windows.Forms.Button btMajoitusRaportointi;
         private System.Windows.Forms.DataGridViewTextBoxColumn alueidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nimiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnRaportit;
     }
 }

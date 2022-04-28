@@ -62,6 +62,7 @@ namespace Mökkivaraus
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnRaportit = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -303,6 +304,7 @@ namespace Mökkivaraus
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.btnRaportit);
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
@@ -313,6 +315,23 @@ namespace Mökkivaraus
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(266, 781);
             this.panel2.TabIndex = 20;
+            // 
+            // btnRaportit
+            // 
+            this.btnRaportit.BackColor = System.Drawing.Color.Transparent;
+            this.btnRaportit.FlatAppearance.BorderSize = 0;
+            this.btnRaportit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRaportit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRaportit.Image = ((System.Drawing.Image)(resources.GetObject("btnRaportit.Image")));
+            this.btnRaportit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRaportit.Location = new System.Drawing.Point(3, 334);
+            this.btnRaportit.Name = "btnRaportit";
+            this.btnRaportit.Size = new System.Drawing.Size(260, 60);
+            this.btnRaportit.TabIndex = 28;
+            this.btnRaportit.Text = "Raporttien Hallinta";
+            this.btnRaportit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRaportit.UseVisualStyleBackColor = false;
+            this.btnRaportit.Click += new System.EventHandler(this.btnRaportit_Click);
             // 
             // button5
             // 
@@ -474,5 +493,6 @@ namespace Mökkivaraus
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRaportit;
     }
 }

@@ -44,6 +44,7 @@ namespace Mökkivaraus
             this.laskuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.laskuTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.laskuTableAdapter();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnRaportit = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -119,6 +120,7 @@ namespace Mökkivaraus
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.btnRaportit);
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
@@ -127,8 +129,25 @@ namespace Mökkivaraus
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(266, 361);
+            this.panel2.Size = new System.Drawing.Size(266, 401);
             this.panel2.TabIndex = 21;
+            // 
+            // btnRaportit
+            // 
+            this.btnRaportit.BackColor = System.Drawing.Color.Transparent;
+            this.btnRaportit.FlatAppearance.BorderSize = 0;
+            this.btnRaportit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRaportit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRaportit.Image = ((System.Drawing.Image)(resources.GetObject("btnRaportit.Image")));
+            this.btnRaportit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRaportit.Location = new System.Drawing.Point(3, 334);
+            this.btnRaportit.Name = "btnRaportit";
+            this.btnRaportit.Size = new System.Drawing.Size(260, 60);
+            this.btnRaportit.TabIndex = 28;
+            this.btnRaportit.Text = "Raporttien Hallinta";
+            this.btnRaportit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRaportit.UseVisualStyleBackColor = false;
+            this.btnRaportit.Click += new System.EventHandler(this.btnRaportit_Click);
             // 
             // button5
             // 
@@ -243,7 +262,7 @@ namespace Mökkivaraus
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(266, 98);
+            this.panel3.Location = new System.Drawing.Point(266, 138);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(818, 263);
             this.panel3.TabIndex = 23;
@@ -252,7 +271,7 @@ namespace Mökkivaraus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 361);
+            this.ClientSize = new System.Drawing.Size(1084, 401);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -260,6 +279,7 @@ namespace Mökkivaraus
             this.Name = "Etusivu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Etusivu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Etusivu_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).EndInit();
@@ -298,6 +318,7 @@ namespace Mökkivaraus
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnRaportit;
     }
 }
 

@@ -10,22 +10,18 @@ using System.Windows.Forms;
 
 namespace Mökkivaraus
 {
-    public partial class Etusivu : Form
+    public partial class Raportointi : Form
     {
-        public Etusivu()
+        public Raportointi()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnEtusivu_Click(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'vnDataSet.lasku' table. You can move, or remove it, as needed.
-            this.laskuTableAdapter.Fill(this.vnDataSet.lasku);
-            // TODO: This line of code loads data into the 'vnDataSet.alue' table. You can move, or remove it, as needed.
-            this.alueTableAdapter.Fill(this.vnDataSet.alue);
-            // TODO: This line of code loads data into the 'vnDataSet.asiakas' table. You can move, or remove it, as needed.
-            this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
-
+            Etusivu es = new Etusivu();
+            es.Show();
+            this.Hide();
         }
 
         private void tsmToimintaAlueet_Click(object sender, EventArgs e)
@@ -41,7 +37,6 @@ namespace Mökkivaraus
             ph.Show();
             this.Hide();
         }
-
 
         private void tsmMokki_Click(object sender, EventArgs e)
         {
@@ -64,7 +59,7 @@ namespace Mökkivaraus
             this.Hide();
         }
 
-        private void Etusivu_FormClosed(object sender, FormClosedEventArgs e)
+        private void Raportointi_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Environment.Exit(1);
         }

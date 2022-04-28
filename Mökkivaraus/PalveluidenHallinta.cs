@@ -89,5 +89,12 @@ namespace Mökkivaraus
             palveluBindingSource.EndEdit();
             palveluTableAdapter.Update(this.vnDataSet.palvelu);
         }
+
+        private void btnRaportit_Click(object sender, EventArgs e)
+        {
+            Raportointi rap = new Raportointi();
+            rap.Show();
+            this.Hide();
+        }
     }
 }
