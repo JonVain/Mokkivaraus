@@ -69,6 +69,7 @@ namespace Mökkivaraus
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnLisaa = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsiakkaat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
@@ -316,6 +317,7 @@ namespace Mökkivaraus
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button4);
@@ -454,6 +456,22 @@ namespace Mökkivaraus
             this.btnLisaa.UseVisualStyleBackColor = true;
             this.btnLisaa.Click += new System.EventHandler(this.btnLisaa_Click);
             // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Transparent;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.Location = new System.Drawing.Point(3, 388);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(260, 60);
+            this.button8.TabIndex = 35;
+            this.button8.Text = "Laskutus";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button8.UseVisualStyleBackColor = false;
+            // 
             // AsiakasHallinta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -535,5 +553,6 @@ namespace Mökkivaraus
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }

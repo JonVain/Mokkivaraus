@@ -78,5 +78,10 @@ namespace Mökkivaraus
             rap.Show();
             this.Hide();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

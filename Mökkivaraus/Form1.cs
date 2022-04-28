@@ -16,5 +16,12 @@ namespace Mökkivaraus
         {
             InitializeComponent();
         }
+
+        private void Laskutus_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'vnDataSet.lasku' table. You can move, or remove it, as needed.
+            this.laskuTableAdapter.Fill(this.vnDataSet.lasku);
+
+        }
     }
 }

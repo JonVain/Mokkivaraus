@@ -67,6 +67,7 @@ namespace Mökkivaraus
             this.lbAlueet = new System.Windows.Forms.Label();
             this.tb_id = new System.Windows.Forms.TextBox();
             this.lbMuokkaaAlueita = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMokkiTaulukko)).BeginInit();
@@ -197,6 +198,7 @@ namespace Mökkivaraus
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.btnRaportit);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.button5);
@@ -442,6 +444,22 @@ namespace Mökkivaraus
             this.lbMuokkaaAlueita.Text = "Muokkaa toiminta-alueita";
             this.lbMuokkaaAlueita.Click += new System.EventHandler(this.label1_Click);
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(0, 400);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(260, 60);
+            this.button6.TabIndex = 30;
+            this.button6.Text = "Laskutus";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button6.UseVisualStyleBackColor = false;
+            // 
             // ToimintaAlueHallinta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,5 +528,6 @@ namespace Mökkivaraus
         private System.Windows.Forms.DataGridViewTextBoxColumn alueidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nimiDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnRaportit;
+        private System.Windows.Forms.Button button6;
     }
 }
