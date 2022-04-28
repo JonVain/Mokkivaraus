@@ -44,6 +44,7 @@ namespace Mökkivaraus
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puhelinnroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.okBTN = new System.Windows.Forms.Button();
+            this.asiakasID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).BeginInit();
@@ -143,11 +144,21 @@ namespace Mökkivaraus
             this.okBTN.UseVisualStyleBackColor = true;
             this.okBTN.Click += new System.EventHandler(this.okBTN_Click);
             // 
+            // asiakasID
+            // 
+            this.asiakasID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.asiakasBindingSource, "asiakas_id", true));
+            this.asiakasID.Location = new System.Drawing.Point(669, 22);
+            this.asiakasID.Name = "asiakasID";
+            this.asiakasID.ReadOnly = true;
+            this.asiakasID.Size = new System.Drawing.Size(100, 20);
+            this.asiakasID.TabIndex = 2;
+            // 
             // EtsiAsiakas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(810, 319);
+            this.Controls.Add(this.asiakasID);
             this.Controls.Add(this.okBTN);
             this.Controls.Add(this.dataGridView1);
             this.Name = "EtsiAsiakas";
@@ -158,6 +169,7 @@ namespace Mökkivaraus
             ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -177,5 +189,6 @@ namespace Mökkivaraus
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn puhelinnroDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button okBTN;
+        private System.Windows.Forms.TextBox asiakasID;
     }
 }

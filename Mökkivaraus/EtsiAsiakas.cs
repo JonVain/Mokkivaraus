@@ -32,7 +32,7 @@ namespace Mökkivaraus
         {
             this.Hide();
             laskutus.Show();
-            laskutus.demo("Pekka Pouta");
+            laskutus.EtsiLaskut(int.Parse(asiakasID.Text));
         }
     }
 }
