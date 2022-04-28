@@ -96,5 +96,12 @@ namespace Mökkivaraus
             rap.Show();
             this.Hide();
         }
+
+        private void laskutusbtn_Click(object sender, EventArgs e)
+        {
+            Laskutus laskutus = new Laskutus();
+            this.Hide();
+            laskutus.Show();
+        }
     }
 }

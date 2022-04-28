@@ -62,13 +62,13 @@ namespace Mökkivaraus
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.laskutusbtn = new System.Windows.Forms.Button();
             this.btnRaportit = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
@@ -305,7 +305,7 @@ namespace Mökkivaraus
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.button6);
+            this.panel2.Controls.Add(this.laskutusbtn);
             this.panel2.Controls.Add(this.btnRaportit);
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button4);
@@ -317,6 +317,23 @@ namespace Mökkivaraus
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(266, 781);
             this.panel2.TabIndex = 20;
+            // 
+            // laskutusbtn
+            // 
+            this.laskutusbtn.BackColor = System.Drawing.Color.Transparent;
+            this.laskutusbtn.FlatAppearance.BorderSize = 0;
+            this.laskutusbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.laskutusbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.laskutusbtn.Image = ((System.Drawing.Image)(resources.GetObject("laskutusbtn.Image")));
+            this.laskutusbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.laskutusbtn.Location = new System.Drawing.Point(3, 391);
+            this.laskutusbtn.Name = "laskutusbtn";
+            this.laskutusbtn.Size = new System.Drawing.Size(260, 60);
+            this.laskutusbtn.TabIndex = 30;
+            this.laskutusbtn.Text = "Laskutus";
+            this.laskutusbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.laskutusbtn.UseVisualStyleBackColor = false;
+            this.laskutusbtn.Click += new System.EventHandler(this.button6_Click);
             // 
             // btnRaportit
             // 
@@ -419,23 +436,6 @@ namespace Mökkivaraus
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(3, 391);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(260, 60);
-            this.button6.TabIndex = 30;
-            this.button6.Text = "Laskutus";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
             // MokkienHallinta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -513,6 +513,6 @@ namespace Mökkivaraus
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnRaportit;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button laskutusbtn;
     }
 }

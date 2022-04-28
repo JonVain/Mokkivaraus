@@ -33,6 +33,12 @@ namespace Mökkivaraus
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PalveluidenHallinta));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnRaportit = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.Btn_plvlisaa = new System.Windows.Forms.Button();
             this.Btn_plvpoista = new System.Windows.Forms.Button();
             this.btn_paivita = new System.Windows.Forms.Button();
@@ -63,12 +69,7 @@ namespace Mökkivaraus
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_paivitaplv = new System.Windows.Forms.Button();
-            this.btnRaportit = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.laskutusbtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPalvelut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource1)).BeginInit();
@@ -79,6 +80,7 @@ namespace Mökkivaraus
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.laskutusbtn);
             this.panel2.Controls.Add(this.btnRaportit);
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button4);
@@ -90,6 +92,107 @@ namespace Mökkivaraus
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(266, 781);
             this.panel2.TabIndex = 21;
+            // 
+            // btnRaportit
+            // 
+            this.btnRaportit.BackColor = System.Drawing.Color.Transparent;
+            this.btnRaportit.FlatAppearance.BorderSize = 0;
+            this.btnRaportit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRaportit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRaportit.Image = ((System.Drawing.Image)(resources.GetObject("btnRaportit.Image")));
+            this.btnRaportit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRaportit.Location = new System.Drawing.Point(3, 334);
+            this.btnRaportit.Name = "btnRaportit";
+            this.btnRaportit.Size = new System.Drawing.Size(260, 60);
+            this.btnRaportit.TabIndex = 28;
+            this.btnRaportit.Text = "Raporttien Hallinta";
+            this.btnRaportit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRaportit.UseVisualStyleBackColor = false;
+            this.btnRaportit.Click += new System.EventHandler(this.btnRaportit_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(3, 4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(260, 60);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Etusivu";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.tsmEtusivu_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(3, 268);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(260, 60);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Palveluiden Hallinta";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(3, 202);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(260, 60);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Toiminta-aluehallinta";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.tsmToimintaAlueet_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(3, 136);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(260, 60);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Asiakashallinta";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.tsmAsiakas_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(3, 70);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(260, 60);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Mökkien Hallinta";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.tsmMokki_Click);
             // 
             // Btn_plvlisaa
             // 
@@ -323,106 +426,22 @@ namespace Mökkivaraus
             this.btn_paivitaplv.UseVisualStyleBackColor = true;
             this.btn_paivitaplv.Click += new System.EventHandler(this.button6_Click);
             // 
-            // btnRaportit
+            // laskutusbtn
             // 
-            this.btnRaportit.BackColor = System.Drawing.Color.Transparent;
-            this.btnRaportit.FlatAppearance.BorderSize = 0;
-            this.btnRaportit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRaportit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRaportit.Image = ((System.Drawing.Image)(resources.GetObject("btnRaportit.Image")));
-            this.btnRaportit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRaportit.Location = new System.Drawing.Point(3, 334);
-            this.btnRaportit.Name = "btnRaportit";
-            this.btnRaportit.Size = new System.Drawing.Size(260, 60);
-            this.btnRaportit.TabIndex = 28;
-            this.btnRaportit.Text = "Raporttien Hallinta";
-            this.btnRaportit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRaportit.UseVisualStyleBackColor = false;
-            this.btnRaportit.Click += new System.EventHandler(this.btnRaportit_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(3, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(260, 60);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Etusivu";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.tsmEtusivu_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(3, 268);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(260, 60);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Palveluiden Hallinta";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(3, 202);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(260, 60);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Toiminta-aluehallinta";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.tsmToimintaAlueet_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(3, 136);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(260, 60);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Asiakashallinta";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.tsmAsiakas_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 70);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(260, 60);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Mökkien Hallinta";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.tsmMokki_Click);
+            this.laskutusbtn.BackColor = System.Drawing.Color.Transparent;
+            this.laskutusbtn.FlatAppearance.BorderSize = 0;
+            this.laskutusbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.laskutusbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.laskutusbtn.Image = ((System.Drawing.Image)(resources.GetObject("laskutusbtn.Image")));
+            this.laskutusbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.laskutusbtn.Location = new System.Drawing.Point(3, 386);
+            this.laskutusbtn.Name = "laskutusbtn";
+            this.laskutusbtn.Size = new System.Drawing.Size(260, 60);
+            this.laskutusbtn.TabIndex = 41;
+            this.laskutusbtn.Text = "Laskutus";
+            this.laskutusbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.laskutusbtn.UseVisualStyleBackColor = false;
+            this.laskutusbtn.Click += new System.EventHandler(this.laskutusbtn_Click);
             // 
             // PalveluidenHallinta
             // 
@@ -505,5 +524,6 @@ namespace Mökkivaraus
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_paivitaplv;
         private System.Windows.Forms.Button btnRaportit;
+        private System.Windows.Forms.Button laskutusbtn;
     }
 }

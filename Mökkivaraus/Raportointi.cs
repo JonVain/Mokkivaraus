@@ -225,5 +225,12 @@ namespace Mökkivaraus
             // valistee kaikki id:t mitkä ovat suurempaa kuin -1, eli kaiken tiedon
             populateDGV_Palvelut(" > -1");
         }
+
+        private void laskutusbtn_Click(object sender, EventArgs e)
+        {
+            Laskutus laskutus = new Laskutus();
+            this.Hide();
+            laskutus.Show();
+        }
     }
 }

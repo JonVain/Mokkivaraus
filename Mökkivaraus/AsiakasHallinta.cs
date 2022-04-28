@@ -115,5 +115,17 @@ namespace Mökkivaraus
             this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
             dgvAsiakkaat.Refresh();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e) // laskutus
+        {
+            Laskutus laskutus = new Laskutus();
+            this.Hide();
+            laskutus.Show();
+        }
     }
 }
