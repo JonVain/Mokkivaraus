@@ -147,6 +147,7 @@ namespace Mökkivaraus
             LisaaAlue ikkuna_alue = new LisaaAlue();
             ikkuna_alue.FormClosed += new FormClosedEventHandler(LisaaAlue_FormClosed);
             ikkuna_alue.Show();
+            this.Hide();
             
         }
 
@@ -232,6 +233,11 @@ namespace Mökkivaraus
             {
                 e.Handled = true;
             }  
+        }
+
+        private void btMajoitusRaportointi_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

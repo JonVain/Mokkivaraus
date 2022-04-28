@@ -19,6 +19,8 @@ namespace Mökkivaraus
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            ToimintaAlueHallinta tah = new ToimintaAlueHallinta();
+            tah.Show();
             this.Dispose();
         }
 
@@ -28,10 +30,9 @@ namespace Mökkivaraus
             alueBindingSource8.EndEdit();
             alueTableAdapter.Update(this.vnDataSet);
             alueTableAdapter.Insert(tbUusiAlue.Text);
-            
             this.Close();
-            
-            
+            ToimintaAlueHallinta tah = new ToimintaAlueHallinta();
+            tah.Show();
         }
 
         private void btnTyhjenna_Click(object sender, EventArgs e)
