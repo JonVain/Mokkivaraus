@@ -44,16 +44,16 @@ namespace Mökkivaraus
             this.laskuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.laskuTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.laskuTableAdapter();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.laskutusbtn = new System.Windows.Forms.Button();
             this.btnRaportit = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
@@ -121,7 +121,7 @@ namespace Mökkivaraus
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.button6);
+            this.panel2.Controls.Add(this.laskutusbtn);
             this.panel2.Controls.Add(this.btnRaportit);
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button4);
@@ -134,39 +134,22 @@ namespace Mökkivaraus
             this.panel2.Size = new System.Drawing.Size(266, 451);
             this.panel2.TabIndex = 21;
             // 
-            // panel1
+            // laskutusbtn
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(266, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(818, 100);
-            this.panel1.TabIndex = 22;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(121, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(568, 36);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Village Newbies Mökkihallinta Järjestelmä";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(266, 188);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(818, 263);
-            this.panel3.TabIndex = 23;
+            this.laskutusbtn.BackColor = System.Drawing.Color.Transparent;
+            this.laskutusbtn.FlatAppearance.BorderSize = 0;
+            this.laskutusbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.laskutusbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.laskutusbtn.Image = ((System.Drawing.Image)(resources.GetObject("laskutusbtn.Image")));
+            this.laskutusbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.laskutusbtn.Location = new System.Drawing.Point(3, 391);
+            this.laskutusbtn.Name = "laskutusbtn";
+            this.laskutusbtn.Size = new System.Drawing.Size(260, 60);
+            this.laskutusbtn.TabIndex = 29;
+            this.laskutusbtn.Text = "Laskutus";
+            this.laskutusbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.laskutusbtn.UseVisualStyleBackColor = false;
+            this.laskutusbtn.Click += new System.EventHandler(this.laskutusbtn_Click);
             // 
             // btnRaportit
             // 
@@ -269,21 +252,39 @@ namespace Mökkivaraus
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.tsmMokki_Click);
             // 
-            // button6
+            // panel1
             // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(3, 391);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(260, 60);
-            this.button6.TabIndex = 29;
-            this.button6.Text = "Laskutus";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = false;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(266, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(818, 100);
+            this.panel1.TabIndex = 22;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(121, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(568, 36);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Village Newbies Mökkihallinta Järjestelmä";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(266, 188);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(818, 263);
+            this.panel3.TabIndex = 23;
             // 
             // Etusivu
             // 
@@ -337,7 +338,7 @@ namespace Mökkivaraus
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnRaportit;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button laskutusbtn;
     }
 }
 

@@ -94,11 +94,17 @@
     <Compile Include="AsiakasHallinta.Designer.cs">
       <DependentUpon>AsiakasHallinta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="EtsiAsiakas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="EtsiAsiakas.Designer.cs">
+      <DependentUpon>EtsiAsiakas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laskutus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laskutus.Designer.cs">
+      <DependentUpon>Laskutus.cs</DependentUpon>
     </Compile>
     <Compile Include="Raportointi.cs">
       <SubType>Form</SubType>
@@ -167,11 +173,14 @@
     <EmbeddedResource Include="AsiakasHallinta.resx">
       <DependentUpon>AsiakasHallinta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EtsiAsiakas.resx">
+      <DependentUpon>EtsiAsiakas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Etusivu.resx">
       <DependentUpon>Etusivu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Laskutus.resx">
+      <DependentUpon>Laskutus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Raportointi.resx">
       <DependentUpon>Raportointi.cs</DependentUpon>

@@ -23,5 +23,11 @@ namespace Mökkivaraus
             this.laskuTableAdapter.Fill(this.vnDataSet.lasku);
 
         }
+
+        private void etsiasiakasBtn_Click(object sender, EventArgs e)
+        {
+            EtsiAsiakas etsias = new EtsiAsiakas();
+            etsias.Show();
+        }
     }
 }

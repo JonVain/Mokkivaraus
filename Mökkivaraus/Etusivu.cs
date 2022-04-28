@@ -68,5 +68,12 @@ namespace Mökkivaraus
         {
             System.Environment.Exit(1);
         }
+
+        private void laskutusbtn_Click(object sender, EventArgs e)
+        {
+            Laskutus lks = new Laskutus();
+            lks.Show();
+            this.Hide();
+        }
     }
 }
