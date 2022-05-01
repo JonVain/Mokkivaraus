@@ -131,7 +131,7 @@ namespace Mökkivaraus
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(266, 451);
+            this.panel2.Size = new System.Drawing.Size(266, 465);
             this.panel2.TabIndex = 21;
             // 
             // laskutusbtn
@@ -142,7 +142,7 @@ namespace Mökkivaraus
             this.laskutusbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.laskutusbtn.Image = ((System.Drawing.Image)(resources.GetObject("laskutusbtn.Image")));
             this.laskutusbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.laskutusbtn.Location = new System.Drawing.Point(3, 391);
+            this.laskutusbtn.Location = new System.Drawing.Point(3, 400);
             this.laskutusbtn.Name = "laskutusbtn";
             this.laskutusbtn.Size = new System.Drawing.Size(260, 60);
             this.laskutusbtn.TabIndex = 29;
@@ -259,7 +259,7 @@ namespace Mökkivaraus
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(266, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(818, 100);
+            this.panel1.Size = new System.Drawing.Size(818, 73);
             this.panel1.TabIndex = 22;
             // 
             // label1
@@ -281,16 +281,16 @@ namespace Mökkivaraus
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(266, 188);
+            this.panel3.Location = new System.Drawing.Point(266, 79);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(818, 263);
+            this.panel3.Size = new System.Drawing.Size(818, 386);
             this.panel3.TabIndex = 23;
             // 
             // Etusivu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 451);
+            this.ClientSize = new System.Drawing.Size(1084, 465);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);

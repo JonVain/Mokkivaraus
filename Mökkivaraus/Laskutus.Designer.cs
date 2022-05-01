@@ -49,6 +49,7 @@ namespace Mökkivaraus
             this.asiakashallintabtn = new System.Windows.Forms.Button();
             this.mokkienhallinta = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.asiakasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -61,8 +62,6 @@ namespace Mökkivaraus
             this.lblSukunimi = new System.Windows.Forms.Label();
             this.lblPuhnro = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.asiakasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.asiakasTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.asiakasTableAdapter();
             this.asiakasidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postinroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.etunimiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,12 +69,13 @@ namespace Mökkivaraus
             this.lahiosoiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puhelinnroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asiakasTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.asiakasTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -90,7 +90,7 @@ namespace Mökkivaraus
             this.dataGridView1.DataSource = this.laskuBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(344, 277);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(444, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(464, 150);
             this.dataGridView1.TabIndex = 0;
             // 
             // laskuidDataGridViewTextBoxColumn
@@ -154,7 +154,7 @@ namespace Mökkivaraus
             this.laskutusbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.laskutusbtn.Image = ((System.Drawing.Image)(resources.GetObject("laskutusbtn.Image")));
             this.laskutusbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.laskutusbtn.Location = new System.Drawing.Point(12, 388);
+            this.laskutusbtn.Location = new System.Drawing.Point(12, 397);
             this.laskutusbtn.Name = "laskutusbtn";
             this.laskutusbtn.Size = new System.Drawing.Size(260, 60);
             this.laskutusbtn.TabIndex = 36;
@@ -274,6 +274,11 @@ namespace Mökkivaraus
             this.textBox1.Size = new System.Drawing.Size(147, 20);
             this.textBox1.TabIndex = 37;
             // 
+            // asiakasBindingSource
+            // 
+            this.asiakasBindingSource.DataMember = "asiakas";
+            this.asiakasBindingSource.DataSource = this.vnDataSetBindingSource;
+            // 
             // textBox2
             // 
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.asiakasBindingSource, "postinro", true));
@@ -392,15 +397,6 @@ namespace Mökkivaraus
             this.dataGridView2.TabIndex = 52;
             this.dataGridView2.Visible = false;
             // 
-            // asiakasBindingSource
-            // 
-            this.asiakasBindingSource.DataMember = "asiakas";
-            this.asiakasBindingSource.DataSource = this.vnDataSetBindingSource;
-            // 
-            // asiakasTableAdapter
-            // 
-            this.asiakasTableAdapter.ClearBeforeFill = true;
-            // 
             // asiakasidDataGridViewTextBoxColumn
             // 
             this.asiakasidDataGridViewTextBoxColumn.DataPropertyName = "asiakas_id";
@@ -443,11 +439,15 @@ namespace Mökkivaraus
             this.puhelinnroDataGridViewTextBoxColumn.HeaderText = "puhelinnro";
             this.puhelinnroDataGridViewTextBoxColumn.Name = "puhelinnroDataGridViewTextBoxColumn";
             // 
+            // asiakasTableAdapter
+            // 
+            this.asiakasTableAdapter.ClearBeforeFill = true;
+            // 
             // Laskutus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(812, 467);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.lblOsoite);
             this.Controls.Add(this.lblSukunimi);
@@ -470,15 +470,18 @@ namespace Mökkivaraus
             this.Controls.Add(this.mokkienhallinta);
             this.Controls.Add(this.etsiasiakasBtn);
             this.Controls.Add(this.dataGridView1);
+            this.Location = new System.Drawing.Point(50, 50);
             this.Name = "Laskutus";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Laskutus";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Laskutus_FormClosed);
             this.Load += new System.EventHandler(this.Laskutus_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

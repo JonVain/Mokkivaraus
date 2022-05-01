@@ -326,7 +326,7 @@ namespace Mökkivaraus
             this.laskutusbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.laskutusbtn.Image = ((System.Drawing.Image)(resources.GetObject("laskutusbtn.Image")));
             this.laskutusbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.laskutusbtn.Location = new System.Drawing.Point(3, 391);
+            this.laskutusbtn.Location = new System.Drawing.Point(3, 400);
             this.laskutusbtn.Name = "laskutusbtn";
             this.laskutusbtn.Size = new System.Drawing.Size(260, 60);
             this.laskutusbtn.TabIndex = 30;

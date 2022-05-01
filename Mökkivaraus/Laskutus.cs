@@ -95,5 +95,10 @@ namespace Mökkivaraus
             int index = asiakasBindingSource.Find("asiakas_id", asiakasid);
             if (index >= 0) asiakasBindingSource.Position = index;
         }
+
+        private void Laskutus_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Environment.Exit(1);
+        }
     }
 }

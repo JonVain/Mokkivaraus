@@ -108,7 +108,7 @@ namespace Mökkivaraus
             this.cb_toimintaAlueLista.DataSource = this.alueBindingSource;
             this.cb_toimintaAlueLista.DisplayMember = "nimi";
             this.cb_toimintaAlueLista.FormattingEnabled = true;
-            this.cb_toimintaAlueLista.Location = new System.Drawing.Point(310, 76);
+            this.cb_toimintaAlueLista.Location = new System.Drawing.Point(41, 73);
             this.cb_toimintaAlueLista.Name = "cb_toimintaAlueLista";
             this.cb_toimintaAlueLista.Size = new System.Drawing.Size(164, 21);
             this.cb_toimintaAlueLista.TabIndex = 5;
@@ -220,7 +220,7 @@ namespace Mökkivaraus
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(0, 400);
+            this.button6.Location = new System.Drawing.Point(3, 400);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(260, 60);
             this.button6.TabIndex = 30;
@@ -398,6 +398,7 @@ namespace Mökkivaraus
             // panel3
             // 
             this.panel3.Controls.Add(this.gridMokkiTaulukko);
+            this.panel3.Controls.Add(this.cb_toimintaAlueLista);
             this.panel3.Location = new System.Drawing.Point(269, 4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1012, 279);
@@ -468,7 +469,6 @@ namespace Mökkivaraus
             this.ClientSize = new System.Drawing.Size(1293, 781);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lbMokit);
-            this.Controls.Add(this.cb_toimintaAlueLista);
             this.Controls.Add(this.lbToimintaA);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);

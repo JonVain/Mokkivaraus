@@ -86,7 +86,7 @@ namespace Mökkivaraus
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(266, 574);
+            this.panel2.Size = new System.Drawing.Size(266, 594);
             this.panel2.TabIndex = 22;
             // 
             // laskutusbtn
@@ -97,7 +97,7 @@ namespace Mökkivaraus
             this.laskutusbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.laskutusbtn.Image = ((System.Drawing.Image)(resources.GetObject("laskutusbtn.Image")));
             this.laskutusbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.laskutusbtn.Location = new System.Drawing.Point(0, 393);
+            this.laskutusbtn.Location = new System.Drawing.Point(3, 400);
             this.laskutusbtn.Name = "laskutusbtn";
             this.laskutusbtn.Size = new System.Drawing.Size(260, 60);
             this.laskutusbtn.TabIndex = 41;
@@ -346,7 +346,7 @@ namespace Mökkivaraus
             // 
             // dtp_Varaus_Loppu
             // 
-            this.dtp_Varaus_Loppu.Location = new System.Drawing.Point(838, 89);
+            this.dtp_Varaus_Loppu.Location = new System.Drawing.Point(808, 88);
             this.dtp_Varaus_Loppu.Name = "dtp_Varaus_Loppu";
             this.dtp_Varaus_Loppu.Size = new System.Drawing.Size(210, 20);
             this.dtp_Varaus_Loppu.TabIndex = 34;
@@ -355,7 +355,7 @@ namespace Mökkivaraus
             // lbAlkupvm1
             // 
             this.lbAlkupvm1.AutoSize = true;
-            this.lbAlkupvm1.Location = new System.Drawing.Point(589, 70);
+            this.lbAlkupvm1.Location = new System.Drawing.Point(589, 72);
             this.lbAlkupvm1.Name = "lbAlkupvm1";
             this.lbAlkupvm1.Size = new System.Drawing.Size(54, 13);
             this.lbAlkupvm1.TabIndex = 35;
@@ -373,7 +373,7 @@ namespace Mökkivaraus
             // Loppupvm1
             // 
             this.Loppupvm1.AutoSize = true;
-            this.Loppupvm1.Location = new System.Drawing.Point(835, 73);
+            this.Loppupvm1.Location = new System.Drawing.Point(805, 72);
             this.Loppupvm1.Name = "Loppupvm1";
             this.Loppupvm1.Size = new System.Drawing.Size(63, 13);
             this.Loppupvm1.TabIndex = 37;
@@ -412,7 +412,7 @@ namespace Mökkivaraus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1245, 574);
+            this.ClientSize = new System.Drawing.Size(1109, 594);
             this.Controls.Add(this.btnValitseKaikkiPalvelut);
             this.Controls.Add(this.btValitseKaikkiTAH);
             this.Controls.Add(this.tbLoppupvm2);

@@ -33,6 +33,7 @@ namespace Mökkivaraus
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PalveluidenHallinta));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.laskutusbtn = new System.Windows.Forms.Button();
             this.btnRaportit = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -69,7 +70,6 @@ namespace Mökkivaraus
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_paivitaplv = new System.Windows.Forms.Button();
-            this.laskutusbtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPalvelut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource1)).BeginInit();
@@ -92,6 +92,23 @@ namespace Mökkivaraus
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(266, 781);
             this.panel2.TabIndex = 21;
+            // 
+            // laskutusbtn
+            // 
+            this.laskutusbtn.BackColor = System.Drawing.Color.Transparent;
+            this.laskutusbtn.FlatAppearance.BorderSize = 0;
+            this.laskutusbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.laskutusbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.laskutusbtn.Image = ((System.Drawing.Image)(resources.GetObject("laskutusbtn.Image")));
+            this.laskutusbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.laskutusbtn.Location = new System.Drawing.Point(3, 400);
+            this.laskutusbtn.Name = "laskutusbtn";
+            this.laskutusbtn.Size = new System.Drawing.Size(260, 60);
+            this.laskutusbtn.TabIndex = 41;
+            this.laskutusbtn.Text = "Laskutus";
+            this.laskutusbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.laskutusbtn.UseVisualStyleBackColor = false;
+            this.laskutusbtn.Click += new System.EventHandler(this.laskutusbtn_Click);
             // 
             // btnRaportit
             // 
@@ -425,23 +442,6 @@ namespace Mökkivaraus
             this.btn_paivitaplv.Text = "Päivitä palvelu tiedot";
             this.btn_paivitaplv.UseVisualStyleBackColor = true;
             this.btn_paivitaplv.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // laskutusbtn
-            // 
-            this.laskutusbtn.BackColor = System.Drawing.Color.Transparent;
-            this.laskutusbtn.FlatAppearance.BorderSize = 0;
-            this.laskutusbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.laskutusbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.laskutusbtn.Image = ((System.Drawing.Image)(resources.GetObject("laskutusbtn.Image")));
-            this.laskutusbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.laskutusbtn.Location = new System.Drawing.Point(3, 386);
-            this.laskutusbtn.Name = "laskutusbtn";
-            this.laskutusbtn.Size = new System.Drawing.Size(260, 60);
-            this.laskutusbtn.TabIndex = 41;
-            this.laskutusbtn.Text = "Laskutus";
-            this.laskutusbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.laskutusbtn.UseVisualStyleBackColor = false;
-            this.laskutusbtn.Click += new System.EventHandler(this.laskutusbtn_Click);
             // 
             // PalveluidenHallinta
             // 

@@ -61,7 +61,6 @@ namespace Mökkivaraus
             this.panel1 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnPoista = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -69,6 +68,7 @@ namespace Mökkivaraus
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnPoista = new System.Windows.Forms.Button();
             this.btnLisaa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsiakkaat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
@@ -330,19 +330,6 @@ namespace Mökkivaraus
             this.panel2.Size = new System.Drawing.Size(266, 739);
             this.panel2.TabIndex = 33;
             // 
-            // btnPoista
-            // 
-            this.btnPoista.Image = ((System.Drawing.Image)(resources.GetObject("btnPoista.Image")));
-            this.btnPoista.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPoista.Location = new System.Drawing.Point(272, 639);
-            this.btnPoista.Name = "btnPoista";
-            this.btnPoista.Size = new System.Drawing.Size(118, 42);
-            this.btnPoista.TabIndex = 3;
-            this.btnPoista.Text = "Poista Listalta";
-            this.btnPoista.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPoista.UseVisualStyleBackColor = true;
-            this.btnPoista.Click += new System.EventHandler(this.btnPoista_Click);
-            // 
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.Transparent;
@@ -351,7 +338,7 @@ namespace Mökkivaraus
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
             this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(3, 388);
+            this.button8.Location = new System.Drawing.Point(3, 400);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(260, 60);
             this.button8.TabIndex = 35;
@@ -461,11 +448,24 @@ namespace Mökkivaraus
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.tsmMokki_Click);
             // 
+            // btnPoista
+            // 
+            this.btnPoista.Image = ((System.Drawing.Image)(resources.GetObject("btnPoista.Image")));
+            this.btnPoista.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPoista.Location = new System.Drawing.Point(272, 666);
+            this.btnPoista.Name = "btnPoista";
+            this.btnPoista.Size = new System.Drawing.Size(118, 42);
+            this.btnPoista.TabIndex = 3;
+            this.btnPoista.Text = "Poista Listalta";
+            this.btnPoista.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPoista.UseVisualStyleBackColor = true;
+            this.btnPoista.Click += new System.EventHandler(this.btnPoista_Click);
+            // 
             // btnLisaa
             // 
             this.btnLisaa.Image = ((System.Drawing.Image)(resources.GetObject("btnLisaa.Image")));
             this.btnLisaa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLisaa.Location = new System.Drawing.Point(272, 591);
+            this.btnLisaa.Location = new System.Drawing.Point(272, 610);
             this.btnLisaa.Name = "btnLisaa";
             this.btnLisaa.Size = new System.Drawing.Size(118, 42);
             this.btnLisaa.TabIndex = 1;
