@@ -64,6 +64,8 @@ namespace Mökkivaraus
             this.tbLoppupvm2 = new System.Windows.Forms.Label();
             this.btValitseKaikkiTAH = new System.Windows.Forms.Button();
             this.btnValitseKaikkiPalvelut = new System.Windows.Forms.Button();
+            this.btValitseTAHaika = new System.Windows.Forms.Button();
+            this.btvValitsePalveluAika = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVaraus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.varausBindingSource)).BeginInit();
@@ -209,9 +211,11 @@ namespace Mökkivaraus
             // 
             // dtp_Varaus_Alku
             // 
+            this.dtp_Varaus_Alku.CustomFormat = "yyyy-MM-dd";
+            this.dtp_Varaus_Alku.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_Varaus_Alku.Location = new System.Drawing.Point(592, 88);
             this.dtp_Varaus_Alku.Name = "dtp_Varaus_Alku";
-            this.dtp_Varaus_Alku.Size = new System.Drawing.Size(210, 20);
+            this.dtp_Varaus_Alku.Size = new System.Drawing.Size(127, 20);
             this.dtp_Varaus_Alku.TabIndex = 23;
             this.dtp_Varaus_Alku.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -322,7 +326,7 @@ namespace Mökkivaraus
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(574, 309);
+            this.label3.Location = new System.Drawing.Point(588, 309);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 20);
             this.label3.TabIndex = 32;
@@ -330,25 +334,32 @@ namespace Mökkivaraus
             // 
             // dtp_Palvelu_Alku
             // 
-            this.dtp_Palvelu_Alku.Location = new System.Drawing.Point(578, 357);
+            this.dtp_Palvelu_Alku.CustomFormat = "yyyy-MM-dd";
+            this.dtp_Palvelu_Alku.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_Palvelu_Alku.Location = new System.Drawing.Point(592, 357);
             this.dtp_Palvelu_Alku.Name = "dtp_Palvelu_Alku";
-            this.dtp_Palvelu_Alku.Size = new System.Drawing.Size(210, 20);
+            this.dtp_Palvelu_Alku.Size = new System.Drawing.Size(127, 20);
             this.dtp_Palvelu_Alku.TabIndex = 31;
             this.dtp_Palvelu_Alku.ValueChanged += new System.EventHandler(this.dtp_Palvelu_Alku_ValueChanged);
             // 
             // dtp_Palvelu_Loppu
             // 
-            this.dtp_Palvelu_Loppu.Location = new System.Drawing.Point(825, 357);
+            this.dtp_Palvelu_Loppu.Checked = false;
+            this.dtp_Palvelu_Loppu.CustomFormat = "yyyy-MM-dd";
+            this.dtp_Palvelu_Loppu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_Palvelu_Loppu.Location = new System.Drawing.Point(767, 357);
             this.dtp_Palvelu_Loppu.Name = "dtp_Palvelu_Loppu";
-            this.dtp_Palvelu_Loppu.Size = new System.Drawing.Size(210, 20);
+            this.dtp_Palvelu_Loppu.Size = new System.Drawing.Size(127, 20);
             this.dtp_Palvelu_Loppu.TabIndex = 33;
             this.dtp_Palvelu_Loppu.ValueChanged += new System.EventHandler(this.dtp_Palvelu_Loppu_ValueChanged);
             // 
             // dtp_Varaus_Loppu
             // 
-            this.dtp_Varaus_Loppu.Location = new System.Drawing.Point(808, 88);
+            this.dtp_Varaus_Loppu.CustomFormat = "yyyy-MM-dd";
+            this.dtp_Varaus_Loppu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_Varaus_Loppu.Location = new System.Drawing.Point(767, 89);
             this.dtp_Varaus_Loppu.Name = "dtp_Varaus_Loppu";
-            this.dtp_Varaus_Loppu.Size = new System.Drawing.Size(210, 20);
+            this.dtp_Varaus_Loppu.Size = new System.Drawing.Size(127, 20);
             this.dtp_Varaus_Loppu.TabIndex = 34;
             this.dtp_Varaus_Loppu.ValueChanged += new System.EventHandler(this.dtp_Varaus_Loppu_ValueChanged);
             // 
@@ -364,7 +375,7 @@ namespace Mökkivaraus
             // Alkupvm2
             // 
             this.Alkupvm2.AutoSize = true;
-            this.Alkupvm2.Location = new System.Drawing.Point(575, 341);
+            this.Alkupvm2.Location = new System.Drawing.Point(589, 341);
             this.Alkupvm2.Name = "Alkupvm2";
             this.Alkupvm2.Size = new System.Drawing.Size(54, 13);
             this.Alkupvm2.TabIndex = 36;
@@ -373,7 +384,7 @@ namespace Mökkivaraus
             // Loppupvm1
             // 
             this.Loppupvm1.AutoSize = true;
-            this.Loppupvm1.Location = new System.Drawing.Point(805, 72);
+            this.Loppupvm1.Location = new System.Drawing.Point(764, 72);
             this.Loppupvm1.Name = "Loppupvm1";
             this.Loppupvm1.Size = new System.Drawing.Size(63, 13);
             this.Loppupvm1.TabIndex = 37;
@@ -382,7 +393,7 @@ namespace Mökkivaraus
             // tbLoppupvm2
             // 
             this.tbLoppupvm2.AutoSize = true;
-            this.tbLoppupvm2.Location = new System.Drawing.Point(822, 341);
+            this.tbLoppupvm2.Location = new System.Drawing.Point(764, 341);
             this.tbLoppupvm2.Name = "tbLoppupvm2";
             this.tbLoppupvm2.Size = new System.Drawing.Size(63, 13);
             this.tbLoppupvm2.TabIndex = 38;
@@ -408,11 +419,33 @@ namespace Mökkivaraus
             this.btnValitseKaikkiPalvelut.UseVisualStyleBackColor = true;
             this.btnValitseKaikkiPalvelut.Click += new System.EventHandler(this.btnValitseKaikkiPalvelut_Click);
             // 
+            // btValitseTAHaika
+            // 
+            this.btValitseTAHaika.Location = new System.Drawing.Point(926, 87);
+            this.btValitseTAHaika.Name = "btValitseTAHaika";
+            this.btValitseTAHaika.Size = new System.Drawing.Size(104, 23);
+            this.btValitseTAHaika.TabIndex = 41;
+            this.btValitseTAHaika.Text = "Valitse aika";
+            this.btValitseTAHaika.UseVisualStyleBackColor = true;
+            this.btValitseTAHaika.Click += new System.EventHandler(this.btValitseTAHaika_Click);
+            // 
+            // btvValitsePalveluAika
+            // 
+            this.btvValitsePalveluAika.Location = new System.Drawing.Point(926, 356);
+            this.btvValitsePalveluAika.Name = "btvValitsePalveluAika";
+            this.btvValitsePalveluAika.Size = new System.Drawing.Size(104, 23);
+            this.btvValitsePalveluAika.TabIndex = 42;
+            this.btvValitsePalveluAika.Text = "Valitse aika";
+            this.btvValitsePalveluAika.UseVisualStyleBackColor = true;
+            this.btvValitsePalveluAika.Click += new System.EventHandler(this.btvValitsePalveluAika_Click);
+            // 
             // Raportointi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1109, 594);
+            this.ClientSize = new System.Drawing.Size(1133, 594);
+            this.Controls.Add(this.btvValitsePalveluAika);
+            this.Controls.Add(this.btValitseTAHaika);
             this.Controls.Add(this.btnValitseKaikkiPalvelut);
             this.Controls.Add(this.btValitseKaikkiTAH);
             this.Controls.Add(this.tbLoppupvm2);
@@ -485,5 +518,7 @@ namespace Mökkivaraus
         private System.Windows.Forms.Button btValitseKaikkiTAH;
         private System.Windows.Forms.Button btnValitseKaikkiPalvelut;
         private System.Windows.Forms.Button laskutusbtn;
+        private System.Windows.Forms.Button btValitseTAHaika;
+        private System.Windows.Forms.Button btvValitsePalveluAika;
     }
 }

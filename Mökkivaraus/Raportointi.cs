@@ -99,23 +99,23 @@ namespace Mökkivaraus
         }
 
         // Taulukon päivitys-osio
-        public void populateDGV_Varaukset(string yhtasuuruusJAluku)
+        public void populateDGV_Varaukset(string yhtasuuruusJAluku, string toimintaAikajakso)
         {
             string queryVaraus = "SELECT mokki.mokkinimi, mokki.katuosoite, varaus.varattu_pvm, " +
                 "varaus.vahvistus_pvm, varaus.varattu_alkupvm, varaus.varattu_loppupvm, varaus.varaus_id " +
                 "FROM mokki, alue, varaus " +
                 "WHERE mokki.alue_id = alue.alue_id AND mokki.mokki_id = varaus.mokki_mokki_id AND alue.alue_id" ; // yhtäsuuruus-merkki poistettu
-            
+
             // Uusi yhtasuuruusJAluku muuttuja sisältää yhtäsuuruusmerkin ja luvun
-            
-            string query = queryVaraus + yhtasuuruusJAluku;
+
+            string query = queryVaraus + yhtasuuruusJAluku + toimintaAikajakso;
             DataTable table3 = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
             adapter.Fill(table3);
             dgvVaraus.DataSource = table3;
         }
 
-        public void populateDGV_Palvelut(string yhtasuuruusJAluku2)
+        public void populateDGV_Palvelut(string yhtasuuruusJAluku2, string palveluAikajakso)
         {
             string queryPalvelu = "SELECT palvelu.nimi, palvelu.tyyppi, varaus.varattu_pvm, varaus.vahvistus_pvm," +
                 " varaus.varattu_alkupvm, varaus.varattu_loppupvm " +
@@ -124,7 +124,7 @@ namespace Mökkivaraus
 
             // Uusi yhtasuuruusJAluku2 muuttuja sisältää yhtäsuuruusmerkin ja luvun
 
-            string query2 = queryPalvelu + yhtasuuruusJAluku2;
+            string query2 = queryPalvelu + yhtasuuruusJAluku2 + palveluAikajakso;
             DataTable table2 = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query2, connection);
             adapter.Fill(table2);
@@ -183,7 +183,7 @@ namespace Mökkivaraus
             object alue_id = cb_toimintaAlueLista.SelectedValue;
             string luku = "=" + Convert.ToString(alue_id);
 
-            populateDGV_Varaukset(luku);
+            populateDGV_Varaukset(luku, "--");
             
         }
 
@@ -194,7 +194,7 @@ namespace Mökkivaraus
             // indeksin haku
             object palvelu_id = cbPalveluLista.SelectedValue;
             string luku2 = "=" + Convert.ToString(palvelu_id);
-            populateDGV_Palvelut(luku2);
+            populateDGV_Palvelut(luku2,  "--");
         }
 
         private void dtp_Palvelu_Alku_ValueChanged(object sender, EventArgs e)
@@ -217,13 +217,14 @@ namespace Mökkivaraus
         private void btValitseKaikkiTAH_Click(object sender, EventArgs e)
         {
             // valistee kaikki id:t mitkä ovat suurempaa kuin -1, eli kaiken tiedon
-            populateDGV_Varaukset(" > -1");
+            
+            populateDGV_Varaukset(" > -1", "--");
         }
 
         private void btnValitseKaikkiPalvelut_Click(object sender, EventArgs e)
         {
             // valistee kaikki id:t mitkä ovat suurempaa kuin -1, eli kaiken tiedon
-            populateDGV_Palvelut(" > -1");
+            populateDGV_Palvelut(" > -1", "--");
         }
 
         private void laskutusbtn_Click(object sender, EventArgs e)
@@ -231,6 +232,22 @@ namespace Mökkivaraus
             Laskutus laskutus = new Laskutus();
             this.Hide();
             laskutus.Show();
+        }
+
+        private void btValitseTAHaika_Click(object sender, EventArgs e)
+
+        {
+            string toimintaAikajakso = " AND varaus.varattu_loppupvm BETWEEN  ' " + dtp_Varaus_Alku.Text + " ' AND ' " + dtp_Varaus_Loppu.Text + " ' " +
+                "AND varaus.varattu_alkupvm BETWEEN  ' " + dtp_Varaus_Alku.Text + " ' AND ' " + dtp_Varaus_Loppu.Text + " ' ";
+
+            populateDGV_Varaukset(" > -1", toimintaAikajakso);
+        }
+
+        private void btvValitsePalveluAika_Click(object sender, EventArgs e)
+        {
+            string palveluAikajakso = " AND varaus.varattu_loppupvm BETWEEN  ' " + dtp_Palvelu_Alku.Text + " ' AND ' " + dtp_Palvelu_Loppu.Text + " ' " +
+                "AND varaus.varattu_alkupvm BETWEEN  ' " + dtp_Palvelu_Alku.Text + " ' AND ' " + dtp_Palvelu_Loppu.Text + " ' ";
+            populateDGV_Palvelut(" > -1", palveluAikajakso);
         }
     }
 }
