@@ -87,7 +87,6 @@ namespace Mökkivaraus
             this.lbToimintaA.Size = new System.Drawing.Size(152, 20);
             this.lbToimintaA.TabIndex = 3;
             this.lbToimintaA.Text = "Valitse toiminta-alue";
-            this.lbToimintaA.Click += new System.EventHandler(this.lbToimintaA_Click);
             // 
             // vnDataSet
             // 
@@ -124,7 +123,6 @@ namespace Mökkivaraus
             this.lbMokit.Size = new System.Drawing.Size(51, 20);
             this.lbMokit.TabIndex = 6;
             this.lbMokit.Text = "Mökit:";
-            this.lbMokit.Click += new System.EventHandler(this.label2_Click);
             // 
             // gridMokkiTaulukko
             // 
@@ -359,7 +357,6 @@ namespace Mökkivaraus
             this.dgvAlueet.Name = "dgvAlueet";
             this.dgvAlueet.Size = new System.Drawing.Size(258, 253);
             this.dgvAlueet.TabIndex = 24;
-            this.dgvAlueet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlueetCellContentClick);
             this.dgvAlueet.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvAlueet_MouseClick);
             // 
             // alueidDataGridViewTextBoxColumn
@@ -438,7 +435,6 @@ namespace Mökkivaraus
             this.lbAlueet.Size = new System.Drawing.Size(122, 20);
             this.lbAlueet.TabIndex = 26;
             this.lbAlueet.Text = "Toiminta-alueet:";
-            this.lbAlueet.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // tb_id
             // 
@@ -449,7 +445,6 @@ namespace Mökkivaraus
             this.tb_id.ReadOnly = true;
             this.tb_id.Size = new System.Drawing.Size(125, 20);
             this.tb_id.TabIndex = 25;
-            this.tb_id.TextChanged += new System.EventHandler(this.tb_id_TextChanged);
             // 
             // lbMuokkaaAlueita
             // 
@@ -460,7 +455,6 @@ namespace Mökkivaraus
             this.lbMuokkaaAlueita.Size = new System.Drawing.Size(239, 24);
             this.lbMuokkaaAlueita.TabIndex = 0;
             this.lbMuokkaaAlueita.Text = "Muokkaa toiminta-alueita";
-            this.lbMuokkaaAlueita.Click += new System.EventHandler(this.label1_Click);
             // 
             // ToimintaAlueHallinta
             // 
