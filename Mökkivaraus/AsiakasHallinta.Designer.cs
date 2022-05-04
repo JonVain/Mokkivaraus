@@ -62,7 +62,7 @@ namespace Mökkivaraus
             this.button6 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLaskutus = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnRaportti = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -318,7 +318,7 @@ namespace Mökkivaraus
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.btnLaskutus);
-            this.panel2.Controls.Add(this.button7);
+            this.panel2.Controls.Add(this.btnRaportti);
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
@@ -347,21 +347,22 @@ namespace Mökkivaraus
             this.btnLaskutus.UseVisualStyleBackColor = false;
             this.btnLaskutus.Click += new System.EventHandler(this.btnLaskutus_Click);
             // 
-            // button7
+            // btnRaportti
             // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(3, 334);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(260, 60);
-            this.button7.TabIndex = 28;
-            this.button7.Text = "Raporttien Hallinta";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnRaportti.BackColor = System.Drawing.Color.Transparent;
+            this.btnRaportti.FlatAppearance.BorderSize = 0;
+            this.btnRaportti.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRaportti.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRaportti.Image = ((System.Drawing.Image)(resources.GetObject("btnRaportti.Image")));
+            this.btnRaportti.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRaportti.Location = new System.Drawing.Point(3, 334);
+            this.btnRaportti.Name = "btnRaportti";
+            this.btnRaportti.Size = new System.Drawing.Size(260, 60);
+            this.btnRaportti.TabIndex = 28;
+            this.btnRaportti.Text = "Raporttien Hallinta";
+            this.btnRaportti.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRaportti.UseVisualStyleBackColor = false;
+            this.btnRaportti.Click += new System.EventHandler(this.btnRaportti_Click);
             // 
             // button5
             // 
@@ -553,7 +554,7 @@ namespace Mökkivaraus
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnRaportti;
         private System.Windows.Forms.Button btnLaskutus;
     }
 }

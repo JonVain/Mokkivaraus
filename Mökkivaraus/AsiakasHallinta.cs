@@ -120,5 +120,12 @@ namespace Mökkivaraus
             this.Hide();
             laskutus.Show();
         }
+
+        private void btnRaportti_Click(object sender, EventArgs e)
+        {
+            Raportointi rap = new Raportointi();
+            rap.Show();
+            this.Hide();
+        }
     }
 }
