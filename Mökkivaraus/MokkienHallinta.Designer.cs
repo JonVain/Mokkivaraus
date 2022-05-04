@@ -237,7 +237,6 @@ namespace Mökkivaraus
             this.Alue.Size = new System.Drawing.Size(28, 13);
             this.Alue.TabIndex = 12;
             this.Alue.Text = "Alue";
-            this.Alue.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 

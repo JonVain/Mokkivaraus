@@ -19,9 +19,9 @@ namespace Mökkivaraus
 
         private void tsmToimintaAlueet_Click(object sender, EventArgs e)
         {
-            ToimintaAlueHallinta tah = new ToimintaAlueHallinta();
-            tah.Show();
-            this.Hide();
+            ToimintaAlueHallinta tah = new ToimintaAlueHallinta(); // nämä kolme koodiriviä piilottaa
+            tah.Show();                                            // nykyisen ikkunan ja tuo klikatun ikkunan esille
+            this.Hide();                                           // samaa koodia käytetään kaikissa siirtymisnapeissa
         }
 
         private void tsmEtusivu_Click(object sender, EventArgs e)
@@ -47,7 +47,7 @@ namespace Mökkivaraus
 
         private void PalveluidenHallinta_FormClosed(object sender, FormClosedEventArgs e)
         {
-            System.Environment.Exit(1);
+            System.Environment.Exit(1); // tämä varmistaa sen että ohjelma sulkeutuu jos ikkuna suljetaan
         }
 
         private void PalveluidenHallinta_Load(object sender, EventArgs e)
@@ -60,18 +60,18 @@ namespace Mökkivaraus
         private void Btn_plvlisaa_Click(object sender, EventArgs e)
         {
             LisaaPalvelu lp = new LisaaPalvelu();
-            lp.Show();
+            lp.Show(); // tuodaan palvelun lisäys ikkuna näkyville
         }
 
         private void btn_paivita_Click(object sender, EventArgs e)
         {
             this.palveluTableAdapter.Fill(this.vnDataSet.palvelu);
-            dgvPalvelut.Refresh();
+            dgvPalvelut.Refresh(); // päivitetään palvelut lista
         }
         private void LisaaPalvelu_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.palveluTableAdapter.Fill(this.vnDataSet.palvelu);
-            dgvPalvelut.Refresh();
+            dgvPalvelut.Refresh(); // päivitetään palvelut lista
         }
 
         private void Btn_plvpoista_Click(object sender, EventArgs e)
@@ -81,13 +81,13 @@ namespace Mökkivaraus
             palveluTableAdapter.Update(this.vnDataSet);
             palveluTableAdapter.Delete(int.Parse(tbpalvelu_id.Text), int.Parse(tbalue_id.Text), tbnimi.Text, int.Parse(tbtyyppi.Text), tbkuvaus.Text, double.Parse(tbhinta.Text), double.Parse(tbalvi.Text));
             this.palveluTableAdapter.Fill(this.vnDataSet.palvelu);
-            dgvPalvelut.Refresh();
+            dgvPalvelut.Refresh(); // poistetaan valittu palvelu ja päivitetään lista
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             palveluBindingSource.EndEdit();
-            palveluTableAdapter.Update(this.vnDataSet.palvelu);
+            palveluTableAdapter.Update(this.vnDataSet.palvelu); // päivitetään valittua uusilla tiedoilla
         }
 
         private void btnRaportit_Click(object sender, EventArgs e)

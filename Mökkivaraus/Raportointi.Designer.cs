@@ -277,7 +277,6 @@ namespace Mökkivaraus
             this.label1.Size = new System.Drawing.Size(131, 20);
             this.label1.TabIndex = 27;
             this.label1.Text = "Valitse aikajakso:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dgvPalvelu
             // 

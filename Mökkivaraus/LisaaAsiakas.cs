@@ -15,14 +15,13 @@ namespace Mökkivaraus
         public LisaaAsiakas()
         {
             InitializeComponent();
-            tbPostinumero.MaxLength = 5;
+            tbPostinumero.MaxLength = 5; // postinumerolle limitoitu pituus
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
-            AsiakasHallinta ah = new AsiakasHallinta();
-            ah.Show();
-            this.Dispose();
+            AsiakasHallinta ah = new AsiakasHallinta(); // nämä kolme koodiriviä piilottaa
+            ah.Show();                                  // nykyisen ikkunan ja tuo klikatun ikkunan esille
+            this.Dispose();                             // samaa koodia käytetään kaikissa siirtymisnapeissa
         }
 
         private void btnLisaa_Click(object sender, EventArgs e)
@@ -34,6 +33,7 @@ namespace Mökkivaraus
             this.Close();
             AsiakasHallinta ah = new AsiakasHallinta();
             ah.Show();
+            // tällä lisätään tietokantaan ja datagrid listaan asiakas tietoineen.
         }
 
         private void btnTyhjenna_Click(object sender, EventArgs e)
@@ -44,6 +44,7 @@ namespace Mökkivaraus
             tbOsoite.Text = "";
             tbEmail.Text = "";
             tbPuhnro.Text = "";
+            // napilla voidaan nopeasti tyhjentää kaikki laatikot tiedoistaan
         }
 
         private void LisaaAsiakas_Load(object sender, EventArgs e)
@@ -56,7 +57,7 @@ namespace Mökkivaraus
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
-                e.Handled = true;
+                e.Handled = true; // varmistetaan että postinumerolle ei annetaa väärää inputtia
             }
         }
 
@@ -64,7 +65,7 @@ namespace Mökkivaraus
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
-                e.Handled = true;
+                e.Handled = true; // varmistetaan että puhelinnumerolle ei anneta väärää inputtia
             }
         }
     }

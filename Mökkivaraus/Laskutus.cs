@@ -31,7 +31,7 @@ namespace Mökkivaraus
         private void etsiasiakasBtn_Click(object sender, EventArgs e)
         {
             EtsiAsiakas etsias = new EtsiAsiakas(this);
-            etsias.Show();
+            etsias.Show(); // tuo esille asiakkaan valinnan
         }        
 
         private void button5_Click(object sender, EventArgs e) // etusivu nappi
@@ -76,10 +76,6 @@ namespace Mökkivaraus
             raportointi.Show();
         }
 
-        private void laskutusbtn_Click(object sender, EventArgs e)
-        {
-
-        }
         public void EtsiLaskut(int asiakasid) // valitaan rivi ja tuodaan gridviewiin.
         {            
             string queryLaskut = "SELECT lasku.lasku_id, lasku.varaus_id, lasku.summa, lasku.alv " +
@@ -98,7 +94,7 @@ namespace Mökkivaraus
 
         private void Laskutus_FormClosed(object sender, FormClosedEventArgs e)
         {
-            System.Environment.Exit(1);
+            System.Environment.Exit(1); // tämä varmistaa sen että ohjelma sulkeutuu jos ikkuna suljetaan
         }
     }
 }

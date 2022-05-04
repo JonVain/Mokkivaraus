@@ -61,7 +61,7 @@ namespace Mökkivaraus
             this.panel1 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnLaskutus = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -317,7 +317,7 @@ namespace Mökkivaraus
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.button8);
+            this.panel2.Controls.Add(this.btnLaskutus);
             this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button4);
@@ -330,22 +330,22 @@ namespace Mökkivaraus
             this.panel2.Size = new System.Drawing.Size(266, 739);
             this.panel2.TabIndex = 33;
             // 
-            // button8
+            // btnLaskutus
             // 
-            this.button8.BackColor = System.Drawing.Color.Transparent;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(3, 400);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(260, 60);
-            this.button8.TabIndex = 35;
-            this.button8.Text = "Laskutus";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.btnLaskutus.BackColor = System.Drawing.Color.Transparent;
+            this.btnLaskutus.FlatAppearance.BorderSize = 0;
+            this.btnLaskutus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLaskutus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLaskutus.Image = ((System.Drawing.Image)(resources.GetObject("btnLaskutus.Image")));
+            this.btnLaskutus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLaskutus.Location = new System.Drawing.Point(3, 400);
+            this.btnLaskutus.Name = "btnLaskutus";
+            this.btnLaskutus.Size = new System.Drawing.Size(260, 60);
+            this.btnLaskutus.TabIndex = 35;
+            this.btnLaskutus.Text = "Laskutus";
+            this.btnLaskutus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLaskutus.UseVisualStyleBackColor = false;
+            this.btnLaskutus.Click += new System.EventHandler(this.btnLaskutus_Click);
             // 
             // button7
             // 
@@ -429,7 +429,6 @@ namespace Mökkivaraus
             this.button2.Text = "Asiakashallinta";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -555,6 +554,6 @@ namespace Mökkivaraus
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnLaskutus;
     }
 }

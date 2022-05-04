@@ -17,8 +17,6 @@ namespace Mökkivaraus
             InitializeComponent();
         }
 
-        
-
         private void btn_lisaapalvelu_Click(object sender, EventArgs e)
         {
             Validate();
@@ -29,19 +27,10 @@ namespace Mökkivaraus
         }
         //(long.Parse()tbpalvelu_id.Text, tbalue_id.Text, tbnimi.Text, tbtyyppi.Text, tbkuvaus.Text, tbhinta.Text, tbalv.Text);
         //int.Parse(tbhinta.Text)
-        private void tbpalvelu_id_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_keskeyta_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Dispose(); // sulkee nykyisen ikkunan
         }
 
         private void btn_tyhjenna_Click(object sender, EventArgs e)
@@ -53,8 +42,8 @@ namespace Mökkivaraus
             tbkuvaus.Text = "";
             tbhinta.Text = "";
             tbalv.Text = "";
+            // puhdistaa tekstilaatikot teksteistään
         }
-
 
         private void LisaaPalvelu_Load(object sender, EventArgs e)
         {

@@ -19,9 +19,9 @@ namespace Mökkivaraus
 
         private void tsmEtusivu_Click(object sender, EventArgs e)
         {
-            Etusivu es = new Etusivu();
-            es.Show();
-            this.Hide();
+            Etusivu es = new Etusivu(); // nämä kolme koodiriviä piilottaa
+            es.Show();                  // nykyisen ikkunan ja tuo klikatun ikkunan esille
+            this.Hide();                // samaa koodia käytetään kaikissa siirtymisnapeissa
         }
 
         private void tsmToiminta_Click(object sender, EventArgs e)
@@ -60,11 +60,6 @@ namespace Mökkivaraus
             mokkiTableAdapter.Insert(long.Parse(tbAlue.Text), tbPostinro.Text, tbMokki.Text, tbKatuosoite.Text, double.Parse(tbHinta.Text), tbKuvaus.Text, int.Parse(tbHlomaara.Text), tbVarustelu.Text);
             this.mokkiTableAdapter.Fill(this.vnDataSet.mokki);
             dataGridView1.Refresh();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void MokkienHallinta_FormClosed(object sender, FormClosedEventArgs e)

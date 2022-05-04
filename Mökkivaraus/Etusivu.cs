@@ -30,9 +30,9 @@ namespace Mökkivaraus
 
         private void tsmToimintaAlueet_Click(object sender, EventArgs e)
         {
-            ToimintaAlueHallinta tah = new ToimintaAlueHallinta();
-            tah.Show();
-            this.Hide();
+            ToimintaAlueHallinta tah = new ToimintaAlueHallinta(); // nämä kolme koodiriviä piilottaa
+            tah.Show();                                            // nykyisen ikkunan ja tuo klikatun ikkunan esille
+            this.Hide();                                           // samaa koodia käytetään kaikissa siirtymisnapeissa
         }
 
         private void tsmPalvelut_Click(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace Mökkivaraus
 
         private void Etusivu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            System.Environment.Exit(1);
+            System.Environment.Exit(1); // tämä varmistaa sen että ohjelma sulkeutuu jos ikkuna suljetaan
         }
 
         private void laskutusbtn_Click(object sender, EventArgs e)

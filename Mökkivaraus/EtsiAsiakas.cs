@@ -30,9 +30,9 @@ namespace Mökkivaraus
 
         private void okBTN_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            laskutus.Show();
-            laskutus.EtsiLaskut(int.Parse(asiakasID.Text));
+            this.Hide(); // piilotetaan nykyinen ikkuna
+            laskutus.Show(); // laskutus ikkuna tuodaan takaisin näkyville
+            laskutus.EtsiLaskut(int.Parse(asiakasID.Text)); // etsitään asiakkaan laskut tietokannasta 
         }
     }
 }

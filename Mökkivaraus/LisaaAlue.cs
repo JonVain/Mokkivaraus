@@ -20,8 +20,8 @@ namespace Mökkivaraus
         private void btnClose_Click(object sender, EventArgs e)
         {
             ToimintaAlueHallinta tah = new ToimintaAlueHallinta();
-            tah.Show();
-            this.Dispose();
+            tah.Show(); // tuodaan toiminta alue hallinta ikkuna takaisin esille
+            this.Dispose(); // piilotetaan ja lopetetaan nykyisen ikkunan toiminta
         }
 
         private void btnLisaa_Click(object sender, EventArgs e)
@@ -33,17 +33,12 @@ namespace Mökkivaraus
             this.Close();
             ToimintaAlueHallinta tah = new ToimintaAlueHallinta();
             tah.Show();
+            // tällä napilla lisätään tietokantaan uusi toiminta-alue
         }
 
         private void btnTyhjenna_Click(object sender, EventArgs e)
         {
-            tbUusiAlue.Text = "";
-           
-        }
-
-        private void btnPaivita_Click(object sender, EventArgs e)
-        {
-
+            tbUusiAlue.Text = ""; // tyhjentää tekstin laatikosta
         }
 
         private void LisaaAsiakas_Load(object sender, EventArgs e)
@@ -52,37 +47,12 @@ namespace Mökkivaraus
             this.alueTableAdapter.Fill(this.vnDataSet.alue);
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void asiakasBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void tbUusiAlue_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
             {
-                e.Handled = true;
+                e.Handled = true; // tällä varmistetaan että ei anneta väärää inputtia uudelle alueelle
             }
-        }
-
-        private void tbUusiAlue_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

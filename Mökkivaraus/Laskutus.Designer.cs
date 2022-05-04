@@ -161,7 +161,6 @@ namespace Mökkivaraus
             this.laskutusbtn.Text = "Laskutus";
             this.laskutusbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.laskutusbtn.UseVisualStyleBackColor = false;
-            this.laskutusbtn.Click += new System.EventHandler(this.laskutusbtn_Click);
             // 
             // btnRaportit
             // 

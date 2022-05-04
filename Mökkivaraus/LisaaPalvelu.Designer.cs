@@ -57,7 +57,7 @@ namespace Mökkivaraus
             // 
             // btn_lisaapalvelu
             // 
-            this.btn_lisaapalvelu.Location = new System.Drawing.Point(289, 271);
+            this.btn_lisaapalvelu.Location = new System.Drawing.Point(163, 251);
             this.btn_lisaapalvelu.Name = "btn_lisaapalvelu";
             this.btn_lisaapalvelu.Size = new System.Drawing.Size(75, 23);
             this.btn_lisaapalvelu.TabIndex = 1;
@@ -71,7 +71,6 @@ namespace Mökkivaraus
             this.tbpalvelu_id.Name = "tbpalvelu_id";
             this.tbpalvelu_id.Size = new System.Drawing.Size(100, 20);
             this.tbpalvelu_id.TabIndex = 2;
-            this.tbpalvelu_id.TextChanged += new System.EventHandler(this.tbpalvelu_id_TextChanged);
             // 
             // tbalue_id
             // 
@@ -96,21 +95,21 @@ namespace Mökkivaraus
             // 
             // tbkuvaus
             // 
-            this.tbkuvaus.Location = new System.Drawing.Point(460, 73);
+            this.tbkuvaus.Location = new System.Drawing.Point(347, 73);
             this.tbkuvaus.Name = "tbkuvaus";
             this.tbkuvaus.Size = new System.Drawing.Size(100, 20);
             this.tbkuvaus.TabIndex = 6;
             // 
             // tbhinta
             // 
-            this.tbhinta.Location = new System.Drawing.Point(460, 118);
+            this.tbhinta.Location = new System.Drawing.Point(347, 118);
             this.tbhinta.Name = "tbhinta";
             this.tbhinta.Size = new System.Drawing.Size(100, 20);
             this.tbhinta.TabIndex = 7;
             // 
             // tbalv
             // 
-            this.tbalv.Location = new System.Drawing.Point(460, 162);
+            this.tbalv.Location = new System.Drawing.Point(347, 162);
             this.tbalv.Name = "tbalv";
             this.tbalv.Size = new System.Drawing.Size(100, 20);
             this.tbalv.TabIndex = 8;
@@ -118,12 +117,11 @@ namespace Mökkivaraus
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(228, 21);
+            this.label1.Location = new System.Drawing.Point(76, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 13);
             this.label1.TabIndex = 9;
             this.label1.Text = "Palvelu tietojen lisäys";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -164,7 +162,7 @@ namespace Mökkivaraus
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(367, 76);
+            this.label6.Location = new System.Drawing.Point(254, 76);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 14;
@@ -173,7 +171,7 @@ namespace Mökkivaraus
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(367, 125);
+            this.label7.Location = new System.Drawing.Point(254, 125);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 15;
@@ -182,7 +180,7 @@ namespace Mökkivaraus
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(367, 165);
+            this.label8.Location = new System.Drawing.Point(254, 165);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 13);
             this.label8.TabIndex = 16;
@@ -190,7 +188,7 @@ namespace Mökkivaraus
             // 
             // btn_tyhjenna
             // 
-            this.btn_tyhjenna.Location = new System.Drawing.Point(440, 271);
+            this.btn_tyhjenna.Location = new System.Drawing.Point(314, 251);
             this.btn_tyhjenna.Name = "btn_tyhjenna";
             this.btn_tyhjenna.Size = new System.Drawing.Size(75, 23);
             this.btn_tyhjenna.TabIndex = 17;
@@ -200,7 +198,7 @@ namespace Mökkivaraus
             // 
             // btn_keskeyta
             // 
-            this.btn_keskeyta.Location = new System.Drawing.Point(633, 36);
+            this.btn_keskeyta.Location = new System.Drawing.Point(437, 11);
             this.btn_keskeyta.Name = "btn_keskeyta";
             this.btn_keskeyta.Size = new System.Drawing.Size(75, 23);
             this.btn_keskeyta.TabIndex = 18;
@@ -226,7 +224,7 @@ namespace Mökkivaraus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(524, 330);
             this.Controls.Add(this.btn_keskeyta);
             this.Controls.Add(this.btn_tyhjenna);
             this.Controls.Add(this.label8);

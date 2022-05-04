@@ -61,7 +61,6 @@ namespace Mökkivaraus
             this.lb_otsikko.Size = new System.Drawing.Size(239, 21);
             this.lb_otsikko.TabIndex = 1;
             this.lb_otsikko.Text = "LISÄÄ UUSI TOIMINTA-ALUE";
-            this.lb_otsikko.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbUusiAlue
             // 
@@ -72,7 +71,6 @@ namespace Mökkivaraus
             this.lbUusiAlue.Size = new System.Drawing.Size(160, 19);
             this.lbUusiAlue.TabIndex = 2;
             this.lbUusiAlue.Text = "Toiminta-Alueen nimi";
-            this.lbUusiAlue.Click += new System.EventHandler(this.label2_Click);
             // 
             // tbUusiAlue
             // 
@@ -80,7 +78,6 @@ namespace Mökkivaraus
             this.tbUusiAlue.Name = "tbUusiAlue";
             this.tbUusiAlue.Size = new System.Drawing.Size(240, 22);
             this.tbUusiAlue.TabIndex = 2;
-            this.tbUusiAlue.TextChanged += new System.EventHandler(this.tbUusiAlue_TextChanged);
             this.tbUusiAlue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbUusiAlue_KeyPress);
             // 
             // btnTyhjenna

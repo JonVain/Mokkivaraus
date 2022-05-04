@@ -24,9 +24,9 @@ namespace Mökkivaraus
 
         private void btnEtusivu_Click(object sender, EventArgs e)
         {
-            Etusivu es = new Etusivu();
-            es.Show();
-            this.Hide();
+            Etusivu es = new Etusivu(); // nämä kolme koodiriviä piilottaa
+            es.Show();                  // nykyisen ikkunan ja tuo klikatun ikkunan esille
+            this.Hide();                // samaa koodia käytetään kaikissa siirtymisnapeissa
         }
 
         private void tsmToimintaAlueet_Click(object sender, EventArgs e)
@@ -66,19 +66,19 @@ namespace Mökkivaraus
 
         private void Raportointi_FormClosed(object sender, FormClosedEventArgs e)
         {
-            System.Environment.Exit(1);
+            System.Environment.Exit(1); // tämä varmistaa sen että ohjelma sulkeutuu jos ikkuna suljetaan
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            dtp_Varaus_Loppu.MinDate = dtp_Varaus_Alku.Value;
-            dtp_Varaus_Alku.MaxDate = dtp_Varaus_Loppu.Value;
+            dtp_Varaus_Loppu.MinDate = dtp_Varaus_Alku.Value; // limitoidaan väärän inputin anto 
+            dtp_Varaus_Alku.MaxDate = dtp_Varaus_Loppu.Value; // että se ei ole mahdollista
         }
         private void dtp_Varaus_Loppu_ValueChanged(object sender, EventArgs e)
         {
 
-            dtp_Varaus_Loppu.MinDate = dtp_Varaus_Alku.Value;
-            dtp_Varaus_Alku.MaxDate = dtp_Varaus_Loppu.Value;
+            dtp_Varaus_Loppu.MinDate = dtp_Varaus_Alku.Value; // limitoidaan väärän inputin anto 
+            dtp_Varaus_Alku.MaxDate = dtp_Varaus_Loppu.Value; // että se ei ole mahdollista
 
         }
 
@@ -90,11 +90,6 @@ namespace Mökkivaraus
             this.palveluTableAdapter.Fill(this.vnDataSet.palvelu);
             // TODO: This line of code loads data into the 'vnDataSet.varaus' table. You can move, or remove it, as needed.
             this.varausTableAdapter.Fill(this.vnDataSet.varaus);
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -113,6 +108,7 @@ namespace Mökkivaraus
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
             adapter.Fill(table3);
             dgvVaraus.DataSource = table3;
+            // tuodaan tietokannan tieto esille listaan säädetyssä muodossa
         }
 
         public void populateDGV_Palvelut(string yhtasuuruusJAluku2, string palveluAikajakso)
@@ -129,6 +125,7 @@ namespace Mökkivaraus
             MySqlDataAdapter adapter = new MySqlDataAdapter(query2, connection);
             adapter.Fill(table2);
             dgvPalvelu.DataSource = table2;
+            // tuodaan tietokannan tieto esille listaan säädetyssä muodossa
         }
 
 
@@ -187,8 +184,6 @@ namespace Mökkivaraus
             
         }
 
-        
-
         private void PalvelunValinta(object sender, EventArgs e)
         {
             // indeksin haku
@@ -199,25 +194,19 @@ namespace Mökkivaraus
 
         private void dtp_Palvelu_Alku_ValueChanged(object sender, EventArgs e)
         {
-            dtp_Palvelu_Loppu.MinDate = dtp_Palvelu_Alku.Value;
-            dtp_Palvelu_Alku.MaxDate = dtp_Palvelu_Loppu.Value;
+            dtp_Palvelu_Loppu.MinDate = dtp_Palvelu_Alku.Value; // limitoidaan väärän inputin anto 
+            dtp_Palvelu_Alku.MaxDate = dtp_Palvelu_Loppu.Value; // että se ei ole mahdollista
         }
 
         private void dtp_Palvelu_Loppu_ValueChanged(object sender, EventArgs e)
         {
-            dtp_Palvelu_Loppu.MinDate = dtp_Palvelu_Alku.Value;
-            dtp_Palvelu_Alku.MaxDate = dtp_Palvelu_Loppu.Value;
-        }
-
-        private void TaytaCombobox()
-        {
-
+            dtp_Palvelu_Loppu.MinDate = dtp_Palvelu_Alku.Value; // limitoidaan väärän inputin anto
+            dtp_Palvelu_Alku.MaxDate = dtp_Palvelu_Loppu.Value; // että se ei ole mahdollista
         }
 
         private void btValitseKaikkiTAH_Click(object sender, EventArgs e)
         {
             // valistee kaikki id:t mitkä ovat suurempaa kuin -1, eli kaiken tiedon
-            
             populateDGV_Varaukset(" > -1", "--");
         }
 

@@ -16,7 +16,7 @@ namespace Mökkivaraus
         public AsiakasHallinta()
         {
             InitializeComponent();
-            tbPostnro.MaxLength = 5;
+            tbPostnro.MaxLength = 5; // limitoidaan maksimipituus postinumerolle 5:teen
         }
 
         private void AsiakasHallinta_Load(object sender, EventArgs e)
@@ -29,16 +29,16 @@ namespace Mökkivaraus
 
         private void tsmMokki_Click(object sender, EventArgs e)
         {
-            MokkienHallinta mh = new MokkienHallinta();
-            mh.Show();
-            this.Hide();
+            MokkienHallinta mh = new MokkienHallinta(); // nämä kolme koodiriviä piilottaa
+            mh.Show();                                  // nykyisen ikkunan ja tuo klikatun ikkunan esille
+            this.Hide();                                // samaa koodia käytetään kaikissa siirtymisnapeissa
         }
 
         private void tsmEtusivu_Click(object sender, EventArgs e)
         {
             Etusivu es = new Etusivu();
-            es.Show();
-            this.Hide();
+            es.Show();                  
+            this.Hide();                
         }
 
         private void tsmPalvelut_Click(object sender, EventArgs e)
@@ -64,18 +64,13 @@ namespace Mökkivaraus
 
         private void AsiakasHallinta_FormClosed(object sender, FormClosedEventArgs e)
         {
-            System.Environment.Exit(1);
+            System.Environment.Exit(1); // tämä varmistaa sen että ohjelma sulkeutuu jos ikkuna suljetaan
         }
 
-        private void btnPaivita_Click(object sender, EventArgs e)
-        {
-            this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
-            dgvAsiakkaat.Refresh();
-        }
         private void LisaaAsiakas_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
-            dgvAsiakkaat.Refresh();
+            dgvAsiakkaat.Refresh(); // päivitetään asiakaslista että uudet tiedot tulevat esille
         }
 
         private void btnPoista_Click(object sender, EventArgs e)
@@ -85,20 +80,23 @@ namespace Mökkivaraus
             asiakasTableAdapter.Update(this.vnDataSet);
             asiakasTableAdapter.Delete(long.Parse(tbID.Text), tbPostnro.Text, tbEtunimi.Text, tbSukunimi.Text, tbOsoite.Text, tbEmail.Text, tbPuhnro.Text);
             this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
-            dgvAsiakkaat.Refresh();
+            dgvAsiakkaat.Refresh(); 
+            // tällä koko koodipätkillä poistetaan se nykyinen valittu asiakas
+            // jonka jälkeen päivitetään lista että poistettua asiakasta ei enää näy
         }
 
         private void btnPaivitaAsiakas_Click(object sender, EventArgs e)
         {
             asiakasBindingSource.EndEdit();
-            asiakasTableAdapter.Update(this.vnDataSet.asiakas);
+            asiakasTableAdapter.Update(this.vnDataSet.asiakas); 
+            //Päivitetään valitun henkilön tiedot uusilla syötteillä
         }
 
         private void tbPostnro_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar !='.'))
             {
-                e.Handled = true;
+                e.Handled = true; // ei anneta laittaa muita merkkejä kuin kirjaimia postinumeroon
             }
         }
 
@@ -106,22 +104,17 @@ namespace Mökkivaraus
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
-                e.Handled = true;
+                e.Handled = true; // ei anneta laittaa muita merkkejä kuin kirjaimia postinumeroon
             }
         }
 
         private void AsiakasHallinta_Shown(object sender, EventArgs e)
         {
             this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
-            dgvAsiakkaat.Refresh();
+            dgvAsiakkaat.Refresh(); // päivitetään asiakaslista että uudet tiedot tulevat esille
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button8_Click(object sender, EventArgs e) // laskutus
+        private void btnLaskutus_Click(object sender, EventArgs e)
         {
             Laskutus laskutus = new Laskutus();
             this.Hide();

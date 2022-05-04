@@ -25,9 +25,9 @@ namespace Mökkivaraus
 
         private void tsmEtusivu_Click(object sender, EventArgs e)
         {
-            Etusivu es = new Etusivu();
-            es.Show();
-            this.Hide();
+            Etusivu es = new Etusivu(); // nämä kolme koodiriviä piilottaa
+            es.Show();                  // nykyisen ikkunan ja tuo klikatun ikkunan esille
+            this.Hide();                // samaa koodia käytetään kaikissa siirtymisnapeissa
         }
 
         private void tsmPalvelut_Click(object sender, EventArgs e)
@@ -57,11 +57,6 @@ namespace Mökkivaraus
             this.mokkiTableAdapter.Fill(this.vnDataSet.mokki);
             // TODO: This line of code loads data into the 'vnDataSet.alue' table. You can move, or remove it, as needed.
             this.alueTableAdapter.Fill(this.vnDataSet.alue);
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -134,12 +129,7 @@ namespace Mökkivaraus
 
         private void ToimintaAlueHallinta_FormClosed(object sender, FormClosedEventArgs e)
         {
-            System.Environment.Exit(1);
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
+            System.Environment.Exit(1); // tämä varmistaa sen että ohjelma sulkeutuu jos ikkuna suljetaan
         }
 
         private void btnLisaaAlue_Click(object sender, EventArgs e)
@@ -147,32 +137,20 @@ namespace Mökkivaraus
             LisaaAlue ikkuna_alue = new LisaaAlue();
             ikkuna_alue.FormClosed += new FormClosedEventHandler(LisaaAlue_FormClosed);
             ikkuna_alue.Show();
-            this.Hide();
-            
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void lbToimintaA_Click(object sender, EventArgs e)
-        {
-
+            this.Hide(); 
+            // aukaistaan alueen lisäys ikkuna ja piilotetaan nykyinen
         }
 
         private void tbPaivitaAlueTaulukko_Click(object sender, EventArgs e)
         {
             this.alueTableAdapter.Fill(this.vnDataSet.alue);
-            dgvAlueet.Refresh();
-        
+            dgvAlueet.Refresh(); // päivitetään alueet taulukko
         }
-
 
         private void LisaaAlue_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.alueTableAdapter.Fill(this.vnDataSet.alue);
-            dgvAlueet.Refresh();
+            dgvAlueet.Refresh(); // päivitetään alueet taulukko
         }
 
         private void btnPoistaAlueTaulukosta_Click(object sender, EventArgs e)
@@ -181,32 +159,8 @@ namespace Mökkivaraus
             alueBindingSource.EndEdit();
             alueTableAdapter.Delete(long.Parse(tb_id.Text), tb_nimi.Text);
             this.alueTableAdapter.Fill(this.vnDataSet.alue);
-            dgvAlueet.Refresh();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvAlueetCellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
+            dgvAlueet.Refresh(); 
+            // poistetaan nykyinen valinta taulukosta
         }
 
         private void btPaivitaToimintaAlue_Click(object sender, EventArgs e)
@@ -214,6 +168,7 @@ namespace Mökkivaraus
             Validate();
             alueBindingSource.EndEdit();
             alueTableAdapter.Update(this.vnDataSet);
+            //Päivitetään toiminta alue tiedot annetuilla tiedoilla
         }
 
         private void dgvAlueet_MouseClick(object sender, MouseEventArgs e)
@@ -222,22 +177,12 @@ namespace Mökkivaraus
             //tb_nimi.Text = dgvAlueet.CurrentRow.Cells[1].Value.ToString();
         }
 
-        private void tb_id_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void tb_nimi_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
             {
-                e.Handled = true;
+                e.Handled = true; // ei anneta pistää väärää inputtia
             }  
-        }
-
-        private void btMajoitusRaportointi_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnRaportit_Click(object sender, EventArgs e)
