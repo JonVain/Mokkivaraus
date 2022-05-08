@@ -50,5 +50,72 @@ namespace Mökkivaraus
             // TODO: This line of code loads data into the 'vnDataSet.palvelu' table. You can move, or remove it, as needed.
             this.palveluTableAdapter.Fill(this.vnDataSet.palvelu);
         }
+
+        private void tbhinta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // varmistetaan että hinnalle ei anneta väärää inputtia
+            }
+        }
+
+
+        //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+        //    {
+        //        e.Handled = true; //
+        //    }
+
+        private void LisaaPalvelu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void tbalv_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+            }
+        }
+
+        private void tbalue_id_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+            }
+        }
+
+        private void tbpalvelu_id_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+            }
+        }
+
+        private void tbnimi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+            }
+        }
+
+        private void tbtyyppi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+            }
+        }
+
+        private void tbkuvaus_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+            }
+        }
     }
 }

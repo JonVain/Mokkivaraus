@@ -30,6 +30,7 @@ namespace Mökkivaraus
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LisaaPalvelu));
             this.btn_lisaapalvelu = new System.Windows.Forms.Button();
             this.tbpalvelu_id = new System.Windows.Forms.TextBox();
             this.tbalue_id = new System.Windows.Forms.TextBox();
@@ -57,7 +58,8 @@ namespace Mökkivaraus
             // 
             // btn_lisaapalvelu
             // 
-            this.btn_lisaapalvelu.Location = new System.Drawing.Point(163, 251);
+            this.btn_lisaapalvelu.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_lisaapalvelu.Location = new System.Drawing.Point(280, 313);
             this.btn_lisaapalvelu.Name = "btn_lisaapalvelu";
             this.btn_lisaapalvelu.Size = new System.Drawing.Size(75, 23);
             this.btn_lisaapalvelu.TabIndex = 1;
@@ -67,128 +69,158 @@ namespace Mökkivaraus
             // 
             // tbpalvelu_id
             // 
-            this.tbpalvelu_id.Location = new System.Drawing.Point(138, 73);
+            this.tbpalvelu_id.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbpalvelu_id.Location = new System.Drawing.Point(148, 76);
             this.tbpalvelu_id.Name = "tbpalvelu_id";
-            this.tbpalvelu_id.Size = new System.Drawing.Size(100, 20);
+            this.tbpalvelu_id.Size = new System.Drawing.Size(100, 23);
             this.tbpalvelu_id.TabIndex = 2;
+            this.tbpalvelu_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbpalvelu_id_KeyPress);
             // 
             // tbalue_id
             // 
-            this.tbalue_id.Location = new System.Drawing.Point(138, 118);
+            this.tbalue_id.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbalue_id.Location = new System.Drawing.Point(148, 121);
             this.tbalue_id.Name = "tbalue_id";
-            this.tbalue_id.Size = new System.Drawing.Size(100, 20);
+            this.tbalue_id.Size = new System.Drawing.Size(100, 23);
             this.tbalue_id.TabIndex = 3;
+            this.tbalue_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbalue_id_KeyPress);
             // 
             // tbnimi
             // 
-            this.tbnimi.Location = new System.Drawing.Point(138, 162);
+            this.tbnimi.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbnimi.Location = new System.Drawing.Point(148, 165);
             this.tbnimi.Name = "tbnimi";
-            this.tbnimi.Size = new System.Drawing.Size(100, 20);
+            this.tbnimi.Size = new System.Drawing.Size(100, 23);
             this.tbnimi.TabIndex = 4;
+            this.tbnimi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbnimi_KeyPress);
             // 
             // tbtyyppi
             // 
-            this.tbtyyppi.Location = new System.Drawing.Point(138, 205);
+            this.tbtyyppi.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbtyyppi.Location = new System.Drawing.Point(148, 208);
             this.tbtyyppi.Name = "tbtyyppi";
-            this.tbtyyppi.Size = new System.Drawing.Size(100, 20);
+            this.tbtyyppi.Size = new System.Drawing.Size(100, 23);
             this.tbtyyppi.TabIndex = 5;
+            this.tbtyyppi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbtyyppi_KeyPress);
             // 
             // tbkuvaus
             // 
-            this.tbkuvaus.Location = new System.Drawing.Point(347, 73);
+            this.tbkuvaus.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbkuvaus.Location = new System.Drawing.Point(148, 251);
             this.tbkuvaus.Name = "tbkuvaus";
-            this.tbkuvaus.Size = new System.Drawing.Size(100, 20);
+            this.tbkuvaus.Size = new System.Drawing.Size(100, 23);
             this.tbkuvaus.TabIndex = 6;
+            this.tbkuvaus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbkuvaus_KeyPress);
             // 
             // tbhinta
             // 
-            this.tbhinta.Location = new System.Drawing.Point(347, 118);
+            this.tbhinta.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbhinta.Location = new System.Drawing.Point(148, 293);
             this.tbhinta.Name = "tbhinta";
-            this.tbhinta.Size = new System.Drawing.Size(100, 20);
+            this.tbhinta.Size = new System.Drawing.Size(100, 23);
             this.tbhinta.TabIndex = 7;
+            this.tbhinta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbhinta_KeyPress);
             // 
             // tbalv
             // 
-            this.tbalv.Location = new System.Drawing.Point(347, 162);
+            this.tbalv.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbalv.Location = new System.Drawing.Point(148, 336);
             this.tbalv.Name = "tbalv";
-            this.tbalv.Size = new System.Drawing.Size(100, 20);
+            this.tbalv.Size = new System.Drawing.Size(100, 23);
             this.tbalv.TabIndex = 8;
+            this.tbalv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbalv_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(76, 21);
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(37, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 13);
+            this.label1.Size = new System.Drawing.Size(198, 23);
             this.label1.TabIndex = 9;
             this.label1.Text = "Palvelu tietojen lisäys";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(76, 76);
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(38, 79);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.Size = new System.Drawing.Size(68, 16);
             this.label2.TabIndex = 10;
             this.label2.Text = "Palvelu_id";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(76, 121);
+            this.label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(38, 124);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.Size = new System.Drawing.Size(50, 16);
             this.label3.TabIndex = 11;
             this.label3.Text = "Alue_id";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(76, 165);
+            this.label4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(38, 168);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 13);
+            this.label4.Size = new System.Drawing.Size(34, 16);
             this.label4.TabIndex = 12;
             this.label4.Text = "Nimi";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(76, 208);
+            this.label5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(38, 211);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.Size = new System.Drawing.Size(43, 16);
             this.label5.TabIndex = 13;
             this.label5.Text = "Tyyppi";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(254, 76);
+            this.label6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(37, 254);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 13);
+            this.label6.Size = new System.Drawing.Size(51, 16);
             this.label6.TabIndex = 14;
             this.label6.Text = "Kuvaus";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(254, 125);
+            this.label7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(38, 296);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 13);
+            this.label7.Size = new System.Drawing.Size(38, 16);
             this.label7.TabIndex = 15;
             this.label7.Text = "Hinta";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(254, 165);
+            this.label8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(38, 339);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 13);
+            this.label8.Size = new System.Drawing.Size(84, 16);
             this.label8.TabIndex = 16;
             this.label8.Text = "Arvolisävero";
             // 
             // btn_tyhjenna
             // 
-            this.btn_tyhjenna.Location = new System.Drawing.Point(314, 251);
+            this.btn_tyhjenna.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tyhjenna.Location = new System.Drawing.Point(280, 247);
             this.btn_tyhjenna.Name = "btn_tyhjenna";
             this.btn_tyhjenna.Size = new System.Drawing.Size(75, 23);
             this.btn_tyhjenna.TabIndex = 17;
@@ -198,11 +230,14 @@ namespace Mökkivaraus
             // 
             // btn_keskeyta
             // 
-            this.btn_keskeyta.Location = new System.Drawing.Point(437, 11);
+            this.btn_keskeyta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_keskeyta.BackgroundImage")));
+            this.btn_keskeyta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_keskeyta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_keskeyta.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_keskeyta.Location = new System.Drawing.Point(330, 24);
             this.btn_keskeyta.Name = "btn_keskeyta";
-            this.btn_keskeyta.Size = new System.Drawing.Size(75, 23);
+            this.btn_keskeyta.Size = new System.Drawing.Size(25, 20);
             this.btn_keskeyta.TabIndex = 18;
-            this.btn_keskeyta.Text = "X";
             this.btn_keskeyta.UseVisualStyleBackColor = true;
             this.btn_keskeyta.Click += new System.EventHandler(this.btn_keskeyta_Click);
             // 
@@ -224,7 +259,7 @@ namespace Mökkivaraus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 330);
+            this.ClientSize = new System.Drawing.Size(378, 406);
             this.Controls.Add(this.btn_keskeyta);
             this.Controls.Add(this.btn_tyhjenna);
             this.Controls.Add(this.label8);
@@ -246,6 +281,7 @@ namespace Mökkivaraus
             this.Name = "LisaaPalvelu";
             this.Text = "LisaaPalvelu";
             this.Load += new System.EventHandler(this.LisaaPalvelu_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LisaaPalvelu_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource)).EndInit();
             this.ResumeLayout(false);

@@ -70,11 +70,14 @@ namespace Mökkivaraus
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_paivitaplv = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPalvelut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -90,7 +93,7 @@ namespace Mökkivaraus
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(266, 781);
+            this.panel2.Size = new System.Drawing.Size(266, 474);
             this.panel2.TabIndex = 21;
             // 
             // laskutusbtn
@@ -213,9 +216,10 @@ namespace Mökkivaraus
             // 
             // Btn_plvlisaa
             // 
-            this.Btn_plvlisaa.Location = new System.Drawing.Point(311, 413);
+            this.Btn_plvlisaa.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_plvlisaa.Location = new System.Drawing.Point(312, 66);
             this.Btn_plvlisaa.Name = "Btn_plvlisaa";
-            this.Btn_plvlisaa.Size = new System.Drawing.Size(106, 23);
+            this.Btn_plvlisaa.Size = new System.Drawing.Size(106, 35);
             this.Btn_plvlisaa.TabIndex = 22;
             this.Btn_plvlisaa.Text = "Lisää palvelu";
             this.Btn_plvlisaa.UseVisualStyleBackColor = true;
@@ -223,9 +227,10 @@ namespace Mökkivaraus
             // 
             // Btn_plvpoista
             // 
-            this.Btn_plvpoista.Location = new System.Drawing.Point(311, 442);
+            this.Btn_plvpoista.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_plvpoista.Location = new System.Drawing.Point(312, 107);
             this.Btn_plvpoista.Name = "Btn_plvpoista";
-            this.Btn_plvpoista.Size = new System.Drawing.Size(106, 23);
+            this.Btn_plvpoista.Size = new System.Drawing.Size(106, 34);
             this.Btn_plvpoista.TabIndex = 23;
             this.Btn_plvpoista.Text = "Poista palvelu";
             this.Btn_plvpoista.UseVisualStyleBackColor = true;
@@ -233,9 +238,10 @@ namespace Mökkivaraus
             // 
             // btn_paivita
             // 
-            this.btn_paivita.Location = new System.Drawing.Point(311, 471);
+            this.btn_paivita.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_paivita.Location = new System.Drawing.Point(31, 143);
             this.btn_paivita.Name = "btn_paivita";
-            this.btn_paivita.Size = new System.Drawing.Size(106, 23);
+            this.btn_paivita.Size = new System.Drawing.Size(106, 40);
             this.btn_paivita.TabIndex = 24;
             this.btn_paivita.Text = "Päivitä tiedot";
             this.btn_paivita.UseVisualStyleBackColor = true;
@@ -254,10 +260,10 @@ namespace Mökkivaraus
             this.kuvausDataGridViewTextBoxColumn,
             this.hintaDataGridViewTextBoxColumn,
             this.alvDataGridViewTextBoxColumn});
-            this.dgvPalvelut.DataSource = this.palveluBindingSource1;
-            this.dgvPalvelut.Location = new System.Drawing.Point(302, 12);
+            this.dgvPalvelut.DataSource = this.palveluBindingSource;
+            this.dgvPalvelut.Location = new System.Drawing.Point(31, 293);
             this.dgvPalvelut.Name = "dgvPalvelut";
-            this.dgvPalvelut.Size = new System.Drawing.Size(745, 150);
+            this.dgvPalvelut.Size = new System.Drawing.Size(696, 163);
             this.dgvPalvelut.TabIndex = 25;
             // 
             // palveluidDataGridViewTextBoxColumn
@@ -314,57 +320,58 @@ namespace Mökkivaraus
             // 
             // tbpalvelu_id
             // 
-            this.tbpalvelu_id.Location = new System.Drawing.Point(594, 404);
+            this.tbpalvelu_id.Location = new System.Drawing.Point(537, 66);
             this.tbpalvelu_id.Name = "tbpalvelu_id";
             this.tbpalvelu_id.Size = new System.Drawing.Size(100, 20);
             this.tbpalvelu_id.TabIndex = 26;
             // 
             // tbalue_id
             // 
-            this.tbalue_id.Location = new System.Drawing.Point(594, 430);
+            this.tbalue_id.Location = new System.Drawing.Point(537, 92);
             this.tbalue_id.Name = "tbalue_id";
             this.tbalue_id.Size = new System.Drawing.Size(100, 20);
             this.tbalue_id.TabIndex = 27;
             // 
             // tbnimi
             // 
-            this.tbnimi.Location = new System.Drawing.Point(594, 456);
+            this.tbnimi.Location = new System.Drawing.Point(537, 118);
             this.tbnimi.Name = "tbnimi";
             this.tbnimi.Size = new System.Drawing.Size(100, 20);
             this.tbnimi.TabIndex = 28;
             // 
             // tbtyyppi
             // 
-            this.tbtyyppi.Location = new System.Drawing.Point(594, 482);
+            this.tbtyyppi.Location = new System.Drawing.Point(537, 144);
             this.tbtyyppi.Name = "tbtyyppi";
             this.tbtyyppi.Size = new System.Drawing.Size(100, 20);
             this.tbtyyppi.TabIndex = 29;
             // 
             // tbkuvaus
             // 
-            this.tbkuvaus.Location = new System.Drawing.Point(804, 404);
+            this.tbkuvaus.Location = new System.Drawing.Point(747, 66);
             this.tbkuvaus.Name = "tbkuvaus";
-            this.tbkuvaus.Size = new System.Drawing.Size(317, 20);
+            this.tbkuvaus.Size = new System.Drawing.Size(155, 20);
             this.tbkuvaus.TabIndex = 30;
             // 
             // tbhinta
             // 
-            this.tbhinta.Location = new System.Drawing.Point(804, 430);
+            this.tbhinta.Location = new System.Drawing.Point(747, 92);
             this.tbhinta.Name = "tbhinta";
-            this.tbhinta.Size = new System.Drawing.Size(317, 20);
+            this.tbhinta.Size = new System.Drawing.Size(67, 20);
             this.tbhinta.TabIndex = 31;
             // 
             // tbalvi
             // 
-            this.tbalvi.Location = new System.Drawing.Point(804, 455);
+            this.tbalvi.Location = new System.Drawing.Point(747, 117);
             this.tbalvi.Name = "tbalvi";
-            this.tbalvi.Size = new System.Drawing.Size(317, 20);
+            this.tbalvi.Size = new System.Drawing.Size(67, 20);
             this.tbalvi.TabIndex = 32;
             // 
             // palveluBindingSource
             // 
             this.palveluBindingSource.DataMember = "palvelu";
             this.palveluBindingSource.DataSource = this.vnDataSet;
+            this.palveluBindingSource.CurrentChanged += new System.EventHandler(this.palveluBindingSource_CurrentChanged);
             // 
             // palveluTableAdapter
             // 
@@ -373,81 +380,127 @@ namespace Mökkivaraus
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(505, 407);
+            this.label1.BackColor = System.Drawing.SystemColors.Window;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(448, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.Size = new System.Drawing.Size(70, 18);
             this.label1.TabIndex = 33;
-            this.label1.Text = "Palvelu id";
+            this.label1.Text = "Palvelu id:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(505, 436);
+            this.label2.BackColor = System.Drawing.SystemColors.Window;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(448, 98);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.Size = new System.Drawing.Size(52, 18);
             this.label2.TabIndex = 34;
-            this.label2.Text = "Alue id";
+            this.label2.Text = "Alue id:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(505, 461);
+            this.label3.BackColor = System.Drawing.SystemColors.Window;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(448, 123);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 13);
+            this.label3.Size = new System.Drawing.Size(37, 18);
             this.label3.TabIndex = 35;
-            this.label3.Text = "nimi";
+            this.label3.Text = "nimi:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(505, 485);
+            this.label4.BackColor = System.Drawing.SystemColors.Window;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(448, 147);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.Size = new System.Drawing.Size(46, 18);
             this.label4.TabIndex = 36;
-            this.label4.Text = "tyyppi";
+            this.label4.Text = "tyyppi:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(746, 407);
+            this.label5.BackColor = System.Drawing.SystemColors.Window;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label5.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(689, 69);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 13);
+            this.label5.Size = new System.Drawing.Size(55, 18);
             this.label5.TabIndex = 37;
-            this.label5.Text = "kuvaus";
+            this.label5.Text = "kuvaus:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(746, 433);
+            this.label6.BackColor = System.Drawing.SystemColors.Window;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label6.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(689, 95);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(30, 13);
+            this.label6.Size = new System.Drawing.Size(41, 18);
             this.label6.TabIndex = 38;
-            this.label6.Text = "hinta";
+            this.label6.Text = "hinta:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(746, 458);
+            this.label7.BackColor = System.Drawing.SystemColors.Window;
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label7.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(689, 120);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(21, 13);
+            this.label7.Size = new System.Drawing.Size(30, 18);
             this.label7.TabIndex = 39;
-            this.label7.Text = "alv";
+            this.label7.Text = "alv:";
             // 
             // btn_paivitaplv
             // 
-            this.btn_paivitaplv.Location = new System.Drawing.Point(804, 485);
+            this.btn_paivitaplv.Location = new System.Drawing.Point(692, 147);
             this.btn_paivitaplv.Name = "btn_paivitaplv";
-            this.btn_paivitaplv.Size = new System.Drawing.Size(155, 23);
+            this.btn_paivitaplv.Size = new System.Drawing.Size(118, 23);
             this.btn_paivitaplv.TabIndex = 40;
             this.btn_paivitaplv.Text = "Päivitä palvelu tiedot";
             this.btn_paivitaplv.UseVisualStyleBackColor = true;
             this.btn_paivitaplv.Click += new System.EventHandler(this.button6_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label8.Font = new System.Drawing.Font("Bahnschrift", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(305, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(332, 42);
+            this.label8.TabIndex = 41;
+            this.label8.Text = "Palveluiden Hallinta";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.dgvPalvelut);
+            this.panel1.Controls.Add(this.btn_paivita);
+            this.panel1.Location = new System.Drawing.Point(281, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(795, 467);
+            this.panel1.TabIndex = 42;
+            // 
             // PalveluidenHallinta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 781);
+            this.ClientSize = new System.Drawing.Size(1079, 474);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btn_paivitaplv);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -463,22 +516,24 @@ namespace Mökkivaraus
             this.Controls.Add(this.tbnimi);
             this.Controls.Add(this.tbalue_id);
             this.Controls.Add(this.tbpalvelu_id);
-            this.Controls.Add(this.dgvPalvelut);
-            this.Controls.Add(this.btn_paivita);
             this.Controls.Add(this.Btn_plvpoista);
             this.Controls.Add(this.Btn_plvlisaa);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Location = new System.Drawing.Point(50, 50);
             this.Name = "PalveluidenHallinta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Palveluiden Hallinta";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.PalveluidenHallinta_FormClosed);
             this.Load += new System.EventHandler(this.PalveluidenHallinta_Load);
+            this.Shown += new System.EventHandler(this.PalveluidenHallinta_Shown);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPalvelut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,5 +580,7 @@ namespace Mökkivaraus
         private System.Windows.Forms.Button btn_paivitaplv;
         private System.Windows.Forms.Button btnRaportit;
         private System.Windows.Forms.Button laskutusbtn;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel1;
     }
 }

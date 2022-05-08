@@ -17,6 +17,8 @@ namespace Mökkivaraus
             InitializeComponent();
         }
 
+        
+
         private void tsmToimintaAlueet_Click(object sender, EventArgs e)
         {
             ToimintaAlueHallinta tah = new ToimintaAlueHallinta(); // nämä kolme koodiriviä piilottaa
@@ -102,6 +104,22 @@ namespace Mökkivaraus
             Laskutus laskutus = new Laskutus();
             this.Hide();
             laskutus.Show();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void palveluBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PalveluidenHallinta_Shown(object sender, EventArgs e)
+        {
+            this.palveluTableAdapter.Fill(this.vnDataSet.palvelu);
+            dgvPalvelut.Refresh(); // päivitetään asiakaslista että uudet tiedot tulevat esille
         }
     }
 }
