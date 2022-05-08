@@ -31,11 +31,6 @@ namespace Mökkivaraus
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.vnDataSet = new Mökkivaraus.VnDataSet();
-            this.laskuBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.laskuTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.laskuTableAdapter();
-            this.asiakasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.asiakasTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.asiakasTableAdapter();
             this.asiakasidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.postinroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.etunimiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,12 +38,17 @@ namespace Mökkivaraus
             this.lahiosoiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.puhelinnroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asiakasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vnDataSet = new Mökkivaraus.VnDataSet();
+            this.laskuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.laskuTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.laskuTableAdapter();
+            this.asiakasTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.asiakasTableAdapter();
             this.okBTN = new System.Windows.Forms.Button();
             this.asiakasID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -66,8 +66,63 @@ namespace Mökkivaraus
             this.dataGridView1.DataSource = this.asiakasBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(24, 157);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(745, 150);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // asiakasidDataGridViewTextBoxColumn
+            // 
+            this.asiakasidDataGridViewTextBoxColumn.DataPropertyName = "asiakas_id";
+            this.asiakasidDataGridViewTextBoxColumn.HeaderText = "asiakas_id";
+            this.asiakasidDataGridViewTextBoxColumn.Name = "asiakasidDataGridViewTextBoxColumn";
+            this.asiakasidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // postinroDataGridViewTextBoxColumn
+            // 
+            this.postinroDataGridViewTextBoxColumn.DataPropertyName = "postinro";
+            this.postinroDataGridViewTextBoxColumn.HeaderText = "postinro";
+            this.postinroDataGridViewTextBoxColumn.Name = "postinroDataGridViewTextBoxColumn";
+            this.postinroDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // etunimiDataGridViewTextBoxColumn
+            // 
+            this.etunimiDataGridViewTextBoxColumn.DataPropertyName = "etunimi";
+            this.etunimiDataGridViewTextBoxColumn.HeaderText = "etunimi";
+            this.etunimiDataGridViewTextBoxColumn.Name = "etunimiDataGridViewTextBoxColumn";
+            this.etunimiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sukunimiDataGridViewTextBoxColumn
+            // 
+            this.sukunimiDataGridViewTextBoxColumn.DataPropertyName = "sukunimi";
+            this.sukunimiDataGridViewTextBoxColumn.HeaderText = "sukunimi";
+            this.sukunimiDataGridViewTextBoxColumn.Name = "sukunimiDataGridViewTextBoxColumn";
+            this.sukunimiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lahiosoiteDataGridViewTextBoxColumn
+            // 
+            this.lahiosoiteDataGridViewTextBoxColumn.DataPropertyName = "lahiosoite";
+            this.lahiosoiteDataGridViewTextBoxColumn.HeaderText = "lahiosoite";
+            this.lahiosoiteDataGridViewTextBoxColumn.Name = "lahiosoiteDataGridViewTextBoxColumn";
+            this.lahiosoiteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // puhelinnroDataGridViewTextBoxColumn
+            // 
+            this.puhelinnroDataGridViewTextBoxColumn.DataPropertyName = "puhelinnro";
+            this.puhelinnroDataGridViewTextBoxColumn.HeaderText = "puhelinnro";
+            this.puhelinnroDataGridViewTextBoxColumn.Name = "puhelinnroDataGridViewTextBoxColumn";
+            this.puhelinnroDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // asiakasBindingSource
+            // 
+            this.asiakasBindingSource.DataMember = "asiakas";
+            this.asiakasBindingSource.DataSource = this.vnDataSet;
             // 
             // vnDataSet
             // 
@@ -83,56 +138,9 @@ namespace Mökkivaraus
             // 
             this.laskuTableAdapter.ClearBeforeFill = true;
             // 
-            // asiakasBindingSource
-            // 
-            this.asiakasBindingSource.DataMember = "asiakas";
-            this.asiakasBindingSource.DataSource = this.vnDataSet;
-            // 
             // asiakasTableAdapter
             // 
             this.asiakasTableAdapter.ClearBeforeFill = true;
-            // 
-            // asiakasidDataGridViewTextBoxColumn
-            // 
-            this.asiakasidDataGridViewTextBoxColumn.DataPropertyName = "asiakas_id";
-            this.asiakasidDataGridViewTextBoxColumn.HeaderText = "asiakas_id";
-            this.asiakasidDataGridViewTextBoxColumn.Name = "asiakasidDataGridViewTextBoxColumn";
-            // 
-            // postinroDataGridViewTextBoxColumn
-            // 
-            this.postinroDataGridViewTextBoxColumn.DataPropertyName = "postinro";
-            this.postinroDataGridViewTextBoxColumn.HeaderText = "postinro";
-            this.postinroDataGridViewTextBoxColumn.Name = "postinroDataGridViewTextBoxColumn";
-            // 
-            // etunimiDataGridViewTextBoxColumn
-            // 
-            this.etunimiDataGridViewTextBoxColumn.DataPropertyName = "etunimi";
-            this.etunimiDataGridViewTextBoxColumn.HeaderText = "etunimi";
-            this.etunimiDataGridViewTextBoxColumn.Name = "etunimiDataGridViewTextBoxColumn";
-            // 
-            // sukunimiDataGridViewTextBoxColumn
-            // 
-            this.sukunimiDataGridViewTextBoxColumn.DataPropertyName = "sukunimi";
-            this.sukunimiDataGridViewTextBoxColumn.HeaderText = "sukunimi";
-            this.sukunimiDataGridViewTextBoxColumn.Name = "sukunimiDataGridViewTextBoxColumn";
-            // 
-            // lahiosoiteDataGridViewTextBoxColumn
-            // 
-            this.lahiosoiteDataGridViewTextBoxColumn.DataPropertyName = "lahiosoite";
-            this.lahiosoiteDataGridViewTextBoxColumn.HeaderText = "lahiosoite";
-            this.lahiosoiteDataGridViewTextBoxColumn.Name = "lahiosoiteDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // puhelinnroDataGridViewTextBoxColumn
-            // 
-            this.puhelinnroDataGridViewTextBoxColumn.DataPropertyName = "puhelinnro";
-            this.puhelinnroDataGridViewTextBoxColumn.HeaderText = "puhelinnro";
-            this.puhelinnroDataGridViewTextBoxColumn.Name = "puhelinnroDataGridViewTextBoxColumn";
             // 
             // okBTN
             // 
@@ -165,9 +173,9 @@ namespace Mökkivaraus
             this.Text = "EtsiAsiakas";
             this.Load += new System.EventHandler(this.EtsiAsiakas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
