@@ -51,8 +51,9 @@ namespace Mökkivaraus
             this.kuvausDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hintaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alvDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.palveluBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.palveluBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vnDataSet = new Mökkivaraus.VnDataSet();
+            this.palveluBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tbpalvelu_id = new System.Windows.Forms.TextBox();
             this.tbalue_id = new System.Windows.Forms.TextBox();
             this.tbnimi = new System.Windows.Forms.TextBox();
@@ -60,7 +61,6 @@ namespace Mökkivaraus
             this.tbkuvaus = new System.Windows.Forms.TextBox();
             this.tbhinta = new System.Windows.Forms.TextBox();
             this.tbalvi = new System.Windows.Forms.TextBox();
-            this.palveluBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.palveluTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.palveluTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -74,9 +74,9 @@ namespace Mökkivaraus
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPalvelut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -261,10 +261,12 @@ namespace Mökkivaraus
             this.hintaDataGridViewTextBoxColumn,
             this.alvDataGridViewTextBoxColumn});
             this.dgvPalvelut.DataSource = this.palveluBindingSource;
-            this.dgvPalvelut.Location = new System.Drawing.Point(31, 293);
+            this.dgvPalvelut.Location = new System.Drawing.Point(31, 295);
             this.dgvPalvelut.Name = "dgvPalvelut";
-            this.dgvPalvelut.Size = new System.Drawing.Size(696, 163);
+            this.dgvPalvelut.Size = new System.Drawing.Size(683, 163);
             this.dgvPalvelut.TabIndex = 25;
+            this.dgvPalvelut.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPalvelut_CellClick);
+            this.dgvPalvelut.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPalvelut_CellContentClick);
             // 
             // palveluidDataGridViewTextBoxColumn
             // 
@@ -308,15 +310,21 @@ namespace Mökkivaraus
             this.alvDataGridViewTextBoxColumn.HeaderText = "alv";
             this.alvDataGridViewTextBoxColumn.Name = "alvDataGridViewTextBoxColumn";
             // 
-            // palveluBindingSource1
+            // palveluBindingSource
             // 
-            this.palveluBindingSource1.DataMember = "palvelu";
-            this.palveluBindingSource1.DataSource = this.vnDataSet;
+            this.palveluBindingSource.DataMember = "palvelu";
+            this.palveluBindingSource.DataSource = this.vnDataSet;
+            this.palveluBindingSource.CurrentChanged += new System.EventHandler(this.palveluBindingSource_CurrentChanged);
             // 
             // vnDataSet
             // 
             this.vnDataSet.DataSetName = "VnDataSet";
             this.vnDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // palveluBindingSource1
+            // 
+            this.palveluBindingSource1.DataMember = "palvelu";
+            this.palveluBindingSource1.DataSource = this.vnDataSet;
             // 
             // tbpalvelu_id
             // 
@@ -324,6 +332,8 @@ namespace Mökkivaraus
             this.tbpalvelu_id.Name = "tbpalvelu_id";
             this.tbpalvelu_id.Size = new System.Drawing.Size(100, 20);
             this.tbpalvelu_id.TabIndex = 26;
+            this.tbpalvelu_id.Text = "1";
+            this.tbpalvelu_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbpalvelu_id_KeyPress);
             // 
             // tbalue_id
             // 
@@ -331,6 +341,8 @@ namespace Mökkivaraus
             this.tbalue_id.Name = "tbalue_id";
             this.tbalue_id.Size = new System.Drawing.Size(100, 20);
             this.tbalue_id.TabIndex = 27;
+            this.tbalue_id.Text = "1";
+            this.tbalue_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbalue_id_KeyPress);
             // 
             // tbnimi
             // 
@@ -338,6 +350,8 @@ namespace Mökkivaraus
             this.tbnimi.Name = "tbnimi";
             this.tbnimi.Size = new System.Drawing.Size(100, 20);
             this.tbnimi.TabIndex = 28;
+            this.tbnimi.Text = "Hätäsiivous";
+            this.tbnimi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbnimi_KeyPress);
             // 
             // tbtyyppi
             // 
@@ -345,6 +359,8 @@ namespace Mökkivaraus
             this.tbtyyppi.Name = "tbtyyppi";
             this.tbtyyppi.Size = new System.Drawing.Size(100, 20);
             this.tbtyyppi.TabIndex = 29;
+            this.tbtyyppi.Text = "1";
+            this.tbtyyppi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbtyyppi_KeyPress);
             // 
             // tbkuvaus
             // 
@@ -352,6 +368,8 @@ namespace Mökkivaraus
             this.tbkuvaus.Name = "tbkuvaus";
             this.tbkuvaus.Size = new System.Drawing.Size(155, 20);
             this.tbkuvaus.TabIndex = 30;
+            this.tbkuvaus.Text = "Siivouspalvelu tahkon mökkeihin";
+            this.tbkuvaus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbkuvaus_KeyPress);
             // 
             // tbhinta
             // 
@@ -359,6 +377,8 @@ namespace Mökkivaraus
             this.tbhinta.Name = "tbhinta";
             this.tbhinta.Size = new System.Drawing.Size(67, 20);
             this.tbhinta.TabIndex = 31;
+            this.tbhinta.Text = "20";
+            this.tbhinta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbhinta_KeyPress);
             // 
             // tbalvi
             // 
@@ -366,12 +386,8 @@ namespace Mökkivaraus
             this.tbalvi.Name = "tbalvi";
             this.tbalvi.Size = new System.Drawing.Size(67, 20);
             this.tbalvi.TabIndex = 32;
-            // 
-            // palveluBindingSource
-            // 
-            this.palveluBindingSource.DataMember = "palvelu";
-            this.palveluBindingSource.DataSource = this.vnDataSet;
-            this.palveluBindingSource.CurrentChanged += new System.EventHandler(this.palveluBindingSource_CurrentChanged);
+            this.tbalvi.Text = "24";
+            this.tbalvi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbalvi_KeyPress);
             // 
             // palveluTableAdapter
             // 
@@ -530,9 +546,9 @@ namespace Mökkivaraus
             this.Shown += new System.EventHandler(this.PalveluidenHallinta_Shown);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPalvelut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -121,5 +121,100 @@ namespace Mökkivaraus
             this.palveluTableAdapter.Fill(this.vnDataSet.palvelu);
             dgvPalvelut.Refresh(); // päivitetään asiakaslista että uudet tiedot tulevat esille
         }
+
+        private void dgvPalvelut_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvPalvelut_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (tbpalvelu_id.DataBindings.Count > 0)
+                tbpalvelu_id.DataBindings.RemoveAt(0);
+            if (tbalue_id.DataBindings.Count > 0)
+                tbalue_id.DataBindings.RemoveAt(0);
+            if (tbnimi.DataBindings.Count > 0)
+                tbnimi.DataBindings.RemoveAt(0);
+            if (tbtyyppi.DataBindings.Count > 0)
+                tbtyyppi.DataBindings.RemoveAt(0);
+            if (tbkuvaus.DataBindings.Count > 0)
+                tbkuvaus.DataBindings.RemoveAt(0);
+            if (tbhinta.DataBindings.Count > 0)
+                tbhinta.DataBindings.RemoveAt(0);
+            if (tbalvi.DataBindings.Count > 0)
+                tbalvi.DataBindings.RemoveAt(0);
+
+            // The code binds column index 2 to the TextBox control
+            tbpalvelu_id.DataBindings.Add(
+                new Binding("Text", dgvPalvelut[0, e.RowIndex], "Value", false));
+            tbalue_id.DataBindings.Add(
+                new Binding("Text", dgvPalvelut[1, e.RowIndex], "Value", false));
+            tbnimi.DataBindings.Add(
+                new Binding("Text", dgvPalvelut[2, e.RowIndex], "Value", false));
+            tbtyyppi.DataBindings.Add(
+                new Binding("Text", dgvPalvelut[3, e.RowIndex], "Value", false));
+            tbkuvaus.DataBindings.Add(
+                new Binding("Text", dgvPalvelut[4, e.RowIndex], "Value", false));
+            tbhinta.DataBindings.Add(
+                new Binding("Text", dgvPalvelut[5, e.RowIndex], "Value", false));
+            tbalvi.DataBindings.Add(
+                new Binding("Text", dgvPalvelut[6, e.RowIndex], "Value", false));
+        }
+
+        private void tbpalvelu_id_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+            }
+        }
+
+        private void tbalue_id_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+            }
+        }
+
+        private void tbnimi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && (e.KeyChar != ' '))
+            {
+                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+            }
+        }
+
+        private void tbtyyppi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+            }
+        }
+
+        private void tbkuvaus_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && (e.KeyChar != ' '))
+            {
+                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+            }
+        }
+
+        private void tbhinta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // varmistetaan että hinnalle ei anneta väärää inputtia
+            }
+        }
+
+        private void tbalvi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+            }
+        }
     }
 }

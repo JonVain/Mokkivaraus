@@ -19,11 +19,23 @@ namespace Mökkivaraus
 
         private void btn_lisaapalvelu_Click(object sender, EventArgs e)
         {
-            Validate();
-            palveluBindingSource.EndEdit();
-            palveluTableAdapter.Update(this.vnDataSet);
-            palveluTableAdapter.Insert(int.Parse(tbpalvelu_id.Text),int.Parse(tbalue_id.Text),tbnimi.Text,int.Parse(tbtyyppi.Text),tbkuvaus.Text,double.Parse(tbhinta.Text),double.Parse(tbalv.Text) );
-            this.Close();
+            try
+            {//System.Data.Odbc.OdbcException
+                Validate();
+                palveluBindingSource.EndEdit();
+                palveluTableAdapter.Update(this.vnDataSet);
+                palveluTableAdapter.Insert(int.Parse(tbpalvelu_id.Text), int.Parse(tbalue_id.Text), tbnimi.Text, int.Parse(tbtyyppi.Text), tbkuvaus.Text, double.Parse(tbhinta.Text), double.Parse(tbalv.Text));
+                this.Close();
+            }
+
+            catch (System.Data.Odbc.OdbcException)
+            {
+
+                MessageBox.Show("!!!SAMAA PALVELU_ID:TÄ EI SAA KÄYTTÄÄ!!!");
+                
+            }
+
+
         }
         //(long.Parse()tbpalvelu_id.Text, tbalue_id.Text, tbnimi.Text, tbtyyppi.Text, tbkuvaus.Text, tbhinta.Text, tbalv.Text);
         //int.Parse(tbhinta.Text)
@@ -96,7 +108,7 @@ namespace Mökkivaraus
 
         private void tbnimi_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && (e.KeyChar != ' '))
             {
                 e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
             }
@@ -112,7 +124,7 @@ namespace Mökkivaraus
 
         private void tbkuvaus_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            if(!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && (e.KeyChar != ' '))
             {
                 e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
             }
