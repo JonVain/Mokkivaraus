@@ -32,7 +32,7 @@ namespace Mökkivaraus
             {
 
                 MessageBox.Show("!!!SAMAA PALVELU_ID:TÄ EI SAA KÄYTTÄÄ!!!");
-                
+                return;
             }
 
 
