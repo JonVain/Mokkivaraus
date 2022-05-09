@@ -65,7 +65,7 @@ namespace Mökkivaraus
             var varustelu = tbVarustelu.Text;
             Validate();
             mokkiBindingSource.EndEdit();
-            //mokkiTableAdapter.Update(this.vnDataSet);
+            mokkiTableAdapter.Update(this.vnDataSet);
             mokkiTableAdapter.Insert(alue, postinro, mokki, katuosoite, hinta, kuvaus, hlomaara, varustelu);
             this.mokkiTableAdapter.Fill(this.vnDataSet.mokki);
             dgvMokki.Refresh();
@@ -93,7 +93,7 @@ namespace Mökkivaraus
         private void tbPoista_Click(object sender, EventArgs e)
         {            
             Validate();
-            //mokkiBindingSource.EndEdit();
+            mokkiBindingSource.EndEdit();
             mokkiTableAdapter.Update(this.vnDataSet);            
             mokkiTableAdapter.Delete(long.Parse(tbMokkiID.Text), (long)tbAlue.SelectedValue, tbPostinro.Text, tbMokki.Text, tbKatuosoite.Text, double.Parse(tbHinta.Text), tbKuvaus.Text, int.Parse(tbHlomaara.Text), tbVarustelu.Text);            
             this.mokkiTableAdapter.Fill(this.vnDataSet.mokki);
@@ -101,7 +101,7 @@ namespace Mökkivaraus
         }
 
         private void tbPäivitä_Click(object sender, EventArgs e)
-        {
+        {            
             mokkiBindingSource.EndEdit();
             mokkiTableAdapter.Update(this.vnDataSet.mokki);
         }

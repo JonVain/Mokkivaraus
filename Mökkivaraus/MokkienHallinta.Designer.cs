@@ -524,6 +524,7 @@ namespace Mökkivaraus
             // tbAlue
             // 
             this.tbAlue.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.mokkiBindingSource, "alue_id", true));
+            this.tbAlue.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.mokkiBindingSource, "alue_id", true));
             this.tbAlue.DataSource = this.alueBindingSource;
             this.tbAlue.DisplayMember = "nimi";
             this.tbAlue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
