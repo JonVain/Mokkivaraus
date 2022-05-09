@@ -30,7 +30,7 @@ namespace Mökkivaraus
 
             catch (System.Data.Odbc.OdbcException)
             {
-
+                //estetään saman palvelu id:n käytön
                 MessageBox.Show("!!!SAMAA PALVELU_ID:TÄ EI SAA KÄYTTÄÄ!!!");
                 return;
             }
@@ -94,7 +94,7 @@ namespace Mökkivaraus
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+                e.Handled = true; // varmistetaan että alue_id:lle ei anneta väärää inputtia
             }
         }
 
@@ -102,7 +102,7 @@ namespace Mökkivaraus
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+                e.Handled = true; // varmistetaan että palvelu_id:lle ei anneta väärää inputtia
             }
         }
 
@@ -110,7 +110,7 @@ namespace Mökkivaraus
         {
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && (e.KeyChar != ' '))
             {
-                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+                e.Handled = true; // varmistetaan että nimelle ei anneta väärää inputtia
             }
         }
 
@@ -118,7 +118,7 @@ namespace Mökkivaraus
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+                e.Handled = true; // varmistetaan että tyypille ei anneta väärää inputtia
             }
         }
 
@@ -126,7 +126,7 @@ namespace Mökkivaraus
         {
             if(!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && (e.KeyChar != ' '))
             {
-                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+                e.Handled = true; // varmistetaan että kuvaukselle ei anneta väärää inputtia
             }
         }
     }

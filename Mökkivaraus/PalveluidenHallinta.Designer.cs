@@ -93,7 +93,7 @@ namespace Mökkivaraus
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(266, 474);
+            this.panel2.Size = new System.Drawing.Size(266, 473);
             this.panel2.TabIndex = 21;
             // 
             // laskutusbtn
@@ -515,7 +515,7 @@ namespace Mökkivaraus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1079, 474);
+            this.ClientSize = new System.Drawing.Size(1021, 473);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btn_paivitaplv);
             this.Controls.Add(this.label7);

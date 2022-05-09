@@ -96,14 +96,14 @@ namespace Mökkivaraus
         {
             Raportointi rap = new Raportointi();
             rap.Show();
-            this.Hide();
+            this.Hide();//tuodaan raportointi esille kun sitä painetaan valikosta
         }
 
         private void laskutusbtn_Click(object sender, EventArgs e)
         {
             Laskutus laskutus = new Laskutus();
             this.Hide();
-            laskutus.Show();
+            laskutus.Show();//tuodaan laskutus esiin kun sitä painetaan valikosta
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -144,7 +144,7 @@ namespace Mökkivaraus
             if (tbalvi.DataBindings.Count > 0)
                 tbalvi.DataBindings.RemoveAt(0);
 
-            // The code binds column index 2 to the TextBox control
+            // yhdistää datagridviewstä rivin tiedot textboxeihin kun riviä clickaa
             tbpalvelu_id.DataBindings.Add(
                 new Binding("Text", dgvPalvelut[0, e.RowIndex], "Value", false));
             tbalue_id.DataBindings.Add(
@@ -165,7 +165,7 @@ namespace Mökkivaraus
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+                e.Handled = true; // varmistetaan että palvelu_id:lle ei anneta väärää inputtia
             }
         }
 
@@ -173,7 +173,7 @@ namespace Mökkivaraus
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+                e.Handled = true; // varmistetaan että alue_id:lle ei anneta väärää inputtia
             }
         }
 
@@ -181,7 +181,7 @@ namespace Mökkivaraus
         {
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && (e.KeyChar != ' '))
             {
-                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+                e.Handled = true; // varmistetaan että nimelle ei anneta väärää inputtia
             }
         }
 
@@ -189,7 +189,7 @@ namespace Mökkivaraus
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+                e.Handled = true; // varmistetaan että tyypille ei anneta väärää inputtia
             }
         }
 
@@ -197,7 +197,7 @@ namespace Mökkivaraus
         {
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && (e.KeyChar != ' '))
             {
-                e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
+                e.Handled = true; // varmistetaan että kuvaukselle ei anneta väärää inputtia
             }
         }
 
