@@ -45,7 +45,6 @@ namespace Mökkivaraus
             this.vnDataSet = new Mökkivaraus.VnDataSet();
             this.mokkiTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.mokkiTableAdapter();
             this.btnLisaa = new System.Windows.Forms.Button();
-            this.tbAlue = new System.Windows.Forms.TextBox();
             this.tbPostinro = new System.Windows.Forms.TextBox();
             this.tbMokki = new System.Windows.Forms.TextBox();
             this.tbKatuosoite = new System.Windows.Forms.TextBox();
@@ -69,10 +68,14 @@ namespace Mökkivaraus
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.tbAlue = new System.Windows.Forms.ComboBox();
+            this.alueBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.alueTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.alueTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -173,15 +176,9 @@ namespace Mökkivaraus
             this.btnLisaa.UseVisualStyleBackColor = true;
             this.btnLisaa.Click += new System.EventHandler(this.btnLisaa_Click);
             // 
-            // tbAlue
-            // 
-            this.tbAlue.Location = new System.Drawing.Point(402, 200);
-            this.tbAlue.Name = "tbAlue";
-            this.tbAlue.Size = new System.Drawing.Size(100, 20);
-            this.tbAlue.TabIndex = 3;
-            // 
             // tbPostinro
             // 
+            this.tbPostinro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mokkiBindingSource, "postinro", true));
             this.tbPostinro.Location = new System.Drawing.Point(402, 226);
             this.tbPostinro.Name = "tbPostinro";
             this.tbPostinro.Size = new System.Drawing.Size(100, 20);
@@ -189,6 +186,7 @@ namespace Mökkivaraus
             // 
             // tbMokki
             // 
+            this.tbMokki.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mokkiBindingSource, "mokkinimi", true));
             this.tbMokki.Location = new System.Drawing.Point(402, 252);
             this.tbMokki.Name = "tbMokki";
             this.tbMokki.Size = new System.Drawing.Size(100, 20);
@@ -196,6 +194,7 @@ namespace Mökkivaraus
             // 
             // tbKatuosoite
             // 
+            this.tbKatuosoite.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mokkiBindingSource, "katuosoite", true));
             this.tbKatuosoite.Location = new System.Drawing.Point(402, 278);
             this.tbKatuosoite.Name = "tbKatuosoite";
             this.tbKatuosoite.Size = new System.Drawing.Size(100, 20);
@@ -203,6 +202,7 @@ namespace Mökkivaraus
             // 
             // tbHinta
             // 
+            this.tbHinta.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mokkiBindingSource, "hinta", true));
             this.tbHinta.Location = new System.Drawing.Point(402, 304);
             this.tbHinta.Name = "tbHinta";
             this.tbHinta.Size = new System.Drawing.Size(100, 20);
@@ -210,6 +210,7 @@ namespace Mökkivaraus
             // 
             // tbKuvaus
             // 
+            this.tbKuvaus.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mokkiBindingSource, "kuvaus", true));
             this.tbKuvaus.Location = new System.Drawing.Point(402, 330);
             this.tbKuvaus.Name = "tbKuvaus";
             this.tbKuvaus.Size = new System.Drawing.Size(100, 20);
@@ -217,6 +218,7 @@ namespace Mökkivaraus
             // 
             // tbHlomaara
             // 
+            this.tbHlomaara.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mokkiBindingSource, "henkilomaara", true));
             this.tbHlomaara.Location = new System.Drawing.Point(402, 356);
             this.tbHlomaara.Name = "tbHlomaara";
             this.tbHlomaara.Size = new System.Drawing.Size(100, 20);
@@ -224,6 +226,7 @@ namespace Mökkivaraus
             // 
             // tbVarustelu
             // 
+            this.tbVarustelu.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mokkiBindingSource, "varustelu", true));
             this.tbVarustelu.Location = new System.Drawing.Point(402, 382);
             this.tbVarustelu.Name = "tbVarustelu";
             this.tbVarustelu.Size = new System.Drawing.Size(100, 20);
@@ -435,11 +438,33 @@ namespace Mökkivaraus
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // tbAlue
+            // 
+            this.tbAlue.DataSource = this.alueBindingSource;
+            this.tbAlue.DisplayMember = "nimi";
+            this.tbAlue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tbAlue.FormattingEnabled = true;
+            this.tbAlue.Location = new System.Drawing.Point(402, 192);
+            this.tbAlue.Name = "tbAlue";
+            this.tbAlue.Size = new System.Drawing.Size(121, 21);
+            this.tbAlue.TabIndex = 21;
+            this.tbAlue.ValueMember = "alue_id";
+            // 
+            // alueBindingSource
+            // 
+            this.alueBindingSource.DataMember = "alue";
+            this.alueBindingSource.DataSource = this.vnDataSet;
+            // 
+            // alueTableAdapter
+            // 
+            this.alueTableAdapter.ClearBeforeFill = true;
+            // 
             // MokkienHallinta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 781);
+            this.Controls.Add(this.tbAlue);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -456,7 +481,6 @@ namespace Mökkivaraus
             this.Controls.Add(this.tbKatuosoite);
             this.Controls.Add(this.tbMokki);
             this.Controls.Add(this.tbPostinro);
-            this.Controls.Add(this.tbAlue);
             this.Controls.Add(this.btnLisaa);
             this.Controls.Add(this.dataGridView1);
             this.Location = new System.Drawing.Point(50, 50);
@@ -469,6 +493,7 @@ namespace Mökkivaraus
             ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.alueBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -489,7 +514,6 @@ namespace Mökkivaraus
         private System.Windows.Forms.DataGridViewTextBoxColumn henkilomaaraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn varusteluDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnLisaa;
-        private System.Windows.Forms.TextBox tbAlue;
         private System.Windows.Forms.TextBox tbPostinro;
         private System.Windows.Forms.TextBox tbMokki;
         private System.Windows.Forms.TextBox tbKatuosoite;
@@ -513,5 +537,8 @@ namespace Mökkivaraus
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnRaportit;
         private System.Windows.Forms.Button laskutusbtn;
+        private System.Windows.Forms.ComboBox tbAlue;
+        private System.Windows.Forms.BindingSource alueBindingSource;
+        private VnDataSetTableAdapters.alueTableAdapter alueTableAdapter;
     }
 }

@@ -49,15 +49,24 @@ namespace Mökkivaraus
         {
             // TODO: This line of code loads data into the 'vnDataSet.mokki' table. You can move, or remove it, as needed.
             this.mokkiTableAdapter.Fill(this.vnDataSet.mokki);
+            this.alueTableAdapter.Fill(this.vnDataSet.alue);
 
         }
 
         private void btnLisaa_Click(object sender, EventArgs e)
         {
+            var alue = long.Parse(tbAlue.SelectedValue.ToString());
+            var postinro = tbPostinro.Text;
+            var mokki = tbMokki.Text;
+            var katuosoite = tbKatuosoite.Text;
+            var hinta = double.Parse(tbHinta.Text);
+            var kuvaus = tbKuvaus.Text;
+            var hlomaara = int.Parse(tbHlomaara.Text);
+            var varustelu = tbVarustelu.Text;
             Validate();
             mokkiBindingSource.EndEdit();
             mokkiTableAdapter.Update(this.vnDataSet);
-            mokkiTableAdapter.Insert(long.Parse(tbAlue.Text), tbPostinro.Text, tbMokki.Text, tbKatuosoite.Text, double.Parse(tbHinta.Text), tbKuvaus.Text, int.Parse(tbHlomaara.Text), tbVarustelu.Text);
+            mokkiTableAdapter.Insert(alue, postinro, mokki, katuosoite, hinta, kuvaus, hlomaara, varustelu);
             this.mokkiTableAdapter.Fill(this.vnDataSet.mokki);
             dataGridView1.Refresh();
         }
