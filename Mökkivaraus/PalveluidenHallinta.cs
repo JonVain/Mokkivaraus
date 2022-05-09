@@ -216,5 +216,10 @@ namespace Mökkivaraus
                 e.Handled = true; // varmistetaan että arvolisäverolle ei anneta väärää inputtia
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
