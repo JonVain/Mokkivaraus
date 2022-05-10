@@ -48,9 +48,22 @@ namespace Mökkivaraus
             this.lblVaraus = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnLisaaVaraus = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbMokki = new System.Windows.Forms.ComboBox();
             this.asiakasBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.mokkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.mokkiTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.mokkiTableAdapter();
+            this.dtpAlku = new System.Windows.Forms.DateTimePicker();
+            this.dtpLoppu = new System.Windows.Forms.DateTimePicker();
+            this.cbMaksettu = new System.Windows.Forms.CheckBox();
+            this.cbAsiakas = new System.Windows.Forms.ComboBox();
+            this.asiakasBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.lblAsiakas = new System.Windows.Forms.Label();
+            this.lblMokki = new System.Windows.Forms.Label();
+            this.rbSahko = new System.Windows.Forms.RadioButton();
+            this.rbPaperi = new System.Windows.Forms.RadioButton();
+            this.lblLaskuntyyppi = new System.Windows.Forms.Label();
+            this.lblVarausmokkiin = new System.Windows.Forms.Label();
+            this.lblVivia = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).BeginInit();
@@ -58,6 +71,8 @@ namespace Mökkivaraus
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -227,42 +242,171 @@ namespace Mökkivaraus
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.lblVivia);
+            this.panel1.Controls.Add(this.lblVarausmokkiin);
+            this.panel1.Controls.Add(this.lblLaskuntyyppi);
+            this.panel1.Controls.Add(this.rbPaperi);
+            this.panel1.Controls.Add(this.rbSahko);
+            this.panel1.Controls.Add(this.lblMokki);
+            this.panel1.Controls.Add(this.lblAsiakas);
+            this.panel1.Controls.Add(this.cbAsiakas);
+            this.panel1.Controls.Add(this.cbMaksettu);
+            this.panel1.Controls.Add(this.dtpLoppu);
+            this.panel1.Controls.Add(this.dtpAlku);
+            this.panel1.Controls.Add(this.cbMokki);
             this.panel1.Controls.Add(this.btnLisaaVaraus);
             this.panel1.Location = new System.Drawing.Point(278, 199);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(764, 256);
+            this.panel1.Size = new System.Drawing.Size(273, 256);
             this.panel1.TabIndex = 38;
             // 
             // btnLisaaVaraus
             // 
-            this.btnLisaaVaraus.Location = new System.Drawing.Point(659, 230);
+            this.btnLisaaVaraus.Location = new System.Drawing.Point(28, 230);
             this.btnLisaaVaraus.Name = "btnLisaaVaraus";
             this.btnLisaaVaraus.Size = new System.Drawing.Size(99, 23);
             this.btnLisaaVaraus.TabIndex = 0;
             this.btnLisaaVaraus.Text = "Lisää varaus";
             this.btnLisaaVaraus.UseVisualStyleBackColor = true;
+            this.btnLisaaVaraus.Click += new System.EventHandler(this.btnLisaaVaraus_Click);
             // 
-            // textBox1
+            // cbMokki
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 48);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cbMokki.DataSource = this.mokkiBindingSource;
+            this.cbMokki.DisplayMember = "mokkinimi";
+            this.cbMokki.FormattingEnabled = true;
+            this.cbMokki.Location = new System.Drawing.Point(105, 50);
+            this.cbMokki.Name = "cbMokki";
+            this.cbMokki.Size = new System.Drawing.Size(150, 21);
+            this.cbMokki.TabIndex = 2;
+            this.cbMokki.ValueMember = "mokki_id";
             // 
             // asiakasBindingSource1
             // 
             this.asiakasBindingSource1.DataMember = "asiakas";
             this.asiakasBindingSource1.DataSource = this.vnDataSetBindingSource;
+            // 
+            // mokkiBindingSource
+            // 
+            this.mokkiBindingSource.DataMember = "mokki";
+            this.mokkiBindingSource.DataSource = this.vnDataSetBindingSource;
+            // 
+            // mokkiTableAdapter
+            // 
+            this.mokkiTableAdapter.ClearBeforeFill = true;
+            // 
+            // dtpAlku
+            // 
+            this.dtpAlku.CustomFormat = "yyyy-MM-dd";
+            this.dtpAlku.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpAlku.Location = new System.Drawing.Point(28, 106);
+            this.dtpAlku.Name = "dtpAlku";
+            this.dtpAlku.Size = new System.Drawing.Size(96, 20);
+            this.dtpAlku.TabIndex = 3;
+            // 
+            // dtpLoppu
+            // 
+            this.dtpLoppu.CustomFormat = "yyyy-MM-dd";
+            this.dtpLoppu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpLoppu.Location = new System.Drawing.Point(150, 106);
+            this.dtpLoppu.Name = "dtpLoppu";
+            this.dtpLoppu.Size = new System.Drawing.Size(96, 20);
+            this.dtpLoppu.TabIndex = 4;
+            // 
+            // cbMaksettu
+            // 
+            this.cbMaksettu.AutoSize = true;
+            this.cbMaksettu.Location = new System.Drawing.Point(28, 198);
+            this.cbMaksettu.Name = "cbMaksettu";
+            this.cbMaksettu.Size = new System.Drawing.Size(76, 17);
+            this.cbMaksettu.TabIndex = 5;
+            this.cbMaksettu.Text = "Maksettu?";
+            this.cbMaksettu.UseVisualStyleBackColor = true;
+            // 
+            // cbAsiakas
+            // 
+            this.cbAsiakas.DataSource = this.asiakasBindingSource2;
+            this.cbAsiakas.DisplayMember = "email";
+            this.cbAsiakas.FormattingEnabled = true;
+            this.cbAsiakas.Location = new System.Drawing.Point(105, 23);
+            this.cbAsiakas.Name = "cbAsiakas";
+            this.cbAsiakas.Size = new System.Drawing.Size(150, 21);
+            this.cbAsiakas.TabIndex = 6;
+            this.cbAsiakas.ValueMember = "asiakas_id";
+            // 
+            // asiakasBindingSource2
+            // 
+            this.asiakasBindingSource2.DataMember = "asiakas";
+            this.asiakasBindingSource2.DataSource = this.vnDataSetBindingSource;
+            // 
+            // lblAsiakas
+            // 
+            this.lblAsiakas.AutoSize = true;
+            this.lblAsiakas.Location = new System.Drawing.Point(25, 26);
+            this.lblAsiakas.Name = "lblAsiakas";
+            this.lblAsiakas.Size = new System.Drawing.Size(44, 13);
+            this.lblAsiakas.TabIndex = 7;
+            this.lblAsiakas.Text = "Asiakas";
+            // 
+            // lblMokki
+            // 
+            this.lblMokki.AutoSize = true;
+            this.lblMokki.Location = new System.Drawing.Point(25, 53);
+            this.lblMokki.Name = "lblMokki";
+            this.lblMokki.Size = new System.Drawing.Size(36, 13);
+            this.lblMokki.TabIndex = 8;
+            this.lblMokki.Text = "Mökki";
+            // 
+            // rbSahko
+            // 
+            this.rbSahko.AutoSize = true;
+            this.rbSahko.Location = new System.Drawing.Point(28, 155);
+            this.rbSahko.Name = "rbSahko";
+            this.rbSahko.Size = new System.Drawing.Size(78, 17);
+            this.rbSahko.TabIndex = 11;
+            this.rbSahko.TabStop = true;
+            this.rbSahko.Text = "Sähköposti";
+            this.rbSahko.UseVisualStyleBackColor = true;
+            // 
+            // rbPaperi
+            // 
+            this.rbPaperi.AutoSize = true;
+            this.rbPaperi.Location = new System.Drawing.Point(28, 175);
+            this.rbPaperi.Name = "rbPaperi";
+            this.rbPaperi.Size = new System.Drawing.Size(55, 17);
+            this.rbPaperi.TabIndex = 12;
+            this.rbPaperi.TabStop = true;
+            this.rbPaperi.Text = "Paperi";
+            this.rbPaperi.UseVisualStyleBackColor = true;
+            // 
+            // lblLaskuntyyppi
+            // 
+            this.lblLaskuntyyppi.AutoSize = true;
+            this.lblLaskuntyyppi.Location = new System.Drawing.Point(25, 139);
+            this.lblLaskuntyyppi.Name = "lblLaskuntyyppi";
+            this.lblLaskuntyyppi.Size = new System.Drawing.Size(72, 13);
+            this.lblLaskuntyyppi.TabIndex = 13;
+            this.lblLaskuntyyppi.Text = "Laskun tyyppi";
+            // 
+            // lblVarausmokkiin
+            // 
+            this.lblVarausmokkiin.AutoSize = true;
+            this.lblVarausmokkiin.Location = new System.Drawing.Point(25, 85);
+            this.lblVarausmokkiin.Name = "lblVarausmokkiin";
+            this.lblVarausmokkiin.Size = new System.Drawing.Size(99, 13);
+            this.lblVarausmokkiin.TabIndex = 16;
+            this.lblVarausmokkiin.Text = "Varattu aika mökille";
+            // 
+            // lblVivia
+            // 
+            this.lblVivia.AutoSize = true;
+            this.lblVivia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVivia.Location = new System.Drawing.Point(130, 105);
+            this.lblVivia.Name = "lblVivia";
+            this.lblVivia.Size = new System.Drawing.Size(14, 20);
+            this.lblVivia.TabIndex = 17;
+            this.lblVivia.Text = "-";
+            this.lblVivia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Laskutus
             // 
@@ -293,6 +437,8 @@ namespace Mökkivaraus
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,9 +462,22 @@ namespace Mökkivaraus
         private VnDataSetTableAdapters.asiakasTableAdapter asiakasTableAdapter;
         private System.Windows.Forms.Label lblVaraus;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cbMokki;
         private System.Windows.Forms.Button btnLisaaVaraus;
         private System.Windows.Forms.BindingSource asiakasBindingSource1;
+        private System.Windows.Forms.BindingSource mokkiBindingSource;
+        private VnDataSetTableAdapters.mokkiTableAdapter mokkiTableAdapter;
+        private System.Windows.Forms.Label lblLaskuntyyppi;
+        private System.Windows.Forms.RadioButton rbPaperi;
+        private System.Windows.Forms.RadioButton rbSahko;
+        private System.Windows.Forms.Label lblMokki;
+        private System.Windows.Forms.Label lblAsiakas;
+        private System.Windows.Forms.ComboBox cbAsiakas;
+        private System.Windows.Forms.BindingSource asiakasBindingSource2;
+        private System.Windows.Forms.CheckBox cbMaksettu;
+        private System.Windows.Forms.DateTimePicker dtpLoppu;
+        private System.Windows.Forms.DateTimePicker dtpAlku;
+        private System.Windows.Forms.Label lblVivia;
+        private System.Windows.Forms.Label lblVarausmokkiin;
     }
 }

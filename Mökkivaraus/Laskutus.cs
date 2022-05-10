@@ -23,9 +23,10 @@ namespace Mökkivaraus
             InitializeComponent();
         }
 
-
         private void Laskutus_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'vnDataSet.mokki' table. You can move, or remove it, as needed.
+            this.mokkiTableAdapter.Fill(this.vnDataSet.mokki);
             // TODO: This line of code loads data into the 'vnDataSet.asiakas' table. You can move, or remove it, as needed.
             this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
             // TODO: This line of code loads data into the 'vnDataSet.lasku' table. You can move, or remove it, as needed.
@@ -82,35 +83,14 @@ namespace Mökkivaraus
             raportointi.Show();
         }
 
-        public void EtsiLaskut(int asiakasid) // valitaan rivi ja tuodaan gridviewiin.
+        private void btnLisaaVaraus_Click(object sender, EventArgs e)
         {
-            string queryLaskut = "SELECT lasku.lasku_id, lasku.varaus_id, lasku.summa, lasku.alv " +
-                "FROM lasku " +
-                "LEFT JOIN varaus ON varaus.varaus_id = lasku.varaus_id " +
-                "WHERE varaus.asiakas_id = ";
 
-            string query = queryLaskut + asiakasid;
-            DataTable table3 = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
-            adapter.Fill(table3);
-            laskuBindingSource.DataSource = table3;
-            int index = asiakasBindingSource.Find("asiakas_id", asiakasid);
-            if (index >= 0) asiakasBindingSource.Position = index;
         }
 
         private void Laskutus_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Environment.Exit(1); // tämä varmistaa sen että ohjelma sulkeutuu jos ikkuna suljetaan
-        }
-
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-
-        }
-
-        private void vnDataSetBindingSource1_CurrentChanged(object sender, EventArgs e)
-        {
-
         }
 
         public void populateDGV()
