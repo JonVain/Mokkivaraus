@@ -36,7 +36,6 @@ namespace Mökkivaraus
             this.alueBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.alueTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.alueTableAdapter();
             this.cb_toimintaAlueLista = new System.Windows.Forms.ComboBox();
-            this.lbMokit = new System.Windows.Forms.Label();
             this.gridMokkiTaulukko = new System.Windows.Forms.DataGridView();
             this.mokkinimiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.katuosoiteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,7 +64,6 @@ namespace Mökkivaraus
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btPaivitaToimintaAlue = new System.Windows.Forms.Button();
-            this.lbAlueet = new System.Windows.Forms.Label();
             this.tb_id = new System.Windows.Forms.TextBox();
             this.lbMuokkaaAlueita = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSet)).BeginInit();
@@ -82,7 +80,7 @@ namespace Mökkivaraus
             // 
             this.lbToimintaA.AutoSize = true;
             this.lbToimintaA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbToimintaA.Location = new System.Drawing.Point(306, 53);
+            this.lbToimintaA.Location = new System.Drawing.Point(3, 5);
             this.lbToimintaA.Name = "lbToimintaA";
             this.lbToimintaA.Size = new System.Drawing.Size(152, 20);
             this.lbToimintaA.TabIndex = 3;
@@ -107,22 +105,12 @@ namespace Mökkivaraus
             this.cb_toimintaAlueLista.DataSource = this.alueBindingSource;
             this.cb_toimintaAlueLista.DisplayMember = "nimi";
             this.cb_toimintaAlueLista.FormattingEnabled = true;
-            this.cb_toimintaAlueLista.Location = new System.Drawing.Point(41, 73);
+            this.cb_toimintaAlueLista.Location = new System.Drawing.Point(7, 28);
             this.cb_toimintaAlueLista.Name = "cb_toimintaAlueLista";
             this.cb_toimintaAlueLista.Size = new System.Drawing.Size(164, 21);
             this.cb_toimintaAlueLista.TabIndex = 5;
             this.cb_toimintaAlueLista.ValueMember = "alue_id";
             this.cb_toimintaAlueLista.SelectedIndexChanged += new System.EventHandler(this.ToimintaAlueLista_SelectedIndexChanged);
-            // 
-            // lbMokit
-            // 
-            this.lbMokit.AutoSize = true;
-            this.lbMokit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMokit.Location = new System.Drawing.Point(504, 53);
-            this.lbMokit.Name = "lbMokit";
-            this.lbMokit.Size = new System.Drawing.Size(51, 20);
-            this.lbMokit.TabIndex = 6;
-            this.lbMokit.Text = "Mökit:";
             // 
             // gridMokkiTaulukko
             // 
@@ -137,7 +125,7 @@ namespace Mökkivaraus
             this.henkilomaaraDataGridViewTextBoxColumn,
             this.varusteluDataGridViewTextBoxColumn});
             this.gridMokkiTaulukko.DataSource = this.mokkiBindingSource;
-            this.gridMokkiTaulukko.Location = new System.Drawing.Point(239, 73);
+            this.gridMokkiTaulukko.Location = new System.Drawing.Point(7, 55);
             this.gridMokkiTaulukko.Name = "gridMokkiTaulukko";
             this.gridMokkiTaulukko.Size = new System.Drawing.Size(760, 185);
             this.gridMokkiTaulukko.TabIndex = 7;
@@ -207,7 +195,7 @@ namespace Mökkivaraus
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(266, 781);
+            this.panel2.Size = new System.Drawing.Size(266, 530);
             this.panel2.TabIndex = 21;
             // 
             // button6
@@ -337,7 +325,7 @@ namespace Mökkivaraus
             // 
             // btnLisaaUusiAlue
             // 
-            this.btnLisaaUusiAlue.Location = new System.Drawing.Point(40, 77);
+            this.btnLisaaUusiAlue.Location = new System.Drawing.Point(7, 44);
             this.btnLisaaUusiAlue.Name = "btnLisaaUusiAlue";
             this.btnLisaaUusiAlue.Size = new System.Drawing.Size(125, 34);
             this.btnLisaaUusiAlue.TabIndex = 22;
@@ -353,9 +341,9 @@ namespace Mökkivaraus
             this.alueidDataGridViewTextBoxColumn,
             this.nimiDataGridViewTextBoxColumn});
             this.dgvAlueet.DataSource = this.alueBindingSource;
-            this.dgvAlueet.Location = new System.Drawing.Point(238, 77);
+            this.dgvAlueet.Location = new System.Drawing.Point(138, 44);
             this.dgvAlueet.Name = "dgvAlueet";
-            this.dgvAlueet.Size = new System.Drawing.Size(258, 253);
+            this.dgvAlueet.Size = new System.Drawing.Size(263, 175);
             this.dgvAlueet.TabIndex = 24;
             this.dgvAlueet.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvAlueet_MouseClick);
             // 
@@ -373,7 +361,7 @@ namespace Mökkivaraus
             // 
             // btnPoistaAlueTaulukosta
             // 
-            this.btnPoistaAlueTaulukosta.Location = new System.Drawing.Point(40, 117);
+            this.btnPoistaAlueTaulukosta.Location = new System.Drawing.Point(7, 84);
             this.btnPoistaAlueTaulukosta.Name = "btnPoistaAlueTaulukosta";
             this.btnPoistaAlueTaulukosta.Size = new System.Drawing.Size(125, 34);
             this.btnPoistaAlueTaulukosta.TabIndex = 22;
@@ -385,7 +373,7 @@ namespace Mökkivaraus
             // 
             this.tb_nimi.BackColor = System.Drawing.SystemColors.Window;
             this.tb_nimi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alueBindingSource, "nimi", true));
-            this.tb_nimi.Location = new System.Drawing.Point(40, 244);
+            this.tb_nimi.Location = new System.Drawing.Point(7, 144);
             this.tb_nimi.MaxLength = 40;
             this.tb_nimi.Name = "tb_nimi";
             this.tb_nimi.Size = new System.Drawing.Size(125, 20);
@@ -396,15 +384,15 @@ namespace Mökkivaraus
             // 
             this.panel3.Controls.Add(this.gridMokkiTaulukko);
             this.panel3.Controls.Add(this.cb_toimintaAlueLista);
+            this.panel3.Controls.Add(this.lbToimintaA);
             this.panel3.Location = new System.Drawing.Point(269, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1012, 279);
+            this.panel3.Size = new System.Drawing.Size(778, 279);
             this.panel3.TabIndex = 26;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.btPaivitaToimintaAlue);
-            this.panel4.Controls.Add(this.lbAlueet);
             this.panel4.Controls.Add(this.tb_id);
             this.panel4.Controls.Add(this.tb_nimi);
             this.panel4.Controls.Add(this.lbMuokkaaAlueita);
@@ -413,12 +401,12 @@ namespace Mökkivaraus
             this.panel4.Controls.Add(this.btnPoistaAlueTaulukosta);
             this.panel4.Location = new System.Drawing.Point(270, 290);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1011, 346);
+            this.panel4.Size = new System.Drawing.Size(424, 233);
             this.panel4.TabIndex = 27;
             // 
             // btPaivitaToimintaAlue
             // 
-            this.btPaivitaToimintaAlue.Location = new System.Drawing.Point(40, 296);
+            this.btPaivitaToimintaAlue.Location = new System.Drawing.Point(7, 196);
             this.btPaivitaToimintaAlue.Name = "btPaivitaToimintaAlue";
             this.btPaivitaToimintaAlue.Size = new System.Drawing.Size(125, 23);
             this.btPaivitaToimintaAlue.TabIndex = 27;
@@ -426,21 +414,11 @@ namespace Mökkivaraus
             this.btPaivitaToimintaAlue.UseVisualStyleBackColor = true;
             this.btPaivitaToimintaAlue.Click += new System.EventHandler(this.btPaivitaToimintaAlue_Click);
             // 
-            // lbAlueet
-            // 
-            this.lbAlueet.AutoSize = true;
-            this.lbAlueet.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAlueet.Location = new System.Drawing.Point(234, 54);
-            this.lbAlueet.Name = "lbAlueet";
-            this.lbAlueet.Size = new System.Drawing.Size(122, 20);
-            this.lbAlueet.TabIndex = 26;
-            this.lbAlueet.Text = "Toiminta-alueet:";
-            // 
             // tb_id
             // 
             this.tb_id.BackColor = System.Drawing.SystemColors.Control;
             this.tb_id.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.alueBindingSource, "alue_id", true));
-            this.tb_id.Location = new System.Drawing.Point(40, 270);
+            this.tb_id.Location = new System.Drawing.Point(7, 170);
             this.tb_id.Name = "tb_id";
             this.tb_id.ReadOnly = true;
             this.tb_id.Size = new System.Drawing.Size(125, 20);
@@ -450,7 +428,7 @@ namespace Mökkivaraus
             // 
             this.lbMuokkaaAlueita.AutoSize = true;
             this.lbMuokkaaAlueita.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMuokkaaAlueita.Location = new System.Drawing.Point(36, 14);
+            this.lbMuokkaaAlueita.Location = new System.Drawing.Point(3, 0);
             this.lbMuokkaaAlueita.Name = "lbMuokkaaAlueita";
             this.lbMuokkaaAlueita.Size = new System.Drawing.Size(239, 24);
             this.lbMuokkaaAlueita.TabIndex = 0;
@@ -460,10 +438,8 @@ namespace Mökkivaraus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1293, 781);
+            this.ClientSize = new System.Drawing.Size(1052, 530);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.lbMokit);
-            this.Controls.Add(this.lbToimintaA);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
             this.Location = new System.Drawing.Point(50, 50);
@@ -479,10 +455,10 @@ namespace Mökkivaraus
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlueet)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -492,7 +468,6 @@ namespace Mökkivaraus
         private System.Windows.Forms.BindingSource alueBindingSource;
         private VnDataSetTableAdapters.alueTableAdapter alueTableAdapter;
         private System.Windows.Forms.ComboBox cb_toimintaAlueLista;
-        private System.Windows.Forms.Label lbMokit;
         private System.Windows.Forms.DataGridView gridMokkiTaulukko;
         private System.Windows.Forms.BindingSource mokkiBindingSource;
         private VnDataSetTableAdapters.mokkiTableAdapter mokkiTableAdapter;
@@ -517,7 +492,6 @@ namespace Mökkivaraus
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lbMuokkaaAlueita;
-        private System.Windows.Forms.Label lbAlueet;
         private System.Windows.Forms.Button btPaivitaToimintaAlue;
         private System.Windows.Forms.TextBox tb_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn alueidDataGridViewTextBoxColumn;
