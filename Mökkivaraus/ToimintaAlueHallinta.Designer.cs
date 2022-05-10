@@ -361,6 +361,7 @@ namespace Mökkivaraus
             // 
             // btnPoistaAlueTaulukosta
             // 
+            this.btnPoistaAlueTaulukosta.Enabled = false;
             this.btnPoistaAlueTaulukosta.Location = new System.Drawing.Point(7, 84);
             this.btnPoistaAlueTaulukosta.Name = "btnPoistaAlueTaulukosta";
             this.btnPoistaAlueTaulukosta.Size = new System.Drawing.Size(125, 34);

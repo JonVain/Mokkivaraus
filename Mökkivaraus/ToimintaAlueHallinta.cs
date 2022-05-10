@@ -67,6 +67,11 @@ namespace Mökkivaraus
             int luku =  Convert.ToInt32(alue_id);
 
             populateDGV(luku);
+
+            if (gridMokkiTaulukko.RowCount <= 1)
+                btnPoistaAlueTaulukosta.Enabled = true;
+            else
+                btnPoistaAlueTaulukosta.Enabled = false;
         }
 
 
