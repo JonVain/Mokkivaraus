@@ -5174,13 +5174,12 @@ namespace Mökkivaraus.VnDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_alv", global::System.Data.Odbc.OdbcType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "alv", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `lasku` (`lasku_id`, `varaus_id`, `summa`, `alv`) VALUES (?, ?, ?, ?)" +
-                "";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO lasku\r\n                         (varaus_id, summa, alv)\r\nVALUES      " +
+                "  (?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("lasku_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "lasku_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("varaus_id", global::System.Data.Odbc.OdbcType.BigInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "varaus_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("summa", global::System.Data.Odbc.OdbcType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "summa", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("alv", global::System.Data.Odbc.OdbcType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "alv", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("varaus_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "varaus_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("summa", global::System.Data.Odbc.OdbcType.Decimal, 0, global::System.Data.ParameterDirection.Input, ((byte)(8)), ((byte)(2)), "summa", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("alv", global::System.Data.Odbc.OdbcType.Decimal, 0, global::System.Data.ParameterDirection.Input, ((byte)(8)), ((byte)(2)), "alv", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE `lasku` SET `lasku_id` = ?, `varaus_id` = ?, `summa` = ?, `alv` = ? WHERE " +
@@ -5295,11 +5294,10 @@ namespace Mökkivaraus.VnDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int lasku_id, long varaus_id, double summa, double alv) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(lasku_id));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((long)(varaus_id));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((double)(summa));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((double)(alv));
+        public virtual int Insert(int varaus_id, decimal summa, decimal alv) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(varaus_id));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(summa));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(alv));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7049,15 +7047,18 @@ namespace Mökkivaraus.VnDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_varattu_loppupvm", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "varattu_loppupvm", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `varaus` (`asiakas_id`, `mokki_mokki_id`, `varattu_pvm`, `vahvistus_p" +
-                "vm`, `varattu_alkupvm`, `varattu_loppupvm`) VALUES (?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO varaus\r\n                         (asiakas_id, mokki_mokki_id, varattu" +
+                "_pvm, vahvistus_pvm, varattu_alkupvm, varattu_loppupvm, maskun_tila, laskun_muot" +
+                "o)\r\nVALUES        (?, ?, ?, ?, ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("asiakas_id", global::System.Data.Odbc.OdbcType.BigInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "asiakas_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("mokki_mokki_id", global::System.Data.Odbc.OdbcType.BigInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mokki_mokki_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("asiakas_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "asiakas_id", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("mokki_mokki_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "mokki_mokki_id", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("varattu_pvm", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "varattu_pvm", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("vahvistus_pvm", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "vahvistus_pvm", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("varattu_alkupvm", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "varattu_alkupvm", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("varattu_loppupvm", global::System.Data.Odbc.OdbcType.DateTime, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "varattu_loppupvm", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("maskun_tila", global::System.Data.Odbc.OdbcType.NVarChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "maskun_tila", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("laskun_muoto", global::System.Data.Odbc.OdbcType.NVarChar, 1024, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "laskun_muoto", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = @"UPDATE `varaus` SET `asiakas_id` = ?, `mokki_mokki_id` = ?, `varattu_pvm` = ?, `vahvistus_pvm` = ?, `varattu_alkupvm` = ?, `varattu_loppupvm` = ? WHERE ((`varaus_id` = ?) AND (`asiakas_id` = ?) AND (`mokki_mokki_id` = ?) AND ((? = 1 AND `varattu_pvm` IS NULL) OR (`varattu_pvm` = ?)) AND ((? = 1 AND `vahvistus_pvm` IS NULL) OR (`vahvistus_pvm` = ?)) AND ((? = 1 AND `varattu_alkupvm` IS NULL) OR (`varattu_alkupvm` = ?)) AND ((? = 1 AND `varattu_loppupvm` IS NULL) OR (`varattu_loppupvm` = ?)))";
@@ -7188,13 +7189,45 @@ namespace Mökkivaraus.VnDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long asiakas_id, long mokki_mokki_id, System.DateTime varattu_pvm, System.DateTime vahvistus_pvm, System.DateTime varattu_alkupvm, System.DateTime varattu_loppupvm) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(asiakas_id));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((long)(mokki_mokki_id));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(varattu_pvm));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(vahvistus_pvm));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(varattu_alkupvm));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(varattu_loppupvm));
+        public virtual int Insert(int asiakas_id, int mokki_mokki_id, global::System.Nullable<global::System.DateTime> varattu_pvm, global::System.Nullable<global::System.DateTime> vahvistus_pvm, global::System.Nullable<global::System.DateTime> varattu_alkupvm, global::System.Nullable<global::System.DateTime> varattu_loppupvm, string maskun_tila, string laskun_muoto) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(asiakas_id));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(mokki_mokki_id));
+            if ((varattu_pvm.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(varattu_pvm.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((vahvistus_pvm.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(vahvistus_pvm.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((varattu_alkupvm.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(varattu_alkupvm.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((varattu_loppupvm.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(varattu_loppupvm.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((maskun_tila == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(maskun_tila));
+            }
+            if ((laskun_muoto == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(laskun_muoto));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

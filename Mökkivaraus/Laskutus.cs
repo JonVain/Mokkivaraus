@@ -85,7 +85,39 @@ namespace Mökkivaraus
 
         private void btnLisaaVaraus_Click(object sender, EventArgs e)
         {
-
+            Validate();
+            mokkiBindingSource.EndEdit();
+            asiakasBindingSource.EndEdit();
+            object asiakas_id = cbAsiakas.SelectedValue;
+            int asiakas = Convert.ToInt32(asiakas_id);
+            object mokki_id = cbMokki.SelectedValue;
+            int mokki = Convert.ToInt32(mokki_id);
+            varausTableAdapter1.Update(this.vnDataSet);
+            if (rbSahko.Checked)
+            {
+                if (cbMaksettu.Checked)
+                {
+                    varausTableAdapter1.Insert(asiakas, mokki, DateTime.Now, DateTime.Now, dtpAlku.Value, dtpLoppu.Value, "Maksettu", "Sähköposti");
+                }
+                else
+                {
+                    varausTableAdapter1.Insert(asiakas, mokki, DateTime.Now, DateTime.Now, dtpAlku.Value, dtpLoppu.Value, "Ei maksettu", "Sähköposti");
+                }
+            }
+            else if (rbPaperi.Checked)
+            {
+                if (cbMaksettu.Checked)
+                {
+                    varausTableAdapter1.Insert(asiakas, mokki, DateTime.Now, DateTime.Now, dtpAlku.Value, dtpLoppu.Value, "Maksettu", "Paperi");
+                }
+                else
+                {
+                    varausTableAdapter1.Insert(asiakas, mokki, DateTime.Now, DateTime.Now, dtpAlku.Value, dtpLoppu.Value, "Ei maksettu", "Paperi");
+                }
+            }
+            //laskuTableAdapter.Insert(varaus_id: "",  ,24) ; 
+            populateDGV();
+            
         }
 
         private void Laskutus_FormClosed(object sender, FormClosedEventArgs e)
@@ -148,6 +180,18 @@ namespace Mökkivaraus
             {
                 connection.Close();
             }
+        }
+
+        private void dtpAlku_ValueChanged(object sender, EventArgs e)
+        {
+            dtpLoppu.MinDate = dtpAlku.Value; // limitoidaan väärän inputin anto 
+            dtpAlku.MaxDate = dtpLoppu.Value; // että se ei ole mahdollista
+        }
+
+        private void dtpLoppu_ValueChanged(object sender, EventArgs e)
+        {
+            dtpLoppu.MinDate = dtpAlku.Value; // limitoidaan väärän inputin anto 
+            dtpAlku.MaxDate = dtpLoppu.Value; // että se ei ole mahdollista
         }
     }
 }

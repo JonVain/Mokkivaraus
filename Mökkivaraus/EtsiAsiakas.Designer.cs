@@ -150,7 +150,6 @@ namespace Mökkivaraus
             this.okBTN.TabIndex = 1;
             this.okBTN.Text = "OK";
             this.okBTN.UseVisualStyleBackColor = true;
-            this.okBTN.Click += new System.EventHandler(this.okBTN_Click);
             // 
             // asiakasID
             // 
