@@ -456,7 +456,7 @@ namespace Mökkivaraus
             this.btnPoista.Name = "btnPoista";
             this.btnPoista.Size = new System.Drawing.Size(118, 42);
             this.btnPoista.TabIndex = 3;
-            this.btnPoista.Text = "Poista Listalta";
+            this.btnPoista.Text = "Poista Asiakas";
             this.btnPoista.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPoista.UseVisualStyleBackColor = true;
             this.btnPoista.Click += new System.EventHandler(this.btnPoista_Click);
