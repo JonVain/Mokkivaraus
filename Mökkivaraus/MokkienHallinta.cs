@@ -15,6 +15,7 @@ namespace Mökkivaraus
         public MokkienHallinta()
         {
             InitializeComponent();
+            tbPostinro.MaxLength = 5;
         }
 
         private void tsmEtusivu_Click(object sender, EventArgs e)
