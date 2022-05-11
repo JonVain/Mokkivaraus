@@ -192,5 +192,13 @@ namespace Mökkivaraus
             dtpLoppu.MinDate = dtpAlku.Value; // limitoidaan väärän inputin anto 
             dtpAlku.MaxDate = dtpLoppu.Value; // että se ei ole mahdollista
         }
+
+        private void tbHinta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true; // varmistetaan että hinnalle ei anneta väärää inputtia
+            }
+        }
     }
 }

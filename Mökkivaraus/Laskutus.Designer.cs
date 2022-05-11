@@ -47,6 +47,8 @@ namespace Mökkivaraus
             this.asiakasTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.asiakasTableAdapter();
             this.lblVaraus = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblHinta = new System.Windows.Forms.Label();
+            this.tbHinta = new System.Windows.Forms.TextBox();
             this.lblVivia = new System.Windows.Forms.Label();
             this.lblVarausmokkiin = new System.Windows.Forms.Label();
             this.lblLaskuntyyppi = new System.Windows.Forms.Label();
@@ -65,8 +67,6 @@ namespace Mökkivaraus
             this.mokkiTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.mokkiTableAdapter();
             this.asiakasBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.varausTableAdapter1 = new Mökkivaraus.VnDataSetTableAdapters.varausTableAdapter();
-            this.tbHinta = new System.Windows.Forms.TextBox();
-            this.lblHinta = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).BeginInit();
@@ -265,6 +265,23 @@ namespace Mökkivaraus
             this.panel1.Size = new System.Drawing.Size(362, 230);
             this.panel1.TabIndex = 38;
             // 
+            // lblHinta
+            // 
+            this.lblHinta.AutoSize = true;
+            this.lblHinta.Location = new System.Drawing.Point(25, 80);
+            this.lblHinta.Name = "lblHinta";
+            this.lblHinta.Size = new System.Drawing.Size(66, 13);
+            this.lblHinta.TabIndex = 40;
+            this.lblHinta.Text = "Sovittu hinta";
+            // 
+            // tbHinta
+            // 
+            this.tbHinta.Location = new System.Drawing.Point(105, 77);
+            this.tbHinta.Name = "tbHinta";
+            this.tbHinta.Size = new System.Drawing.Size(150, 20);
+            this.tbHinta.TabIndex = 39;
+            this.tbHinta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbHinta_KeyPress);
+            // 
             // lblVivia
             // 
             this.lblVivia.AutoSize = true;
@@ -419,22 +436,6 @@ namespace Mökkivaraus
             // varausTableAdapter1
             // 
             this.varausTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tbHinta
-            // 
-            this.tbHinta.Location = new System.Drawing.Point(105, 77);
-            this.tbHinta.Name = "tbHinta";
-            this.tbHinta.Size = new System.Drawing.Size(150, 20);
-            this.tbHinta.TabIndex = 39;
-            // 
-            // lblHinta
-            // 
-            this.lblHinta.AutoSize = true;
-            this.lblHinta.Location = new System.Drawing.Point(25, 80);
-            this.lblHinta.Name = "lblHinta";
-            this.lblHinta.Size = new System.Drawing.Size(66, 13);
-            this.lblHinta.TabIndex = 40;
-            this.lblHinta.Text = "Sovittu hinta";
             // 
             // Laskutus
             // 
