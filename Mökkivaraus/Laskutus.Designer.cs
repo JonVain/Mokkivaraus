@@ -67,6 +67,9 @@ namespace Mökkivaraus
             this.mokkiTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.mokkiTableAdapter();
             this.asiakasBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.varausTableAdapter1 = new Mökkivaraus.VnDataSetTableAdapters.varausTableAdapter();
+            this.palveluBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.palveluTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.palveluTableAdapter();
+            this.clbPalvelut = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).BeginInit();
@@ -76,6 +79,7 @@ namespace Mökkivaraus
             ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -245,6 +249,7 @@ namespace Mökkivaraus
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.clbPalvelut);
             this.panel1.Controls.Add(this.lblHinta);
             this.panel1.Controls.Add(this.tbHinta);
             this.panel1.Controls.Add(this.lblVivia);
@@ -262,7 +267,7 @@ namespace Mökkivaraus
             this.panel1.Controls.Add(this.btnLisaaVaraus);
             this.panel1.Location = new System.Drawing.Point(278, 199);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(362, 230);
+            this.panel1.Size = new System.Drawing.Size(362, 256);
             this.panel1.TabIndex = 38;
             // 
             // lblHinta
@@ -286,7 +291,7 @@ namespace Mökkivaraus
             // 
             this.lblVivia.AutoSize = true;
             this.lblVivia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVivia.Location = new System.Drawing.Point(130, 131);
+            this.lblVivia.Location = new System.Drawing.Point(122, 216);
             this.lblVivia.Name = "lblVivia";
             this.lblVivia.Size = new System.Drawing.Size(14, 20);
             this.lblVivia.TabIndex = 17;
@@ -296,7 +301,7 @@ namespace Mökkivaraus
             // lblVarausmokkiin
             // 
             this.lblVarausmokkiin.AutoSize = true;
-            this.lblVarausmokkiin.Location = new System.Drawing.Point(25, 113);
+            this.lblVarausmokkiin.Location = new System.Drawing.Point(17, 198);
             this.lblVarausmokkiin.Name = "lblVarausmokkiin";
             this.lblVarausmokkiin.Size = new System.Drawing.Size(99, 13);
             this.lblVarausmokkiin.TabIndex = 16;
@@ -377,7 +382,7 @@ namespace Mökkivaraus
             // 
             this.dtpLoppu.CustomFormat = "yyyy-MM-dd";
             this.dtpLoppu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpLoppu.Location = new System.Drawing.Point(150, 132);
+            this.dtpLoppu.Location = new System.Drawing.Point(142, 217);
             this.dtpLoppu.Name = "dtpLoppu";
             this.dtpLoppu.Size = new System.Drawing.Size(96, 20);
             this.dtpLoppu.TabIndex = 4;
@@ -387,7 +392,7 @@ namespace Mökkivaraus
             // 
             this.dtpAlku.CustomFormat = "yyyy-MM-dd";
             this.dtpAlku.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpAlku.Location = new System.Drawing.Point(28, 132);
+            this.dtpAlku.Location = new System.Drawing.Point(20, 217);
             this.dtpAlku.Name = "dtpAlku";
             this.dtpAlku.Size = new System.Drawing.Size(96, 20);
             this.dtpAlku.TabIndex = 3;
@@ -411,7 +416,7 @@ namespace Mökkivaraus
             // 
             // btnLisaaVaraus
             // 
-            this.btnLisaaVaraus.Location = new System.Drawing.Point(254, 198);
+            this.btnLisaaVaraus.Location = new System.Drawing.Point(254, 218);
             this.btnLisaaVaraus.Name = "btnLisaaVaraus";
             this.btnLisaaVaraus.Size = new System.Drawing.Size(99, 23);
             this.btnLisaaVaraus.TabIndex = 0;
@@ -436,6 +441,29 @@ namespace Mökkivaraus
             // varausTableAdapter1
             // 
             this.varausTableAdapter1.ClearBeforeFill = true;
+            // 
+            // palveluBindingSource
+            // 
+            this.palveluBindingSource.DataMember = "palvelu";
+            this.palveluBindingSource.DataSource = this.vnDataSet;
+            // 
+            // palveluTableAdapter
+            // 
+            this.palveluTableAdapter.ClearBeforeFill = true;
+            // 
+            // clbPalvelut
+            // 
+            this.clbPalvelut.FormattingEnabled = true;
+            this.clbPalvelut.Items.AddRange(new object[] {
+            "test",
+            "test2",
+            "test3",
+            "test4"});
+            this.clbPalvelut.Location = new System.Drawing.Point(28, 103);
+            this.clbPalvelut.Name = "clbPalvelut";
+            this.clbPalvelut.Size = new System.Drawing.Size(227, 94);
+            this.clbPalvelut.TabIndex = 41;
+            this.clbPalvelut.SelectedIndexChanged += new System.EventHandler(this.clbPalvelut_SelectedIndexChanged);
             // 
             // Laskutus
             // 
@@ -468,6 +496,7 @@ namespace Mökkivaraus
             ((System.ComponentModel.ISupportInitialize)(this.mokkiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.asiakasBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.palveluBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -511,5 +540,8 @@ namespace Mökkivaraus
         private VnDataSetTableAdapters.varausTableAdapter varausTableAdapter1;
         private System.Windows.Forms.TextBox tbHinta;
         private System.Windows.Forms.Label lblHinta;
+        private System.Windows.Forms.BindingSource palveluBindingSource;
+        private VnDataSetTableAdapters.palveluTableAdapter palveluTableAdapter;
+        private System.Windows.Forms.CheckedListBox clbPalvelut;
     }
 }

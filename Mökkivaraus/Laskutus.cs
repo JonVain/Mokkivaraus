@@ -31,8 +31,15 @@ namespace Mökkivaraus
             this.asiakasTableAdapter.Fill(this.vnDataSet.asiakas);
             // TODO: This line of code loads data into the 'vnDataSet.lasku' table. You can move, or remove it, as needed.
             this.laskuTableAdapter.Fill(this.vnDataSet.lasku);
+            this.palveluTableAdapter.Fill(this.vnDataSet.palvelu);
 
             populateDGV();
+            clbPalvelut.Items.Clear();                     
+                foreach(var palvelu in palveluBindingSource.List)
+            {
+                var rivi = (DataRowView)palvelu;
+                clbPalvelut.Items.Add(rivi["nimi"]);
+            }
         }
 
         private void etsiasiakasBtn_Click(object sender, EventArgs e)
@@ -199,6 +206,11 @@ namespace Mökkivaraus
             {
                 e.Handled = true; // varmistetaan että hinnalle ei anneta väärää inputtia
             }
+        }
+
+        private void clbPalvelut_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
