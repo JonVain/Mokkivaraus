@@ -5174,12 +5174,12 @@ namespace Mökkivaraus.VnDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("Original_alv", global::System.Data.Odbc.OdbcType.Double, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "alv", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO lasku\r\n                         (varaus_id, summa, alv)\r\nVALUES      " +
+            this._adapter.InsertCommand.CommandText = "INSERT INTO lasku\r\n                         (varaus_id, alv, summa)\r\nVALUES      " +
                 "  (?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("varaus_id", global::System.Data.Odbc.OdbcType.Int, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "varaus_id", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("summa", global::System.Data.Odbc.OdbcType.Decimal, 0, global::System.Data.ParameterDirection.Input, ((byte)(8)), ((byte)(2)), "summa", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("alv", global::System.Data.Odbc.OdbcType.Decimal, 0, global::System.Data.ParameterDirection.Input, ((byte)(8)), ((byte)(2)), "alv", global::System.Data.DataRowVersion.Current, false, null));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.Odbc.OdbcParameter("summa", global::System.Data.Odbc.OdbcType.Decimal, 0, global::System.Data.ParameterDirection.Input, ((byte)(8)), ((byte)(2)), "summa", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.Odbc.OdbcCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE `lasku` SET `lasku_id` = ?, `varaus_id` = ?, `summa` = ?, `alv` = ? WHERE " +
@@ -5294,10 +5294,10 @@ namespace Mökkivaraus.VnDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int varaus_id, decimal summa, decimal alv) {
+        public virtual int Insert(int varaus_id, decimal alv, decimal summa) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(varaus_id));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(summa));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(alv));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((decimal)(alv));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(summa));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

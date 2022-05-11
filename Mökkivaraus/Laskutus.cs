@@ -115,9 +115,8 @@ namespace Mökkivaraus
                     varausTableAdapter1.Insert(asiakas, mokki, DateTime.Now, DateTime.Now, dtpAlku.Value, dtpLoppu.Value, "Ei maksettu", "Paperi");
                 }
             }
-            //laskuTableAdapter.Insert(varaus_id: "",  ,24) ; 
+            laskuTableAdapter.Insert(varausTableAdapter1.GetData().Count(), 24, int.Parse(tbHinta.Text));
             populateDGV();
-            
         }
 
         private void Laskutus_FormClosed(object sender, FormClosedEventArgs e)

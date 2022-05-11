@@ -65,6 +65,8 @@ namespace Mökkivaraus
             this.mokkiTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.mokkiTableAdapter();
             this.asiakasBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.varausTableAdapter1 = new Mökkivaraus.VnDataSetTableAdapters.varausTableAdapter();
+            this.tbHinta = new System.Windows.Forms.TextBox();
+            this.lblHinta = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).BeginInit();
@@ -243,6 +245,8 @@ namespace Mökkivaraus
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblHinta);
+            this.panel1.Controls.Add(this.tbHinta);
             this.panel1.Controls.Add(this.lblVivia);
             this.panel1.Controls.Add(this.lblVarausmokkiin);
             this.panel1.Controls.Add(this.lblLaskuntyyppi);
@@ -265,7 +269,7 @@ namespace Mökkivaraus
             // 
             this.lblVivia.AutoSize = true;
             this.lblVivia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVivia.Location = new System.Drawing.Point(130, 105);
+            this.lblVivia.Location = new System.Drawing.Point(130, 131);
             this.lblVivia.Name = "lblVivia";
             this.lblVivia.Size = new System.Drawing.Size(14, 20);
             this.lblVivia.TabIndex = 17;
@@ -275,7 +279,7 @@ namespace Mökkivaraus
             // lblVarausmokkiin
             // 
             this.lblVarausmokkiin.AutoSize = true;
-            this.lblVarausmokkiin.Location = new System.Drawing.Point(25, 85);
+            this.lblVarausmokkiin.Location = new System.Drawing.Point(25, 113);
             this.lblVarausmokkiin.Name = "lblVarausmokkiin";
             this.lblVarausmokkiin.Size = new System.Drawing.Size(99, 13);
             this.lblVarausmokkiin.TabIndex = 16;
@@ -356,7 +360,7 @@ namespace Mökkivaraus
             // 
             this.dtpLoppu.CustomFormat = "yyyy-MM-dd";
             this.dtpLoppu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpLoppu.Location = new System.Drawing.Point(150, 106);
+            this.dtpLoppu.Location = new System.Drawing.Point(150, 132);
             this.dtpLoppu.Name = "dtpLoppu";
             this.dtpLoppu.Size = new System.Drawing.Size(96, 20);
             this.dtpLoppu.TabIndex = 4;
@@ -366,7 +370,7 @@ namespace Mökkivaraus
             // 
             this.dtpAlku.CustomFormat = "yyyy-MM-dd";
             this.dtpAlku.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpAlku.Location = new System.Drawing.Point(28, 106);
+            this.dtpAlku.Location = new System.Drawing.Point(28, 132);
             this.dtpAlku.Name = "dtpAlku";
             this.dtpAlku.Size = new System.Drawing.Size(96, 20);
             this.dtpAlku.TabIndex = 3;
@@ -415,6 +419,22 @@ namespace Mökkivaraus
             // varausTableAdapter1
             // 
             this.varausTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tbHinta
+            // 
+            this.tbHinta.Location = new System.Drawing.Point(105, 77);
+            this.tbHinta.Name = "tbHinta";
+            this.tbHinta.Size = new System.Drawing.Size(150, 20);
+            this.tbHinta.TabIndex = 39;
+            // 
+            // lblHinta
+            // 
+            this.lblHinta.AutoSize = true;
+            this.lblHinta.Location = new System.Drawing.Point(25, 80);
+            this.lblHinta.Name = "lblHinta";
+            this.lblHinta.Size = new System.Drawing.Size(66, 13);
+            this.lblHinta.TabIndex = 40;
+            this.lblHinta.Text = "Sovittu hinta";
             // 
             // Laskutus
             // 
@@ -488,5 +508,7 @@ namespace Mökkivaraus
         private System.Windows.Forms.Label lblVivia;
         private System.Windows.Forms.Label lblVarausmokkiin;
         private VnDataSetTableAdapters.varausTableAdapter varausTableAdapter1;
+        private System.Windows.Forms.TextBox tbHinta;
+        private System.Windows.Forms.Label lblHinta;
     }
 }
