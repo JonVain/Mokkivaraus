@@ -408,6 +408,7 @@ namespace Mökkivaraus
             this.cbMokki.Size = new System.Drawing.Size(150, 21);
             this.cbMokki.TabIndex = 2;
             this.cbMokki.ValueMember = "mokki_id";
+            this.cbMokki.SelectedIndexChanged += new System.EventHandler(this.cbMokki_SelectedIndexChanged);
             // 
             // mokkiBindingSource
             // 

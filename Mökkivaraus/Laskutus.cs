@@ -34,8 +34,17 @@ namespace Mökkivaraus
             this.palveluTableAdapter.Fill(this.vnDataSet.palvelu);
 
             populateDGV();
-            clbPalvelut.Items.Clear();                     
-                foreach(var palvelu in palveluBindingSource.List)
+            
+            TaytaPalvelut();
+        }
+
+        private void TaytaPalvelut() //checklistbox täyttö tietokannasta
+        {
+            var mokki = (DataRowView)cbMokki.SelectedItem;
+            long alueid = (long)mokki["alue_id"];
+            clbPalvelut.Items.Clear();
+            palveluBindingSource.Filter = $"alue_id = {alueid}";
+            foreach (var palvelu in palveluBindingSource.List)
             {
                 var rivi = (DataRowView)palvelu;
                 clbPalvelut.Items.Add(rivi["nimi"]);
@@ -211,6 +220,11 @@ namespace Mökkivaraus
         private void clbPalvelut_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbMokki_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TaytaPalvelut();
         }
     }
 }
