@@ -47,8 +47,34 @@ namespace Mökkivaraus
             foreach (var palvelu in palveluBindingSource.List)
             {
                 var rivi = (DataRowView)palvelu;
-                clbPalvelut.Items.Add(rivi["nimi"]);
+                var data = new PalveluStruct() {
+                    alueid = alueid,
+                    nimi = (string)rivi["nimi"],
+                    palveluid = (long)rivi["palvelu_id"]
+                };              
+                clbPalvelut.Items.Add(data);
             }
+        }
+        private struct PalveluStruct
+        {
+            public long alueid;
+            public string nimi;
+            public long palveluid;
+            public override string ToString()
+            {
+                return nimi;
+            }
+        }
+
+        private List<PalveluStruct> KeraaPalvelut()
+        {            
+            List<PalveluStruct> valitutpalvelut = new List<PalveluStruct>();
+            foreach (var palvelu in clbPalvelut.CheckedItems)
+            {                
+                var p = (PalveluStruct)palvelu;
+                valitutpalvelut.Add(p);
+            }            
+            return valitutpalvelut;
         }
 
         private void etsiasiakasBtn_Click(object sender, EventArgs e)
@@ -131,8 +157,13 @@ namespace Mökkivaraus
                     varausTableAdapter1.Insert(asiakas, mokki, DateTime.Now, DateTime.Now, dtpAlku.Value, dtpLoppu.Value, "Ei maksettu", "Paperi");
                 }
             }
-            laskuTableAdapter.Insert(varausTableAdapter1.GetData().Count(), 24, int.Parse(tbHinta.Text));
+            var varausid = varausTableAdapter1.GetData().Count();
+            laskuTableAdapter.Insert(varausid, 24, int.Parse(tbHinta.Text));            
             populateDGV();
+            var palvelut = KeraaPalvelut();
+            foreach (var palvelu in palvelut) {
+                varauksen_palvelutTableAdapter1.Insert(varausid, palvelu.palveluid, 1);
+            }
         }
 
         private void Laskutus_FormClosed(object sender, FormClosedEventArgs e)

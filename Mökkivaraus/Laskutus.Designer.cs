@@ -70,6 +70,7 @@ namespace Mökkivaraus
             this.palveluBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.palveluTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.palveluTableAdapter();
             this.clbPalvelut = new System.Windows.Forms.CheckedListBox();
+            this.varauksen_palvelutTableAdapter1 = new Mökkivaraus.VnDataSetTableAdapters.varauksen_palvelutTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.laskuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vnDataSetBindingSource)).BeginInit();
@@ -466,6 +467,10 @@ namespace Mökkivaraus
             this.clbPalvelut.TabIndex = 41;
             this.clbPalvelut.SelectedIndexChanged += new System.EventHandler(this.clbPalvelut_SelectedIndexChanged);
             // 
+            // varauksen_palvelutTableAdapter1
+            // 
+            this.varauksen_palvelutTableAdapter1.ClearBeforeFill = true;
+            // 
             // Laskutus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -544,5 +549,6 @@ namespace Mökkivaraus
         private System.Windows.Forms.BindingSource palveluBindingSource;
         private VnDataSetTableAdapters.palveluTableAdapter palveluTableAdapter;
         private System.Windows.Forms.CheckedListBox clbPalvelut;
+        private VnDataSetTableAdapters.varauksen_palvelutTableAdapter varauksen_palvelutTableAdapter1;
     }
 }
