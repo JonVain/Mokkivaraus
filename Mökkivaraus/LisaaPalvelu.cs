@@ -19,6 +19,42 @@ namespace Mökkivaraus
 
         private void btn_lisaapalvelu_Click(object sender, EventArgs e)
         {
+            if(tbpalvelu_id.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("ei tyhjää");
+                return;
+            }
+            if (tbalue_id.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("ei tyhjää");
+                return;
+            }
+            if (tbnimi.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("ei tyhjää");
+                return;
+            }
+            if (tbtyyppi.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("ei tyhjää");
+                return;
+            }
+            if (tbkuvaus.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("ei tyhjää");
+                return;
+            }
+            if (tbhinta.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("ei tyhjää");
+                return;
+            }
+            if (tbalv.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("ei tyhjää");
+                return;
+            }
+
             try
             {//System.Data.Odbc.OdbcException
                 Validate();
@@ -28,10 +64,22 @@ namespace Mökkivaraus
                 this.Close();
             }
 
-            catch (System.Data.Odbc.OdbcException)
+            catch (System.Data.Odbc.OdbcException )
             {
                 //estetään saman palvelu id:n käytön
                 MessageBox.Show("!!!SAMAA PALVELU_ID:TÄ EI SAA KÄYTTÄÄ!!!");
+                return;
+            }
+
+            catch(System.FormatException)
+            {                
+                MessageBox.Show("!!!Syötöt väärin!!!");
+                return;
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("ei näin");
                 return;
             }
 
@@ -128,6 +176,11 @@ namespace Mökkivaraus
             {
                 e.Handled = true; // varmistetaan että kuvaukselle ei anneta väärää inputtia
             }
+        }
+
+        private void tbalue_id_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

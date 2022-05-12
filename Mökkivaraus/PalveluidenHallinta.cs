@@ -78,12 +78,58 @@ namespace Mökkivaraus
 
         private void Btn_plvpoista_Click(object sender, EventArgs e)
         {
-            Validate();
-            palveluBindingSource.EndEdit();
-            palveluTableAdapter.Update(this.vnDataSet);
-            palveluTableAdapter.Delete(int.Parse(tbpalvelu_id.Text), int.Parse(tbalue_id.Text), tbnimi.Text, int.Parse(tbtyyppi.Text), tbkuvaus.Text, double.Parse(tbhinta.Text), double.Parse(tbalvi.Text));
-            this.palveluTableAdapter.Fill(this.vnDataSet.palvelu);
-            dgvPalvelut.Refresh(); // poistetaan valittu palvelu ja päivitetään lista
+            if (tbpalvelu_id.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("ei tyhjää");
+                return;
+            }
+            else if (tbalue_id.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("ei tyhjää");
+                return;
+            }
+            else if (tbnimi.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("ei tyhjää");
+                return;
+            }
+            else if (tbtyyppi.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("ei tyhjää");
+                return;
+            }
+            else if (tbkuvaus.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("ei tyhjää");
+                return;
+            }
+            else if (tbhinta.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("ei tyhjää");
+                return;
+            }
+            else if (tbalvi.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("ei tyhjää");
+                return;
+            }
+
+
+            try
+            {
+                Validate();
+                palveluBindingSource.EndEdit();
+                palveluTableAdapter.Update(this.vnDataSet);
+                palveluTableAdapter.Delete(int.Parse(tbpalvelu_id.Text), int.Parse(tbalue_id.Text), tbnimi.Text, int.Parse(tbtyyppi.Text), tbkuvaus.Text, double.Parse(tbhinta.Text), double.Parse(tbalvi.Text));
+                this.palveluTableAdapter.Fill(this.vnDataSet.palvelu);
+                dgvPalvelut.Refresh(); // poistetaan valittu palvelu ja päivitetään lista
+            }
+
+            catch
+            {
+
+            }
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -129,36 +175,60 @@ namespace Mökkivaraus
 
         private void dgvPalvelut_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (tbpalvelu_id.DataBindings.Count > 0)
-                tbpalvelu_id.DataBindings.RemoveAt(0);
-            if (tbalue_id.DataBindings.Count > 0)
-                tbalue_id.DataBindings.RemoveAt(0);
-            if (tbnimi.DataBindings.Count > 0)
-                tbnimi.DataBindings.RemoveAt(0);
-            if (tbtyyppi.DataBindings.Count > 0)
-                tbtyyppi.DataBindings.RemoveAt(0);
-            if (tbkuvaus.DataBindings.Count > 0)
-                tbkuvaus.DataBindings.RemoveAt(0);
-            if (tbhinta.DataBindings.Count > 0)
-                tbhinta.DataBindings.RemoveAt(0);
-            if (tbalvi.DataBindings.Count > 0)
-                tbalvi.DataBindings.RemoveAt(0);
+            //if (e.RowIndex >= 0 && !(sender is DataGridViewHeaderCell))
+            //{
+            //    MessageBox.Show("content cell was clicked");
+            //}
+            if (e.RowIndex == -1)  // ignore header row and any column
+                return;
+            
 
-            // yhdistää datagridviewstä rivin tiedot textboxeihin kun riviä clickaa
-            tbpalvelu_id.DataBindings.Add(
-                new Binding("Text", dgvPalvelut[0, e.RowIndex], "Value", false));
-            tbalue_id.DataBindings.Add(
-                new Binding("Text", dgvPalvelut[1, e.RowIndex], "Value", false));
-            tbnimi.DataBindings.Add(
-                new Binding("Text", dgvPalvelut[2, e.RowIndex], "Value", false));
-            tbtyyppi.DataBindings.Add(
-                new Binding("Text", dgvPalvelut[3, e.RowIndex], "Value", false));
-            tbkuvaus.DataBindings.Add(
-                new Binding("Text", dgvPalvelut[4, e.RowIndex], "Value", false));
-            tbhinta.DataBindings.Add(
-                new Binding("Text", dgvPalvelut[5, e.RowIndex], "Value", false));
-            tbalvi.DataBindings.Add(
-                new Binding("Text", dgvPalvelut[6, e.RowIndex], "Value", false));
+            try
+            {
+
+            
+
+
+            if (tbpalvelu_id.DataBindings.Count > 0)
+                    tbpalvelu_id.DataBindings.RemoveAt(0);
+                if (tbalue_id.DataBindings.Count > 0)
+                    tbalue_id.DataBindings.RemoveAt(0);
+                if (tbnimi.DataBindings.Count > 0)
+                    tbnimi.DataBindings.RemoveAt(0);
+                if (tbtyyppi.DataBindings.Count > 0)
+                    tbtyyppi.DataBindings.RemoveAt(0);
+                if (tbkuvaus.DataBindings.Count > 0)
+                    tbkuvaus.DataBindings.RemoveAt(0);
+                if (tbhinta.DataBindings.Count > 0)
+                    tbhinta.DataBindings.RemoveAt(0);
+                if (tbalvi.DataBindings.Count > 0)
+                    tbalvi.DataBindings.RemoveAt(0);
+
+                // yhdistää datagridviewstä rivin tiedot textboxeihin kun riviä clickaa
+                tbpalvelu_id.DataBindings.Add(
+                    new Binding("Text", dgvPalvelut[0, e.RowIndex], "Value", false));
+                tbalue_id.DataBindings.Add(
+                    new Binding("Text", dgvPalvelut[1, e.RowIndex], "Value", false));
+                tbnimi.DataBindings.Add(
+                    new Binding("Text", dgvPalvelut[2, e.RowIndex], "Value", false));
+                tbtyyppi.DataBindings.Add(
+                    new Binding("Text", dgvPalvelut[3, e.RowIndex], "Value", false));
+                tbkuvaus.DataBindings.Add(
+                    new Binding("Text", dgvPalvelut[4, e.RowIndex], "Value", false));
+                tbhinta.DataBindings.Add(
+                    new Binding("Text", dgvPalvelut[5, e.RowIndex], "Value", false));
+                tbalvi.DataBindings.Add(
+                    new Binding("Text", dgvPalvelut[6, e.RowIndex], "Value", false));
+            }
+            catch(System.ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("ei siitä");
+            }
+            catch(Exception b)
+            {
+                MessageBox.Show(b.Message);
+            }
+
         }
 
         private void tbpalvelu_id_KeyPress(object sender, KeyPressEventArgs e)

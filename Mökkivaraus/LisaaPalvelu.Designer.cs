@@ -83,6 +83,7 @@ namespace Mökkivaraus
             this.tbalue_id.Name = "tbalue_id";
             this.tbalue_id.Size = new System.Drawing.Size(100, 23);
             this.tbalue_id.TabIndex = 3;
+            this.tbalue_id.TextChanged += new System.EventHandler(this.tbalue_id_TextChanged);
             this.tbalue_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbalue_id_KeyPress);
             // 
             // tbnimi

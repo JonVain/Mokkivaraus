@@ -250,6 +250,7 @@ namespace Mökkivaraus
             // dgvPalvelut
             // 
             this.dgvPalvelut.AllowUserToDeleteRows = false;
+            this.dgvPalvelut.AllowUserToOrderColumns = true;
             this.dgvPalvelut.AutoGenerateColumns = false;
             this.dgvPalvelut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPalvelut.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -264,6 +265,8 @@ namespace Mökkivaraus
             this.dgvPalvelut.Location = new System.Drawing.Point(31, 295);
             this.dgvPalvelut.Name = "dgvPalvelut";
             this.dgvPalvelut.ReadOnly = true;
+            this.dgvPalvelut.ShowCellErrors = false;
+            this.dgvPalvelut.ShowRowErrors = false;
             this.dgvPalvelut.Size = new System.Drawing.Size(683, 163);
             this.dgvPalvelut.TabIndex = 25;
             this.dgvPalvelut.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPalvelut_CellClick);
@@ -336,8 +339,10 @@ namespace Mökkivaraus
             // 
             // tbpalvelu_id
             // 
+            this.tbpalvelu_id.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.palveluBindingSource, "palvelu_id", true));
             this.tbpalvelu_id.Location = new System.Drawing.Point(537, 66);
             this.tbpalvelu_id.Name = "tbpalvelu_id";
+            this.tbpalvelu_id.ReadOnly = true;
             this.tbpalvelu_id.Size = new System.Drawing.Size(100, 20);
             this.tbpalvelu_id.TabIndex = 26;
             this.tbpalvelu_id.Text = "1";
@@ -345,8 +350,10 @@ namespace Mökkivaraus
             // 
             // tbalue_id
             // 
+            this.tbalue_id.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.palveluBindingSource, "alue_id", true));
             this.tbalue_id.Location = new System.Drawing.Point(537, 92);
             this.tbalue_id.Name = "tbalue_id";
+            this.tbalue_id.ReadOnly = true;
             this.tbalue_id.Size = new System.Drawing.Size(100, 20);
             this.tbalue_id.TabIndex = 27;
             this.tbalue_id.Text = "1";
@@ -354,8 +361,10 @@ namespace Mökkivaraus
             // 
             // tbnimi
             // 
+            this.tbnimi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.palveluBindingSource, "nimi", true));
             this.tbnimi.Location = new System.Drawing.Point(537, 118);
             this.tbnimi.Name = "tbnimi";
+            this.tbnimi.ReadOnly = true;
             this.tbnimi.Size = new System.Drawing.Size(100, 20);
             this.tbnimi.TabIndex = 28;
             this.tbnimi.Text = "Hätäsiivous";
@@ -363,8 +372,10 @@ namespace Mökkivaraus
             // 
             // tbtyyppi
             // 
+            this.tbtyyppi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.palveluBindingSource, "tyyppi", true));
             this.tbtyyppi.Location = new System.Drawing.Point(537, 144);
             this.tbtyyppi.Name = "tbtyyppi";
+            this.tbtyyppi.ReadOnly = true;
             this.tbtyyppi.Size = new System.Drawing.Size(100, 20);
             this.tbtyyppi.TabIndex = 29;
             this.tbtyyppi.Text = "1";
@@ -372,8 +383,10 @@ namespace Mökkivaraus
             // 
             // tbkuvaus
             // 
+            this.tbkuvaus.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.palveluBindingSource, "kuvaus", true));
             this.tbkuvaus.Location = new System.Drawing.Point(747, 66);
             this.tbkuvaus.Name = "tbkuvaus";
+            this.tbkuvaus.ReadOnly = true;
             this.tbkuvaus.Size = new System.Drawing.Size(155, 20);
             this.tbkuvaus.TabIndex = 30;
             this.tbkuvaus.Text = "Siivouspalvelu tahkon mökkeihin";
@@ -381,8 +394,10 @@ namespace Mökkivaraus
             // 
             // tbhinta
             // 
+            this.tbhinta.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.palveluBindingSource, "hinta", true));
             this.tbhinta.Location = new System.Drawing.Point(747, 92);
             this.tbhinta.Name = "tbhinta";
+            this.tbhinta.ReadOnly = true;
             this.tbhinta.Size = new System.Drawing.Size(67, 20);
             this.tbhinta.TabIndex = 31;
             this.tbhinta.Text = "20";
@@ -390,8 +405,10 @@ namespace Mökkivaraus
             // 
             // tbalvi
             // 
+            this.tbalvi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.palveluBindingSource, "alv", true));
             this.tbalvi.Location = new System.Drawing.Point(747, 117);
             this.tbalvi.Name = "tbalvi";
+            this.tbalvi.ReadOnly = true;
             this.tbalvi.Size = new System.Drawing.Size(67, 20);
             this.tbalvi.TabIndex = 32;
             this.tbalvi.Text = "24";
