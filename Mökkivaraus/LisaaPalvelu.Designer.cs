@@ -75,6 +75,7 @@ namespace Mökkivaraus
             this.tbpalvelu_id.Size = new System.Drawing.Size(100, 23);
             this.tbpalvelu_id.TabIndex = 2;
             this.tbpalvelu_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbpalvelu_id_KeyPress);
+            this.tbpalvelu_id.Leave += new System.EventHandler(this.tbKaikki_Leave);
             // 
             // tbalue_id
             // 
@@ -85,6 +86,7 @@ namespace Mökkivaraus
             this.tbalue_id.TabIndex = 3;
             this.tbalue_id.TextChanged += new System.EventHandler(this.tbalue_id_TextChanged);
             this.tbalue_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbalue_id_KeyPress);
+            this.tbalue_id.Leave += new System.EventHandler(this.tbKaikki_Leave);
             // 
             // tbnimi
             // 
@@ -94,6 +96,7 @@ namespace Mökkivaraus
             this.tbnimi.Size = new System.Drawing.Size(100, 23);
             this.tbnimi.TabIndex = 4;
             this.tbnimi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbnimi_KeyPress);
+            this.tbnimi.Leave += new System.EventHandler(this.tbKaikki_Leave);
             // 
             // tbtyyppi
             // 
@@ -103,6 +106,7 @@ namespace Mökkivaraus
             this.tbtyyppi.Size = new System.Drawing.Size(100, 23);
             this.tbtyyppi.TabIndex = 5;
             this.tbtyyppi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbtyyppi_KeyPress);
+            this.tbtyyppi.Leave += new System.EventHandler(this.tbKaikki_Leave);
             // 
             // tbkuvaus
             // 
@@ -112,6 +116,7 @@ namespace Mökkivaraus
             this.tbkuvaus.Size = new System.Drawing.Size(100, 23);
             this.tbkuvaus.TabIndex = 6;
             this.tbkuvaus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbkuvaus_KeyPress);
+            this.tbkuvaus.Leave += new System.EventHandler(this.tbKaikki_Leave);
             // 
             // tbhinta
             // 
@@ -121,6 +126,7 @@ namespace Mökkivaraus
             this.tbhinta.Size = new System.Drawing.Size(100, 23);
             this.tbhinta.TabIndex = 7;
             this.tbhinta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbhinta_KeyPress);
+            this.tbhinta.Leave += new System.EventHandler(this.tbKaikki_Leave);
             // 
             // tbalv
             // 
@@ -130,6 +136,7 @@ namespace Mökkivaraus
             this.tbalv.Size = new System.Drawing.Size(100, 23);
             this.tbalv.TabIndex = 8;
             this.tbalv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbalv_KeyPress);
+            this.tbalv.Leave += new System.EventHandler(this.tbKaikki_Leave);
             // 
             // label1
             // 

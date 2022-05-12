@@ -17,7 +17,26 @@ namespace Mökkivaraus
             InitializeComponent();
         }
 
-        private void btn_lisaapalvelu_Click(object sender, EventArgs e)
+        private void tbKaikki_Leave(object sender, EventArgs e)
+        {
+            TextBox element = null;
+
+            if (tbpalvelu_id.Text.Trim() == string.Empty) element = tbpalvelu_id;
+            else if (tbalue_id.Text.Trim() == string.Empty) element = tbalue_id;
+            else if (tbnimi.Text.Trim() == string.Empty) element = tbnimi;
+            else if (tbtyyppi.Text.Trim() == string.Empty) element = tbtyyppi;
+            else if (tbkuvaus.Text.Trim() == string.Empty) element = tbkuvaus;
+            else if (tbhinta.Text.Trim() == string.Empty) element = tbhinta;
+            else if (tbalv.Text.Trim() == string.Empty) element = tbalv;
+
+            if (element != null)
+            {
+                MessageBox.Show("Et voi jättää tyhjäksi");
+                element.Focus();
+            }
+        }
+
+            private void btn_lisaapalvelu_Click(object sender, EventArgs e)
         {
             if(tbpalvelu_id.Text.Trim() == string.Empty)
             {

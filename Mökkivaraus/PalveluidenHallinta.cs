@@ -291,5 +291,24 @@ namespace Mökkivaraus
         {
 
         }
+
+        private void tbKaikki_Leave(object sender, EventArgs e)
+        {
+            TextBox element = null;
+
+            if (tbpalvelu_id.Text.Trim() == string.Empty) element = tbpalvelu_id;
+            else if (tbalue_id.Text.Trim() == string.Empty) element = tbalue_id;
+            else if (tbnimi.Text.Trim() == string.Empty) element = tbnimi;
+            else if (tbtyyppi.Text.Trim() == string.Empty) element = tbtyyppi;
+            else if (tbkuvaus.Text.Trim() == string.Empty) element = tbkuvaus;
+            else if (tbhinta.Text.Trim() == string.Empty) element = tbhinta;
+            else if (tbalvi.Text.Trim() == string.Empty) element = tbalvi;
+
+            if (element != null)
+            {
+                MessageBox.Show("Et voi jättää tyhjäksi");
+                element.Focus();
+            }
+        }
     }
 }
