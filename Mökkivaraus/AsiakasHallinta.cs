@@ -136,8 +136,7 @@ namespace Mökkivaraus
 
         private void tbKaikki_Leave(object sender, EventArgs e)
         {
-            TextBox element = new TextBox();
-            element = null;
+            TextBox element = null;
 
             if (tbEtunimi.Text.Trim() == string.Empty) element = tbEtunimi;
             else if (tbSukunimi.Text.Trim() == string.Empty) element = tbSukunimi;
