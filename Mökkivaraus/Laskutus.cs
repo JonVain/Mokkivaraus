@@ -55,7 +55,7 @@ namespace Mökkivaraus
                 clbPalvelut.Items.Add(data);
             }
         }
-        private struct PalveluStruct
+        private struct PalveluStruct // rakenne, säilytetään muuttujat.
         {
             public long alueid;
             public string nimi;
@@ -66,7 +66,7 @@ namespace Mökkivaraus
             }
         }
 
-        private List<PalveluStruct> KeraaPalvelut()
+        private List<PalveluStruct> KeraaPalvelut() //kerää valitut palvelut listaan
         {            
             List<PalveluStruct> valitutpalvelut = new List<PalveluStruct>();
             foreach (var palvelu in clbPalvelut.CheckedItems)
@@ -159,9 +159,8 @@ namespace Mökkivaraus
             }
             var varausid = varausTableAdapter1.GetData().Count();
             laskuTableAdapter.Insert(varausid, 24, int.Parse(tbHinta.Text));            
-            populateDGV();
-            var palvelut = KeraaPalvelut();
-            foreach (var palvelu in palvelut) {
+            populateDGV();            
+            foreach (var palvelu in KeraaPalvelut()) {
                 varauksen_palvelutTableAdapter1.Insert(varausid, palvelu.palveluid, 1);
             }
         }
