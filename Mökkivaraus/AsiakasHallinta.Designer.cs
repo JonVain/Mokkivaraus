@@ -59,7 +59,7 @@ namespace Mökkivaraus
             this.mokkiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mokkiTableAdapter = new Mökkivaraus.VnDataSetTableAdapters.mokkiTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnPaivita = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLaskutus = new System.Windows.Forms.Button();
             this.btnRaportti = new System.Windows.Forms.Button();
@@ -180,6 +180,7 @@ namespace Mökkivaraus
             this.tbPostnro.Size = new System.Drawing.Size(150, 20);
             this.tbPostnro.TabIndex = 6;
             this.tbPostnro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPostnro_KeyPress);
+            this.tbPostnro.Leave += new System.EventHandler(this.tbKaikki_Leave);
             // 
             // tbEtunimi
             // 
@@ -188,6 +189,7 @@ namespace Mökkivaraus
             this.tbEtunimi.Name = "tbEtunimi";
             this.tbEtunimi.Size = new System.Drawing.Size(150, 20);
             this.tbEtunimi.TabIndex = 4;
+            this.tbEtunimi.Leave += new System.EventHandler(this.tbKaikki_Leave);
             // 
             // tbEmail
             // 
@@ -196,6 +198,7 @@ namespace Mökkivaraus
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(150, 20);
             this.tbEmail.TabIndex = 8;
+            this.tbEmail.Leave += new System.EventHandler(this.tbKaikki_Leave);
             // 
             // tbOsoite
             // 
@@ -204,6 +207,7 @@ namespace Mökkivaraus
             this.tbOsoite.Name = "tbOsoite";
             this.tbOsoite.Size = new System.Drawing.Size(150, 20);
             this.tbOsoite.TabIndex = 7;
+            this.tbOsoite.Leave += new System.EventHandler(this.tbKaikki_Leave);
             // 
             // tbSukunimi
             // 
@@ -212,6 +216,7 @@ namespace Mökkivaraus
             this.tbSukunimi.Name = "tbSukunimi";
             this.tbSukunimi.Size = new System.Drawing.Size(150, 20);
             this.tbSukunimi.TabIndex = 5;
+            this.tbSukunimi.Leave += new System.EventHandler(this.tbKaikki_Leave);
             // 
             // tbPuhnro
             // 
@@ -221,6 +226,7 @@ namespace Mökkivaraus
             this.tbPuhnro.Size = new System.Drawing.Size(150, 20);
             this.tbPuhnro.TabIndex = 9;
             this.tbPuhnro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPuhnro_KeyPress);
+            this.tbPuhnro.Leave += new System.EventHandler(this.tbKaikki_Leave);
             // 
             // lblid
             // 
@@ -303,16 +309,16 @@ namespace Mökkivaraus
             this.panel1.Size = new System.Drawing.Size(644, 585);
             this.panel1.TabIndex = 34;
             // 
-            // button6
+            // btnPaivita
             // 
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(653, 687);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(245, 21);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "Päivitä Asiakkaan tiedot";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.btnPaivitaAsiakas_Click);
+            this.btnPaivita.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPaivita.Location = new System.Drawing.Point(653, 687);
+            this.btnPaivita.Name = "btnPaivita";
+            this.btnPaivita.Size = new System.Drawing.Size(245, 21);
+            this.btnPaivita.TabIndex = 11;
+            this.btnPaivita.Text = "Päivitä Asiakkaan tiedot";
+            this.btnPaivita.UseVisualStyleBackColor = true;
+            this.btnPaivita.Click += new System.EventHandler(this.btnPaivitaAsiakas_Click);
             // 
             // panel2
             // 
@@ -479,7 +485,7 @@ namespace Mökkivaraus
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 739);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnPaivita);
             this.Controls.Add(this.btnPoista);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -547,7 +553,7 @@ namespace Mökkivaraus
         private System.Windows.Forms.DataGridViewTextBoxColumn lahiosoiteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn puhelinnroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnPaivita;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;

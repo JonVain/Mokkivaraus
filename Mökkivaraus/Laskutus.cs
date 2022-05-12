@@ -132,6 +132,7 @@ namespace Mökkivaraus
                 MessageBox.Show("Anna sovittu hinta");
                 return;
             }
+
             Validate();
             mokkiBindingSource.EndEdit();
             asiakasBindingSource.EndEdit();

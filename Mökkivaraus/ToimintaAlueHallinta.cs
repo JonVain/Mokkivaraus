@@ -170,6 +170,12 @@ namespace Mökkivaraus
 
         private void btPaivitaToimintaAlue_Click(object sender, EventArgs e)
         {
+            if (tb_nimi.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Et voi päivittää nimeä tyhjäksi");
+                return;
+            }
+
             Validate();
             alueBindingSource.EndEdit();
             alueTableAdapter.Update(this.vnDataSet);

@@ -87,6 +87,12 @@ namespace Mökkivaraus
 
         private void btnPaivitaAsiakas_Click(object sender, EventArgs e)
         {
+            if (tbEtunimi.Text.Trim() == string.Empty || tbSukunimi.Text.Trim() == string.Empty || tbEmail.Text.Trim() == string.Empty || tbOsoite.Text.Trim() == string.Empty || tbPostnro.Text.Trim() == string.Empty || tbPuhnro.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Et voi päivittää mitään kohtaa tyhjäksi");
+                return;
+            }
+
             asiakasBindingSource.EndEdit();
             asiakasTableAdapter.Update(this.vnDataSet.asiakas); 
             //Päivitetään valitun henkilön tiedot uusilla syötteillä
@@ -126,6 +132,25 @@ namespace Mökkivaraus
             Raportointi rap = new Raportointi();
             rap.Show();
             this.Hide();
+        }
+
+        private void tbKaikki_Leave(object sender, EventArgs e)
+        {
+            TextBox element = new TextBox();
+            element = null;
+
+            if (tbEtunimi.Text.Trim() == string.Empty) element = tbEtunimi;
+            else if (tbSukunimi.Text.Trim() == string.Empty) element = tbSukunimi;
+            else if (tbPostnro.Text.Trim() == string.Empty) element = tbPostnro;
+            else if (tbOsoite.Text.Trim() == string.Empty) element = tbOsoite;
+            else if (tbEmail.Text.Trim() == string.Empty) element = tbEmail;
+            else if (tbPuhnro.Text.Trim() == string.Empty) element = tbPuhnro;
+
+            if (element != null)
+            {
+                MessageBox.Show("Et voi jättää tyhjäksi");
+                element.Focus();
+            }
         }
     }
 }

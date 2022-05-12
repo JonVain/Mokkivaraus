@@ -16,6 +16,7 @@ namespace Mökkivaraus
         {
             InitializeComponent();
             tbPostinumero.MaxLength = 5; // postinumerolle limitoitu pituus
+            tbPuhnro.MaxLength = 10;
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -26,6 +27,12 @@ namespace Mökkivaraus
 
         private void btnLisaa_Click(object sender, EventArgs e)
         {
+            if (tbEtunimi.Text.Trim() == string.Empty || tbSukunimi.Text.Trim() == string.Empty || tbEmail.Text.Trim() == string.Empty || tbOsoite.Text.Trim() == string.Empty || tbPostinumero.Text.Trim() == string.Empty || tbPuhnro.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Et voi jättää mitään kohtaa tyhjäksi");
+                return;
+            }
+
             Validate();
             asiakasBindingSource.EndEdit();
             asiakasTableAdapter.Update(this.vnDataSet);
