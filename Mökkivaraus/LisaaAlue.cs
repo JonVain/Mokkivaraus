@@ -26,6 +26,12 @@ namespace Mökkivaraus
 
         private void btnLisaa_Click(object sender, EventArgs e)
         {
+            if(tbUusiAlue.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Anna toiminta-alueelle nimi");
+                return;
+            }
+
             Validate();
             alueBindingSource8.EndEdit();
             alueTableAdapter.Update(this.vnDataSet);

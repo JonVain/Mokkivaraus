@@ -127,6 +127,11 @@ namespace Mökkivaraus
 
         private void btnLisaaVaraus_Click(object sender, EventArgs e)
         {
+            if (tbHinta.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Anna sovittu hinta");
+                return;
+            }
             Validate();
             mokkiBindingSource.EndEdit();
             asiakasBindingSource.EndEdit();
